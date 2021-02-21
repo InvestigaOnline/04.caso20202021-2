@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Perfil del target</title>
+
+<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.17/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="site_libs/proj4js-2.3.15/proj4.js"></script>
+<link href="site_libs/highcharts-8.2.2/css/motion.css" rel="stylesheet" />
+<script src="site_libs/highcharts-8.2.2/highcharts.js"></script>
+<script src="site_libs/highcharts-8.2.2/highcharts-3d.js"></script>
+<script src="site_libs/highcharts-8.2.2/highcharts-more.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/stock.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/map.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/annotations.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/data.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/drilldown.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/item-series.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/offline-exporting.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/overlapping-datalabels.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/exporting.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/export-data.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/funnel.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/heatmap.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/treemap.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/sankey.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/dependency-wheel.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/organization.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/solid-gauge.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/streamgraph.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/sunburst.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/vector.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/wordcloud.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/xrange.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/tilemap.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/venn.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/gantt.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/timeline.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/parallel-coordinates.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/bullet.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/coloraxis.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/dumbbell.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/lollipop.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/series-label.js"></script>
+<script src="site_libs/highcharts-8.2.2/plugins/motion.js"></script>
+<script src="site_libs/highcharts-8.2.2/custom/reset.js"></script>
+<script src="site_libs/highcharts-8.2.2/modules/boost.js"></script>
+<script src="site_libs/highchart-binding-0.8.2.9000/highchart.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<!DOCTYPE html>
+<head><link rel="shortcut icon" href="https://drive.google.com/uc?export=view&id=1JbeH3BFMq-xjBIroa3lcnqhOJS4Ap-RB">&nbsp;</head>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Covid-19 ::|:: Ola 2</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Introducción</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Preliminares
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="analisis.html">Análisis</a>
+    </li>
+    <li>
+      <a href="ficha.html">Ficha</a>
+    </li>
+    <li>
+      <a href="perfil.html">Perfil</a>
+    </li>
+    <li>
+      <a href="o.html">Objetivos</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resultados
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="o1.html">Objetivo.1</a>
+    </li>
+    <li>
+      <a href="o2.html">Objetivo.2</a>
+    </li>
+    <li>
+      <a href="o3.html">Objetivo.3</a>
+    </li>
+    <li>
+      <a href="o4.html">Objetivo.4</a>
+    </li>
+    <li>
+      <a href="escalas.html">Escalas</a>
+    </li>
+    <li>
+      <a href="otros01.html">Tablas cruzadas (1)</a>
+    </li>
+    <li>
+      <a href="otros02.html">Tablas cruzadas (2)</a>
+    </li>
+    <li>
+      <a href="otros03.html">Tablas cruzadas (3)</a>
+    </li>
+    <li>
+      <a href="otros04.html">Tablas cruzadas (4)</a>
+    </li>
+    <li>
+      <a href="verbatim.html">Verbatim</a>
+    </li>
+    <li>
+      <a href="qst.html">Cuestionario</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="conclusiones.html">Conclusiones</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">
+    <span class="fas fa-question-circle"></span>
+     
+    Acerca de ...
+  </a>
+</li>
+<li>
+  <a href="https://www.investigaonline.com">
+    <span class="fas fa-search-plus"></span>
+     
+    InvestigaOnline.com
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Perfil del target</h1>
+
+</div>
+
+
+<div id="descripción-de-la-muestra" class="section level1">
+<h1>Descripción de la muestra</h1>
+<p>Recordemos que finalmente la muestra ha sido obtenida por medio de grupos de whatsapp (conocidos y familiares de alumnos) por lo que el muestreo de conveniencia ha sido el método indicado. Ello nos lleva a una muestra sesgada de individuos, no representativos de la estructura poblacional del universo señalado en la <a href="https://covid.investigaonline.com/ficha.html">ficha técnica</a>.</p>
+<p>La distribución por edades de los entrevistados ha sido la siguiente:</p>
+<div id="htmlwidget-dd9a2f4691c78367f330" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dd9a2f4691c78367f330">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","caption":"<caption>Perfil:Edad<\/caption>","data":[["Edad","","","","","","","",""],["menos de 18","de 18 a 25","de 26 a 34","de 35 a 44","de 45 a 54","de 55 a 64","más de 64","no contesta","#Total cases"],[0.7,41.8,14.9,11.4,18.3,10.1,2.2,0.5,404],[3,169,60,46,74,41,9,2,404]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        %casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-afee7ad3f12e4eb04725" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-afee7ad3f12e4eb04725">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"pie","polar":false,"inverted":false},"title":{"text":"Edad de los entrevistados"},"yAxis":{"title":{"text":null}},"credits":{"enabled":true,"text":"InvestigaOnline.com","href":"https://www.investigaonline.com"},"exporting":{"enabled":true},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"subtitle":{"text":"Tramos de Edad"},"xAxis":{"categories":["menos de 18","de 18 a 25","de 26 a 34","de 35 a 44","de 45 a 54","de 55 a 64","más de 64","no contesta"]},"series":[{"data":[{"name":"menos de 18","y":0.742574257425743},{"name":"de 18 a 25","y":41.8316831683168},{"name":"de 26 a 34","y":14.8514851485149},{"name":"de 35 a 44","y":11.3861386138614},{"name":"de 45 a 54","y":18.3168316831683},{"name":"de 55 a 64","y":10.1485148514851},{"name":"más de 64","y":2.22772277227723},{"name":"no contesta","y":0.495049504950495}],"type":null,"name":"Edad","showInLegend":true,"innerSize":"75%"}]},"theme":{"colors":["#6794a7","#014d64","#76c0c1","#01a2d9","#7ad2f6","#00887d","#adadad","#7bd3f6","#7c260b","#ee8f71","#76c0c1","#a18376"],"chart":{"backgroundColor":"#d5e4eb","style":{"fontFamily":"Droid Sans","color":"#3C3C3C"}},"title":{"align":"left","style":{"fontWeight":"bold"}},"subtitle":{"align":"left"},"yAxis":{"gridLineColor":"#FFFFFF","lineColor":"#FFFFFF","minorGridLineColor":"#FFFFFF","tickColor":"#D7D7D8","tickWidth":1,"title":{"style":{"color":"#A0A0A3"}}},"tooltip":{"backgroundColor":"#FFFFFF","borderColor":"#76c0c1","style":{"color":"#000000"},"valueDecimals":1},"legend":{"itemStyle":{"color":"#3C3C3C"},"itemHiddenStyle":{"color":"#606063"}},"credits":{"style":{"color":"#666"}},"labels":{"style":{"color":"#D7D7D8"}},"drilldown":{"activeAxisLabelStyle":{"color":"#F0F0F3"},"activeDataLabelStyle":{"color":"#F0F0F3"}},"navigation":{"buttonOptions":{"symbolStroke":"#DDDDDD","theme":{"fill":"#505053"}}},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#C0C0C0","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)"},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":"Droid+Sans","debug":false},"evals":[],"jsHooks":[]}</script>
+<p>Mientras que la distribución por sexos ha sido:</p>
+<div id="htmlwidget-ccc80bfe89b62b7ea23d" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ccc80bfe89b62b7ea23d">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","caption":"<caption>Perfil:SEXO<\/caption>","data":[["Sexo","",""],["hombre","mujer","#Total cases"],[38.1,61.9,404],[154,250,404]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        %casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-648bb5778025cab3c8da" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-648bb5778025cab3c8da">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"pie","polar":false,"inverted":false},"title":{"text":"Sexo de los entrevistados"},"yAxis":{"title":{"text":null}},"credits":{"enabled":true,"text":"InvestigaOnline.com","href":"https://www.investigaonline.com"},"exporting":{"enabled":true},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"subtitle":{"text":""},"xAxis":{"categories":["hombre","mujer"]},"series":[{"data":[{"name":"hombre","y":38.1188118811881},{"name":"mujer","y":61.8811881188119}],"type":null,"name":"Sexo","showInLegend":true,"innerSize":"75%"}]},"theme":{"colors":["#6794a7","#014d64","#76c0c1","#01a2d9","#7ad2f6","#00887d","#adadad","#7bd3f6","#7c260b","#ee8f71","#76c0c1","#a18376"],"chart":{"backgroundColor":"#d5e4eb","style":{"fontFamily":"Droid Sans","color":"#3C3C3C"}},"title":{"align":"left","style":{"fontWeight":"bold"}},"subtitle":{"align":"left"},"yAxis":{"gridLineColor":"#FFFFFF","lineColor":"#FFFFFF","minorGridLineColor":"#FFFFFF","tickColor":"#D7D7D8","tickWidth":1,"title":{"style":{"color":"#A0A0A3"}}},"tooltip":{"backgroundColor":"#FFFFFF","borderColor":"#76c0c1","style":{"color":"#000000"},"valueDecimals":1},"legend":{"itemStyle":{"color":"#3C3C3C"},"itemHiddenStyle":{"color":"#606063"}},"credits":{"style":{"color":"#666"}},"labels":{"style":{"color":"#D7D7D8"}},"drilldown":{"activeAxisLabelStyle":{"color":"#F0F0F3"},"activeDataLabelStyle":{"color":"#F0F0F3"}},"navigation":{"buttonOptions":{"symbolStroke":"#DDDDDD","theme":{"fill":"#505053"}}},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#C0C0C0","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)"},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":"Droid+Sans","debug":false},"evals":[],"jsHooks":[]}</script>
+<p>Por último, se ha realizado a partir de los datos obtenidos del entrevistado sobre si era o no el mayor sustentador del hogar una imputación del nivel socio económico del hogar de residencia del entrevistado, con las siguiente distribución resultante:</p>
+<div id="htmlwidget-e3275e4a642bbeb7d344" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e3275e4a642bbeb7d344">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","caption":"<caption>Perfil:STATUS HOGAR<\/caption>","data":[["NSCE","","","","","","",""],["a1","a2","b","c","d","e1","e2","#Total cases"],[9.2,14.9,14.4,35.1,5,18.3,3.2,404],[37,60,58,142,20,74,13,404]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        %casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p>Las preguntas del final del cuestionario pretendían estimar el volumen de ingresos de la unidad familiar donde reside o de donde depende el individuo entrevistado. Así, siguiendo los cálculos de la AIMC utilizados en el EGM español, los resultados se pueden ver en este gráfico.</p>
+<div id="htmlwidget-2b8af703455540078959" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2b8af703455540078959">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column","polar":false,"inverted":false},"title":{"text":"Status del hogar"},"yAxis":{"title":{"text":null}},"credits":{"enabled":true,"text":"InvestigaOnline.com","href":"https://www.investigaonline.com"},"exporting":{"enabled":true},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"subtitle":{"text":"Escala AIMC 2015"},"xAxis":{"categories":["a1","a2","b","c","d","e1","e2"]},"series":[{"data":[{"name":"a1","y":9.15841584158416},{"name":"a2","y":14.8514851485149},{"name":"b","y":14.3564356435644},{"name":"c","y":35.1485148514851},{"name":"d","y":4.95049504950495},{"name":"e1","y":18.3168316831683},{"name":"e2","y":3.21782178217822}],"type":null,"name":"Status","showInLegend":true,"innerSize":"75%","colorByPoint":true}]},"theme":{"colors":["#6794a7","#014d64","#76c0c1","#01a2d9","#7ad2f6","#00887d","#adadad","#7bd3f6","#7c260b","#ee8f71","#76c0c1","#a18376"],"chart":{"backgroundColor":"#d5e4eb","style":{"fontFamily":"Droid Sans","color":"#3C3C3C"}},"title":{"align":"left","style":{"fontWeight":"bold"}},"subtitle":{"align":"left"},"yAxis":{"gridLineColor":"#FFFFFF","lineColor":"#FFFFFF","minorGridLineColor":"#FFFFFF","tickColor":"#D7D7D8","tickWidth":1,"title":{"style":{"color":"#A0A0A3"}}},"tooltip":{"backgroundColor":"#FFFFFF","borderColor":"#76c0c1","style":{"color":"#000000"},"valueDecimals":1},"legend":{"itemStyle":{"color":"#3C3C3C"},"itemHiddenStyle":{"color":"#606063"}},"credits":{"style":{"color":"#666"}},"labels":{"style":{"color":"#D7D7D8"}},"drilldown":{"activeAxisLabelStyle":{"color":"#F0F0F3"},"activeDataLabelStyle":{"color":"#F0F0F3"}},"navigation":{"buttonOptions":{"symbolStroke":"#DDDDDD","theme":{"fill":"#505053"}}},"legendBackgroundColor":"rgba(0, 0, 0, 0.5)","background2":"#505053","dataLabelsColor":"#B0B0B3","textColor":"#C0C0C0","contrastTextColor":"#F0F0F3","maskColor":"rgba(255,255,255,0.3)"},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":"Droid+Sans","debug":false},"evals":[],"jsHooks":[]}</script>
+<p>La clave de los grupos es (valor imputado en euros del hogar entre miembros):</p>
+<ul>
+<li>A1 Más de 3005 euros;</li>
+<li>A2 De 2452 a 3005;</li>
+<li>B De 2146 a 2451;</li>
+<li>C De 1603 a 2145;</li>
+<li>D De 1313 a 1602;</li>
+<li>E1 De 745 a 1312;</li>
+<li>E2 Hasta 744 euros</li>
+</ul>
+<p>Para más información acerca del mecanismo utilizado para esta imputación, ver este <a href="https://www.aimc.es/otros-estudios-trabajos/clasificacion-socioeconomica/">enlace</a> de la <a href="https://www.aimc.es/">AIMC</a>.</p>
+</div>
+
+<br>
+<hr>
+<div style="text-align: center;">All rights reserved - 2008-2021 (c) - InvestigaOnline.com</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

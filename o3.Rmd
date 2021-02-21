@@ -1,0 +1,299 @@
+---
+title: 'Objetivo 3'
+---
+
+# Identificar nuevos patrones de UX y comportamiento de compra en la nueva normalidad
+
+Cuando todo regrese a la normalidad, ¿en cuántas tiendas crees que comprarás (en persona u online) productos de alimentación e higiene doméstica?
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells('|'=unvr(Q00311)) %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_stat_cpct(label='%casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Objetivo 3: ',var_lab(data$Q00311), sep = ''))
+as.datatable_widget(tab)
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q00311) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+    hc_chart(type = 'column', polar=FALSE) %>%
+    hc_xAxis(categories = tab$row_labels) %>% 
+    hc_add_series(round(tab$`#Total|%casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+Y crees que realizarás ...
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells('|'=unvr(Q00312)) %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_stat_cpct(label='%casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Objetivo 3: ',var_lab(data$Q00312), sep = ''))
+as.datatable_widget(tab)
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q00312) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+    hc_chart(type = 'bar', polar=FALSE) %>%
+    hc_xAxis(categories = tab$row_labels) %>% 
+    hc_add_series(round(tab$`#Total|%casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+Y en cuento al gasto ...
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells('|'=unvr(Q00313)) %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_stat_cpct(label='%casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Objetivo 3: ',var_lab(data$Q00313), sep = ''))
+as.datatable_widget(tab)
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q00313) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+    hc_chart(type = 'column', polar=FALSE) %>%
+    hc_xAxis(categories = tab$row_labels) %>% 
+    hc_add_series(round(tab$`#Total|%casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+Como sabemos todos, se cree que en los próximos meses dispondremos de una vacuna para combatir el coronavirus. En este nuevo escenario, ¿crees que todo volverá a la normalidad anterior a la pandemia?
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells('|'=unvr(Q00320)) %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_stat_cpct(label='%casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Objetivo 3: ',var_lab(data$Q00320), sep = ''))
+as.datatable_widget(tab)
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q00311) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+    hc_chart(type = 'bar', polar=FALSE) %>%
+    hc_xAxis(categories = tab$row_labels) %>% 
+    hc_add_series(round(tab$`#Total|%casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+En general, y en una escala de 1 a 10, donde el 1 es nada seguro y el 10 es muy seguro, ¿cual sería tu valoración del escenario futuro con la convivencia de la COVID-19 y la vacuna en tu entorno más próximo de consumo (tu ciudad, barrio, pueblo, núcleo más cercano)?
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells('|'=unvr(Q00330)) %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_stat_cpct(label='%casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	t() %>% 
+	tab_caption(paste('Objetivo 3: ',var_lab(data$Q00330), sep = ''))
+as.datatable_widget(tab)
+tab <- data %>%
+	tab_cells('|'=unvr(Q00330)) %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_stat_cpct(label='%casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Objetivo 3: ',var_lab(data$Q00330), sep = ''))
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q00330) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+    hc_chart(type = 'column', polar=FALSE) %>%
+    hc_xAxis(categories = tab$row_labels) %>% 
+    hc_add_series(round(tab$`#Total|%casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+¿Cuánto tiempo crees que necesitarás para volver a sentirte seguro comprando en las tiendas productos de alimentación e higiene doméstica como antes de la COVID -19?
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(Q00340) %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_stat_cpct(label='%casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Objetivo 3: ',var_lab(data$Q00340), sep = ''))
+as.datatable_widget(tab)
+tab$row_labels <- str_replace_all(tab$row_labels, 'Q00340', "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+    hc_chart(type = 'column', polar=FALSE) %>%
+    hc_xAxis(categories = tab$row_labels) %>% 
+    hc_add_series(round(tab$`#Total|%casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+En el futuro, a la hora de comprar productos de alimentación e higiene doméstica, ¿hasta qué punto crees que va a ser más o menos importante que antes de la COVID-19 cada uno de los siguientes factores?, utiliza una escala de 1 10, donde 1 es poca o ninguna importancia y 10 es mucha importancia.
+
+```{r echo = FALSE}
+tab0 <- data %>%
+        tab_cells('|'=unvr(Q00350_1)) %>% 
+        tab_stat_cpct(label=var_lab(Q00350_1), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00350_2)) %>% 
+        tab_stat_cpct(label=var_lab(Q00350_2), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00350_3)) %>% 
+        tab_stat_cpct(label=var_lab(Q00350_3), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00350_4)) %>% 
+        tab_stat_cpct(label=var_lab(Q00350_4), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00350_5)) %>% 
+        tab_stat_cpct(label=var_lab(Q00350_5), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00350_6)) %>% 
+        tab_stat_cpct(label=var_lab(Q00350_6), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00350_7)) %>% 
+        tab_stat_cpct(label=var_lab(Q00350_7), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00350_8)) %>% 
+        tab_stat_cpct(label=var_lab(Q00350_8), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00350_9)) %>% 
+        tab_stat_cpct(label=var_lab(Q00350_9), total_row_position='below') %>%
+        tab_pivot(stat_position='inside_columns') %>%
+        t()
+tab1 <- data %>%
+    tab_cells(Q00350_1, Q00350_2, Q00350_3, Q00350_4, Q00350_5, Q00350_6, Q00350_7, Q00350_8, Q00350_9) %>% 
+    tab_stat_mean() %>%
+    tab_pivot()
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+as.datatable_widget(tab2)
+highchart() %>% 
+    hc_chart(type = 'column', polar=TRUE) %>%
+    hc_xAxis(categories = tab2$row_labels) %>% 
+    hc_yAxis(min=0, max=10) %>% 
+    hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+¿Cuáles de las siguientes medidas crees que te hará sentir más cómodo a la hora de comprar en los supermercados u otros establecimientos de productos de alimentación e higiene doméstica? Elige como máximo 5, sabiendo que el orden es importante; la primera es la más importante y sucesivamente hasta la quinta.
+
+Top: primer lugar
+
+```{r echo = FALSE}
+tab1 <- data %>%
+	tab_cells(Q00360_1) %>%
+	tab_stat_cases(label='casos', total_row_position = 'none') %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Objetivo 3: ','Top:', var_lab(data$Q00360_1),sep = ''))
+as.datatable_widget(tab1)
+tab1$row_labels <- str_replace_all(tab1$row_labels, var_lab(data$Q00360_1), "")
+tab1$row_labels <- str_replace_all(tab1$row_labels, '\\|' , "")
+highchart() %>% 
+    hc_chart(type = 'bar', polar=FALSE) %>%
+    hc_xAxis(categories = tab1$row_labels) %>% 
+    hc_add_series(round(tab1$`#Total|%casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+Total
+
+```{r echo = FALSE}
+tab2 <- data %>%
+	tab_cells(mrset_f(Q00360_)) %>%
+	tab_stat_cases(label='casos', total_row_position = 'none') %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Objetivo 3: ',var_lab(data$Q00360_1) ,sep = ''))
+as.datatable_widget(tab2)
+tab2$row_labels <- str_replace_all(tab2$row_labels, var_lab(data$Q00360_1), "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, '\\|' , "")
+highchart() %>% 
+    hc_chart(type = 'bar', polar=FALSE) %>%
+    hc_xAxis(categories = tab2$row_labels) %>% 
+    hc_add_series(round(tab1$`#Total|%casos`,1), name='Top', dataLabels=list(enabled=TRUE)) %>%
+    hc_add_series(round(tab2$`#Total|%casos`,1), name='Total', dataLabels=list(enabled=TRUE)) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+Tras la COVID-19, si no te sientes cómodo comprando en tus tiendas habituales, ¿qué harás?
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(Q00370) %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_stat_cpct(label='%casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Objetivo 3: ',var_lab(data$Q00370),sep = ''))
+as.datatable_widget(tab)
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q00370), "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+    hc_chart(type = 'bar', polar=FALSE) %>%
+    hc_xAxis(categories = tab$row_labels) %>% 
+    hc_add_series(round(tab$`#Total|%casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+```{r echo = FALSE}
+#En comparación con los 12 meses anteriores al inicio de la COVID-19 cree que harás más, igual o menos que antes, cada una de las siguientes actividades que te vamos a citar:
+#tab0 <- data %>%
+#        tab_cells('|'=unvr(Q00380_1)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_1), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_2)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_2), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_3)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_3), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_4)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_4), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_5)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_5), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_6)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_6), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_7)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_7), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_8)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_8), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_9)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_9), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_10)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_10), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_11)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_11), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_12)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_12), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_13)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_13), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_14)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_14), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_15)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_15), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_16)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_16), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_17)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_17), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_18)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_18), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_19)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_19), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_20)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_20), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_21)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_21), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_22)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_22), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_23)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_23), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_24)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_24), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_25)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_25), total_row_position='below') %>%
+#        tab_cells('|'=unvr(Q00380_26)) %>% 
+#        tab_stat_cpct(label=var_lab(Q00380_26), total_row_position='below') %>%
+#        tab_pivot(stat_position='inside_columns') %>%
+#        t()
+#as.datatable_widget(tab0) 
+```
+

@@ -1,0 +1,153 @@
+---
+title: 'Objetivo 4'
+---
+
+# Valorar cómo la sociedad que nos rodea ha actuado en la gestión: instituciones, empresas, marcas y ciudadanía en general
+
+Enumera las 3 primeras marcas que te vienen a la mente, y que más te han impresionado por sus actividades durante la pandemia de la COVID-19.
+
+
+```{r echo = FALSE}
+#data$BRAND1 <- tolower(data$BRAND1)
+#data$BRAND2 <- tolower(data$BRAND2)
+#data$BRAND3 <- tolower(data$BRAND3)
+#
+#data$BRAND1 <- recode(data$BRAND1, '-' ~NA, TRUE ~ copy)
+#data$BRAND2 <- recode(data$BRAND2, '-' ~NA, TRUE ~ copy)
+#data$BRAND3 <- recode(data$BRAND3, '-' ~NA, TRUE ~ copy)
+#     
+#tab <- data %>%
+#	tab_cells('|'=unvr(mrset(BRAND1, BRAND2, BRAND3))) %>% 
+#	tab_stat_cases(label='casos', total_row_position = 'none') %>% 
+#	tab_stat_cpct(label='%casos', total_row_position = 'none') %>% 
+#	tab_pivot(stat_position = 'inside_columns') %>%
+#     tab_sort_desc() %>% 
+#	tab_caption('Objetivo 4: Marcas más valoradas')
+#as.datatable_widget(tab)
+#word = tab$row_labels
+#freq = tab$`#Total|casos`
+#dataword <- data.frame(word, freq)
+#dataword <- na.omit(dataword)
+#wordcloud(words = dataword$word,freq = dataword$freq,min.freq = 1,max.words = 1000,random.order = TRUE,rot.per = 0.10,colors = brewer.pal(8, "Dark2"))
+```
+
+
+```{r echo = FALSE}
+data$Q00410_1 <- recode(data$Q00410_1, 1:3 ~ NA, TRUE ~ copy, with_labels = TRUE)
+data$Q00410_2 <- recode(data$Q00410_2, 1:3 ~ NA, TRUE ~ copy, with_labels = TRUE)
+data$Q00410_3 <- recode(data$Q00410_3, 1:3 ~ NA, TRUE ~ copy, with_labels = TRUE)
+
+tab <- data %>%
+	tab_cells('|'=unvr(mrset_f(Q00410_))) %>% 
+	tab_stat_cases(label='casos', total_row_position = 'none') %>% 
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>% 
+	tab_pivot(stat_position = 'inside_columns') %>%
+     tab_sort_desc() %>% 
+	tab_caption('Objetivo 4: Marcas más valoradas')
+as.datatable_widget(tab)
+word = tolower(tab$row_labels)
+freq = tab$`#Total|casos`
+dataword <- data.frame(word, freq)
+dataword <- na.omit(dataword)
+wordcloud(words = dataword$word,freq = dataword$freq,min.freq = 1,max.words = 1000,random.order = TRUE,rot.per = 0.10,colors = brewer.pal(12, "Paired"))
+```
+
+¿Cómo valoras la reacción y gestión de la pandemia de las siguientes organizaciones? Utiliza una escala de 1 a 10, donde 1 es muy mala gestión y 10 muy buena gestión.
+
+```{r echo = FALSE}
+tab0 <- data %>%
+        tab_cells('|'=unvr(Q00420_1)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_1), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_2)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_2), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_3)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_3), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_4)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_4), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_5)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_5), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_6)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_6), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_7)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_7), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_8)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_8), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_9)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_9), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_10)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_10), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_11)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_11), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_12)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_12), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00420_13)) %>% 
+        tab_stat_cpct(label=var_lab(Q00420_13), total_row_position='below') %>%
+        tab_pivot(stat_position='inside_columns') %>%
+        t()
+tab1 <- data %>%
+    tab_cells(Q00420_1, Q00420_2, Q00420_3, Q00420_4, Q00420_5, Q00420_6, Q00420_7, Q00420_8, Q00420_9, Q00420_10, Q00420_11, Q00420_12, Q00420_13) %>% 
+    tab_stat_mean() %>%
+    tab_pivot()
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+as.datatable_widget(tab2 %>% tab_caption('Objetivo 4: Valoración de colectivos implicados')) 
+highchart() %>% 
+    hc_chart(type = 'column', polar=TRUE) %>%
+    hc_xAxis(categories = tab2$row_labels) %>% 
+    hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+     
+```
+
+¿Cómo valoras la reacción y la gestión de la pandemia de cada uno de los siguientes tipos de empresas y sectores? Utiliza de nuevo una escala de 1 a 10, donde 1 es muy mala gestión y 10 muy buena gestión.
+
+```{r echo = FALSE}
+tab0 <- data %>%
+        tab_cells('|'=unvr(Q00430_1)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_1), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00430_2)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_2), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00430_3)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_3), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00430_4)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_4), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00430_5)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_5), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00430_6)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_6), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00430_7)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_7), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00430_8)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_8), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00430_9)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_9), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00430_10)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_10), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00430_11)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_11), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q00430_12)) %>% 
+        tab_stat_cpct(label=var_lab(Q00430_12), total_row_position='below') %>%
+        tab_pivot(stat_position='inside_columns') %>%
+        t()
+tab1 <- data %>%
+    tab_cells(Q00430_1, Q00430_2, Q00430_3, Q00430_4, Q00430_5, Q00430_6, Q00430_7, Q00430_8, Q00430_9, Q00430_10, Q00430_11, Q00430_12) %>% 
+    tab_stat_mean() %>%
+    tab_pivot()
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+as.datatable_widget(tab2 %>% tab_caption('Objetivo 4: Valoración de tipos de empresa implicados')) 
+highchart() %>% 
+    hc_chart(type = 'column', polar=TRUE) %>%
+    hc_xAxis(categories = tab2$row_labels) %>% 
+    hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+     
+```

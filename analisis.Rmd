@@ -1,0 +1,36 @@
+---
+title: 'Análisis de situación'
+---
+
+# Antecedentes y breve memoria de investigación
+
+En el período entre noviembre y diciembre de 2020, se realizó una investigación (https://covid.investigaonline.com) orientada a la medición de obtener información acerca de cómo la pandemia denominada COVID-19 ha afectado y afectará a los patrones de consumo, se ha decidido realizar un estudio que refleje por una lado como se ha visto afectada la estabilidad emocional del individuo tras todos los acontecimientos vividos y qué pautas de comportamiento se han visto afectadas en relación a sus patrones de consumo, emocionales y de digitalización, siendo posible el realizar una proyección de futuro sobre lo que sucederá en próximas fechas. Ello incluye el que "la emergencia sanitaria provocada por la pandemia del COVID19 ha puesto de manifiesto que esta competencia no la posee una gran parte de la ciudadanía. Las mayores dificultades están relacionadas con el uso de las tecnologías en el ámbito educativo, económico y laboral" (Silva y Lázaro, 2020:45) .
+Ahora, el mismo cliente, nos pide dos meses después y a raíz de la situación acaecida tras las Navidades de 2020, que profundicemos sobre las valoraciones de algunas de esas medidas y una ampliación a algunos objetivos nuevos, enmarcando este nuevo estudio bajo una nueva formulación:
+
+> EL CONSUMIDOR VALENCIANO ANTE EL ESCENARIO ACTUAL POST PANDÉMICO.<br> 
+> Valoración de las medidas restrictivas en la CV y sus efectos en digitalización y teletrabajo.
+
+Nótese que en el momento que se redacta este documento, y a diferencia del período anterior, la vacuna ya se encuentra disponible y está en marcha el plan de vacunación nacional de forma incipiente pero constante, siendo un motivo de esperanza para toda la sociedad en general y por tanto fuente de nuevo optimismo.
+
+El objetivo general de esta nueva investigación es comparar la situación antes de la tercera ola de la pandemia que situaremos después de las fiestas de la Navidad y derivada de las actuaciones de la sociedad entre las festividad de inicio de diciembre de 2020 (puentes festivos) y las festividades de inicio de 2021. Debemos buscar comprender al nuevo consumidor, para poder concluir acerca de la valoración de éstos a instituciones políticas y civiles, organizaciones en genéricas y como no, a las marcas, grandes beneficiadas o perjudicadas del momento pandémico.
+
+De este modo, algunas de las cuestiones que suscitaron interés en la primera investigación deberían repetirse, a la par que se profundizará en nuevas valoraciones demandadas directamente como el teletrabajo (si ha sido necesario, si ha cambiado o está cambiando las relaciones trabajo - familia) o también realizar una clasificación de la sociedad en función de su actitud hacia la pandemia y sus repercusiones. No debemos olvidar que uno de los efectos más conocidos a nivel general ha sido la mayor digitalización de los hogares y por último, una valoración sobre las medidas que recientemente se han introducido, principalmente en la Comunitat Valenciana (sólo residentes).
+
+Desarrollar competencias digitales será necesario para el trabajo y para la vida cotidiana de los ciudadanos de una sociedad propia de la era digital y donde sin duda, la tarea jugará un papel importante para permitir a los ciudadanos adaptarse mejor y más rápido a los cambios producidos por la constante digitalización de la sociedad (Silva y Lázaro, 2020).
+
+# Bibliografía
+
+<hr>
+
+* ADAME-SÁNCHEZ, C.; MIQUEL-ROMERO, M.J.; CAPLLIURE-GINER, E. y LEÓN-LLORENTE, C., 2020. Confinamiento Familiar Y Teletrabajo: ¿Nuevas Tensiones Trabajo Y Familia? Teletrabajo y conciliación en el contexto de la covid-19: Nuevos retos en el marco de la prevención de la violencia de género y la calidad de vida de las mujeres (PEVG 2020). Aranzadi.
+
+* ANDRINO, B.; GRASSO, D.; LLANERAS, K.; VALVERDE, B. y QUERO, A., (2020), ["Cerrar bares, adelantar el toque de queda o limitar la movilidad: qué comunidades aplican medidas más duras contra el virus"](https://elpais.com/sociedad/2021-02-09/cerrar-bares-adelantar-el-toque-de-queda-o-limitar-la-movilidad-que-comunidades-aplican-medidas-mas-duras-contra-el-virus.html), El País, 10/02/2021, recuperado el 12/02/2021.
+
+* CEO (Centre d'Estudis d'Opinió), 2020, ["Enquesta sobre l'impacte de la COVID-19"](https://ceo.gencat.cat/ca/estudis/registre-estudis-dopinio/estudis-dopinio-ceo/societat/detall/index.html?id=7588), recuperado el 10/12/2021.
+
+* INE, 2020, ["Encuesta sobre Equipamiento y Uso de Tecnologías de Información y Comunicación en los Hogares (TIC-H)."](https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=estadistica_C&cid=1254736176743&menu=ultiDatos&idp=1254735576799); recuperado el 11 de febrero de 2021.
+
+* SILVA-QUIROZ, J.E. y LÁZARO-CANTABRANA, J.L., 2020, La Competencia Digital De La Ciudadanía, Una Necesidad Creciente En Una Sociedad 
+Digitalizada. Edutec. Revista Electrónica De Tecnología Educativa, nº 73, pp. 37-50.
+
+* TCK-Google, 2020, "Discovering the new consumer", Madrid, España, 2020.

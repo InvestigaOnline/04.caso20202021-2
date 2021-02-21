@@ -1,0 +1,198 @@
+---
+title: 'Objetivos y necesidades de información'
+---
+
+<style>
+.rojo
+{
+color: red;
+}
+</style>
+## Objetivos
+
+Enumeramos por tanto los nuevos objetivos que nos marca el cliente junto con los anteriores que desea sean renovados. En este caso, esos objetivos medidos de forma repetida será necesario sean comparados.
+
+
+1. Analizar el impacto psicológico de la COVID-19 sobre el consumidor (parte Ola 1).
+2. Identificar amenazas a la experiencia de usuario (UX) consumidor / comprador ante la tercera oleada de la pandemia. (No evaluado)
+3. Valorar la experiencia de usuario (UX) y comportamiento de compra en la actualidad con ya la vacunación en activo; profundizar preferentemente en el modelo de la compra online (parte Ola 1).
+4. Valorar cómo la sociedad que nos rodea está actuando en la gestión de la pandemia: instituciones, empresas, marcas y ciudadanía en general (parte Ola 1).
+5. Perfilar el target de entrevista.
+6. Conocer los efectos producidos por teletrabajo en la relación familia - trabajo. 
+7. Nueva experiencia de digitalización.
+8. Clasificar la sociedad desde el punto de vista actitudinal (conducta, motivación y pensamiento).
+9. Valoración de las medidas de GVA en importancia, impacto personal, general y la importancia.
+
+# Resumen de objetivos y necesidades de información
+
+NOTA: En rojo auqellas necesidades de información presentes en Ola 1 que no han sido requeridas en Ola 2.
+
+1. Analizar el impacto de la COVID-19 sobre el consumidor. 
+	1. <label class='rojo'>Escala de ansiedad (Lee, 2020). </label>
+	2. <label class='rojo'>Escala de obsesión  (Lee, 2020). </label>
+	3. <label class='rojo'>Escala de temor (Ahorsu, et al., 2020). </label>
+	4. Descripción personal (adjetiva, posible cualitativo) del estado de ánimo ante la situación. 
+	5. Conciencia de cambio permanente en la realidad.  
+	6. Incidencia de la COVID-19 en la sociedad futura y su realidad. 
+	7. Valoración de la creencia de exposición a la COVID-19 en la realización de las compras en establecimientos físicos. 
+
+2. <label class='rojo'>Identificar los cambios en la experiencia de usuario (UX) de shopping del consumidor (actual, durante) pandemia</label>
+	1. <label class='rojo'>Valoración del nivel de preocupación actual ante el entorno más próximo de compras </label>
+	2. <label class='rojo'>Identificación de cambios en el patrón de compra en cuanto a ...  </label>
+		1. <label class='rojo'>Número de tiendas en las que compraba.  </label>
+		2. <label class='rojo'>Aumento o disminución en la actualidad de la frecuencia de compra.  </label>
+		3. <label class='rojo'>Identificar cambios en unidades por compra.  </label>
+		4. <label class='rojo'>Identificar cambios en cantidades (mayor o menor gasto).  </label>
+	3. <label class='rojo'>Efectos de la pandemia en su forma de comprar. </label>
+		1. <label class='rojo'>Positivos.  </label>
+		2. <label class='rojo'>Negativo.  </label>
+	4. <label class='rojo'>Afectación a hábitos futuros en la forma de compra.  </label>
+	5. <label class='rojo'>Cambio de marcas, posicionamiento ante la falta de marcas en el lineal, desabastecimiento.  </label>
+	6. <label class='rojo'>Consecuencias negativas de la pandemia para la sociedad.  </label>
+	7. <label class='rojo'>Consecuencias positivas de la pandemia para la sociedad. </label>
+3. Identificar nuevos patrones de experiencia de usuario (UX) y comportamiento de compra en la nueva normalidad
+	1. <label class='rojo'>Identificar cambios en patrón de compra (repetir estructura objetivo 2)</label>
+		1. <label class='rojo'>Aumento o disminución en la actualidad de la frecuencia de compra</label>
+		2. <label class='rojo'>Identificar cambios en unidades por compra</label>
+		3. <label class='rojo'>Identificar cambios en cantidades (mayor o menor gasto)</label>
+	2. <label class='rojo'>Creencia de mejora en las relaciones entre los miembros de la sociedad. </label>
+	3. Valoración de la expectativa de seguridad futura en establecimientos. 
+	4. Expectativa de un horizonte de seguridad en la sociedad. 
+	5. <label class='rojo'>Cambios de importancia en factores esenciales de compra.</label>
+	6. <label class='rojo'>Medidas que ayudan a sentirse más cómodos. </label>
+	7. Expectativa de comportamiento sobre las medidas de cambio. 
+	8. Qué actividades se realizarán más y qué actividades de dejarán de hacer
+	9. Valorar el aprendizaje personal desde olas 1 y 2. 
+4. Valorar cómo la sociedad que nos rodea ha actuado en la gestión: instituciones, empresas, marcas y ciudadanía en general
+	1. Conocer qué marcas han respondido mejor a la situación vivida [abierta]
+	2. Conocer qué instituciones han respondido mejor a la situación vivida
+	3. Conocer qué sectores han respondido mejor a la situación vivida
+5. Perfilar el target
+	1. Identificación de mayor aportador de ingresos
+	2. Situación laboral de mayor aportador
+	3. Profesión del sustentador principal cuenta propia
+	4. Profesión del sustentador principal cuenta ajena
+	5. Estudios del sustentador principal
+	6. Número de personas en el hogar
+	7. Número de personas que reciben un ingreso
+	8. Sexo del entrevistado
+	9. Edad del entrevistado
+	10. NCS (imputada)
+6. Conocer los efectos producidos por el teletrabajo en la relación familia - trabajo.  Impacto de la pandemia en teletrabajo (relaciones trabajo - familia).  (adaptado de Adame et al. , 2020)
+	1. Teletrabajo sobre familia
+		1. ... ha interferido en mis obligaciones familiares. 
+		2. ... ha robado tiempo a mis obligaciones familiares. 
+		3. ... ha cambiado la forma de cumplir con mis obligaciones familiares. 
+		4. ... combinado con mis obligaciones familiares, me ha causado estrés. 
+		5. ... combinado con mis obligaciones familiares, me ha hecho estar más irritable. 
+		6. ... me hizo cumplir mejor en mis obligaciones profesionales y afectó a mis relaciones familiares de forma positiva. . 
+		7. ... me ha hecho estar más feliz y eso me hizo cumplir más eficientemente en mis obligaciones profesionales y afectó a mis relaciones familiares de forma positiva. 
+		8. ... me ha ayudado a sentir sensación de logro  y eso afectó a mis relaciones familiares de forma positiva. 
+		9. ... me ha generado una sensación de éxito personal, y eso afectó a mis relaciones familiares de forma positiva. 
+		10. ... me ha hecho cambiar mi perspectiva de las obligaciones familiares. 
+	2. Familia sobre teletrabajo
+		1. ... han interferido en el trabajo. 
+		2. ... han robado tiempo al trabajo. 
+		3. ... han cambiado mi forma de cumplir con el trabajo. 
+		4. ... combinadas con el teletrabajo me han causado estrés. 
+		5. ... me hicieron estar más irritable mientras realizaba el teletrabajo. 
+	6. 3. Otros
+		1. El teletrabajo junto a mi familia me ha ayudado a usar mi tiempo de manera más eficiente, y eso ha afectado positivamente a mi trabajo.  
+		2. El teletrabajo junto a mi familia me ha ayudado a ser más feliz y eso ha afectado positivamente a mi trabajo.  
+7. Valorar el efecto de digitalización de los hogares.  
+	1. Conocer en qué medida la etapa superada ha convertido al individuo en más digitalizado.  Conocer su valoración antes y después de la etapa superada. 
+	2. Identificar un aumento del uso de Internet. 
+	3. Identificar un aumento de dispositivos que permitían la conectividad. 
+	4. Identificar una mejora de la conectividad en el hogar y el trabajo
+		1. Conexión fija de banda ancha (ADSL, red de cable,   fibra óptica, vía satélite, WiFi público WiMax)
+		2. Conexión móvil de banda ancha (a través de un dispositivo de mano como un teléfono móvil de últimas generaciones -al menos 3G-, vía modem USB o tarjeta –en portátiles, p.  ej. -)
+	5. Identificar el aumento en el uso de aplicaciones (no marcas sino tipologías de comunicación) (% de aumento)
+		1. Recibir o enviar correos electrónicos
+		2. Telefonear o realizar videollamadas a través de Internet  (WhatsApp, Skype, Messenger, Facetime, Viber, Telegram, Zoom, Meet, . . . ). 
+		3. Participar en redes sociales (con un perfil de usuario, p. ej  Facebook, Twitter, Instagram. . . ). 
+		4. Usar mensajería instantánea (WhatsApp, Skype, Messenger Viber, Telegram, Hangouts, . . . ). 
+		5. Buscar información sobre bienes o servicios. 
+		6. Leer noticias, periódicos o revistas de actualidad on-line. 
+	6.  Identificar el aumento en operaciones (% de operaciones digitales en compras, gestiones, …). 
+		1. compras cotidianas (alimentación, higiene hogar, perfumería, cosmética, frescos, perecederos)
+		2. compras no cotidianas (moda, hogar, electrónica)
+		3. ocio y viajes
+		4. hostelería (pedido online y recibir en casa, pedido online y recoger en local)
+		5. administrativas (gestiones con instituciones del estado, autonomía, ayuntamiento)
+		6. bancarias 
+		7. educativas (cursos online)
+		8. sanidad (personal)
+8. Clasificar la sociedad desde el punto de vista actitudinal (conducta, motivación y pensamiento).  Segmentación emocional y actitudinal.  (adaptado de TCK, 2020)
+	1. La crisis del coronavirus me ha afectado muy negativamente a nivel laboral / profesional. 
+	2. La crisis del coronavirus me ha afectado muy negativamente a nivel emocional. 
+	3. He tenido casos cercanos de coronavirus y me ha afectado mucho. 
+	4. Pienso todo el tiempo en el tema del coronavirus, me cuesta desconectar. 
+	5. Creo que la gente está demasiado preocupada con este tema. 
+	6. Me preocupa mi futuro económico a medio- corto plazo. 
+	7. Tendré que recortar algún gasto derivado de la crisis del coronavirus. 
+	8. No creo que pueda seguir manteniendo mi nivel de vida. 
+	9. En el fondo, mi día a día sigue siendo igual. 
+	10. Tengo confianza en que todo va a ir bien. 
+	11. Yo sigo manteniendo mis mismos proyectos vitales. 
+	12. Esta nueva oleada es mucho menos grave que la primera. 
+	13. Me estoy obligando a hacer mi vida lo más normal posible. 
+	14. Me niego a vivir con miedo. 
+	15. Intento seguir todas las recomendaciones de los responsables sanitarios. 
+	16. En estos momentos la prioridad debe ser ponerle freno a la crisis económica. 
+	17. Por encima de la economía, lo principal es la salud. 
+	18. El riesgo cero no existe, hay que volver a la normalidad. 
+	19. A raíz de esta crisis, intento alegrarme dándome caprichos comprando marcas de confianza. 
+	20. Me he sentido discriminado/a en algún momento por pertenecer a un determinado grupo. 
+	21. A nivel de estado de ánimo, estoy llevando peor esta oleada que las anteriores. 
+9. Valoración de las medidas ante la pandemia de la GVA. 
+	1. Medir la percepción de la situación actual
+		1. Interés en el seguimiento de las noticias y la información relacionada
+		2. Preocupación por el grado de desarrollo
+	2. Medir la percepción de importancia de las medidas (adaptado de Andrino et al. , 2020)
+		1. Ámbito de la movilidad. 
+			1. Confinamiento perimetral de la comunidad. 
+			2. Confinamiento perimetral de municipios de más de 50. 000 habitantes. 
+			3. Establecimiento de toque de queda a las 22:00h. 
+		2. Ámbito de las reuniones. 
+			1. Reuniones de sólo 2 personas no convivientes. 
+		3. Ámbito de la hostelería, comercio y ocio. 
+			1. Cierre de bares y restaurantes. 
+			2. Cierre de instalaciones deportivas (gimnasios, centros de recreo, clubs deportivos) no profesionales. 
+			3. Eventos deportivos con ámbito inferior al nacional. 
+			4. Aforo limitado en todos los comercios no esenciales. 
+			5. Horario limitado en establecimientos comerciales no esenciales. 
+		4. Educación. 
+			1. Enseñanza universitaria de grado, online. 
+	9. 3. Medir la expectativa de funcionamiento de las mismas. 
+		1. Ámbito de la movilidad. 
+			1. Confinamiento perimetral de la comunidad. 
+			2. Confinamiento perimetral de municipios de más de 50. 000 habitantes. 
+			3. Establecimiento de toque de queda a las 22:00h. 
+		2. Ámbito de las reuniones. 
+			1. Reuniones de sólo 2 personas no convivientes. 
+		3. Ámbito de la hostelería, comercio y ocio. 
+			1. Cierre de bares y restaurantes. 
+			2. Cierre de instalaciones deportivas (gimnasios, centros de recreo, clubs deportivos) no profesionales. 
+			3. Eventos deportivos con ámbito inferior al nacional. 
+			4. Aforo limitado en todos los comercios no esenciales. 
+			5. Horario limitado en establecimientos comerciales no esenciales. 
+		4. Educación. 
+			1. Enseñanza universitaria de grado, online. 
+	4. Valorar impacto como amenaza de la pandemia y efectos en el individuo y su entorno (adaptado de CEO, 2020)
+		1. Amenaza a la salud
+			1. Salud de la población en su conjunto
+			2. Su salud personal
+			3. La salud de sus familiares
+		2. Amenaza a la economía
+			1. La economía en general
+			2. Su situación económica personal
+		3. Efectos personales
+			1. Dificultad personal en el cumplimiento de medidas
+			2. Dificultad de los niños/as, jóvenes en el cumplimiento de las medidas
+			3. Dificultad para las personas con necesidades especiales
+			4. Dificultad para las personas en riesgo de exclusión social
+		4. Proyección en el futuro
+			1. Valorar cómo ve su futuro
+			2. Valorar el futuro de la economía debido al impacto
+		5. Valorar la intención de cumplimiento
+			1. Acatar versus no acatar. 

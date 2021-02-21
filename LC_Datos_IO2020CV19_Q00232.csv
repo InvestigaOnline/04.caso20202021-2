@@ -1,0 +1,87 @@
+Libro de claves
+TIPO EXTRACCION	1
+TIPO	PADRE	DESCRIPCION	VALOR
+CLAVE		ningún efecto negativo	1
+LITERAL	ningún efecto negativo	-ninguno	2
+LITERAL	ningún efecto negativo	Ninguno	2
+LITERAL	ningún efecto negativo	Negativo	1
+LITERAL	ningún efecto negativo	No	1
+LITERAL	ningún efecto negativo	No Lo se	1
+LITERAL	ningún efecto negativo	Igual que antes	1
+CLAVE		mayor gasto	102
+LITERAL	mayor gasto	gasto más en productos de higiene	1
+LITERAL	mayor gasto	Más gasto	1
+LITERAL	mayor gasto	Más gastos por la compra de productos desinfectantes	1
+LITERAL	mayor gasto	He tenido que gastar más en productos de higiene y prevención	1
+LITERAL	mayor gasto	Lo que me ahorro en otras cosas se gasta en alcohol o mascarillas	1
+LITERAL	mayor gasto	Tengo que comprar mascarillas	1
+LITERAL	mayor gasto	-ahorro	1
+CLAVE		miedo	103
+LITERAL	miedo	-miedo	1
+LITERAL	miedo	-miedo al contagio	1
+LITERAL	miedo	Da más miedo salir a comprar	1
+LITERAL	miedo	He realizado las compras con algo más de miedo que antes de la pandemia	1
+LITERAL	miedo	miedo al contagio	1
+LITERAL	miedo	Mayor inseguridad al poder estar expuesta al covid-19	1
+LITERAL	miedo	Que me cuesta más  en salir por precaución  y tambien en la desinfección  de las compras	1
+LITERAL	miedo	la ignorancia es grata, ahora que sabemos todo lo que se puede transmitir, me parece que todos estamos un poco freaky	1
+LITERAL	miedo	Más estricto	1
+CLAVE		mayor tiempo / menos compras	104
+LITERAL	mayor tiempo / menos compras	-mayor tiempo de espera	1
+LITERAL	mayor tiempo / menos compras	Hago la compra en menos tiempo	1
+LITERAL	mayor tiempo / menos compras	Mayor tiempo dedicado a cada compra al ser menos frecuentes.	1
+LITERAL	mayor tiempo / menos compras	Más tiempo de desinfección en la compra	1
+LITERAL	mayor tiempo / menos compras	Menos compras-	1
+LITERAL	mayor tiempo / menos compras	-que comparo menos	1
+LITERAL	mayor tiempo / menos compras	Si me falta algo de la compra o se me olvida no bajo a comprarlo me espero a la siguiente compra grande	1
+LITERAL	mayor tiempo / menos compras	Hacemos una compra semanal y el peso de carga es muy grande	1
+LITERAL	mayor tiempo / menos compras	Menos diversificación de tiendas	1
+CLAVE		más compras / acumular	105
+LITERAL	más compras / acumular	Compro más productos sobre-envasados	1
+LITERAL	más compras / acumular	-compro mas	1
+LITERAL	más compras / acumular	Se compra más comida	1
+LITERAL	más compras / acumular	Que al principio te puede el ansia de comprar mucho por el hecho de no saber que va a pasar	1
+LITERAL	más compras / acumular	-acumular mas en el hogar	1
+LITERAL	más compras / acumular	Acumuló más comida	1
+LITERAL	más compras / acumular	Demasiada cantidad de alimentos	1
+LITERAL	más compras / acumular	Desperdicio más comida y tengo menos variedad	1
+CLAVE		medidas de seguridad personal	106
+LITERAL	medidas de seguridad personal	-más colas en compras presenciales  Tener que estar pendiente de mantener distancias y que nadie se te acerque	1
+LITERAL	medidas de seguridad personal	Antes ir a hacer la compra era un momento en el que te detenías y mirabas más ahora vas en alerta	1
+LITERAL	medidas de seguridad personal	El horario de realizar la compra, cuando hay menos afluencia de personas en los comercios	1
+LITERAL	medidas de seguridad personal	Mucha gente dentro comprando	1
+LITERAL	medidas de seguridad personal	Agobio con la gente	1
+LITERAL	medidas de seguridad personal	Desconfianza	1
+LITERAL	medidas de seguridad personal	Estar expuesto	1
+LITERAL	medidas de seguridad personal	Estoy más inseguro	1
+LITERAL	medidas de seguridad personal	la inseguridad de estar expuesto	1
+LITERAL	medidas de seguridad personal	temor al contagio	3
+LITERAL	medidas de seguridad personal	Mucho más precaución.	1
+CLAVE		escasez productos	107
+LITERAL	escasez productos	falta de productos	1
+LITERAL	escasez productos	Fin de existencias	1
+LITERAL	escasez productos	En muchas tiendas no quedaba el alimento que ne cesitaba	1
+CLAVE		higiene	108
+LITERAL	higiene	Me tengo que poner la mascarilla y ponerme el gel	1
+LITERAL	higiene	Me he obsesionado con los productos de limpieza que llevan lejia.	1
+LITERAL	higiene	Limpieza de cada producto, mas paranoia	1
+LITERAL	higiene	La desinfección de los productos que entran en casa	1
+CLAVE		otros	109
+LITERAL	otros	-comodidad	1
+LITERAL	otros	-se haga más dinero	1
+LITERAL	otros	Calidad, frescos y menos procesados, vitaminas e higiene.	1
+LITERAL	otros	Compro poco en comercio fisico	1
+LITERAL	otros	Comprábamos más porque estábamos más en casa	1
+LITERAL	otros	Contaminación	1
+LITERAL	otros	El alejamiento con las personas	1
+LITERAL	otros	En productos por capricho	1
+LITERAL	otros	evito caprichos	1
+LITERAL	otros	Incomodidad a la compra	1
+LITERAL	otros	Las colas	1
+LITERAL	otros	Lo necesario para salir lo menos posible y ceca de mi casa	1
+LITERAL	otros	mas faena	1
+LITERAL	otros	Mas variedad de productos	1
+LITERAL	otros	Mayor cantidad de dulces procesados	1
+LITERAL	otros	Menos ecológico	1
+LITERAL	otros	Mucho	1
+LITERAL	otros	Más rapido	1

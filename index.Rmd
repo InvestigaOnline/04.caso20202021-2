@@ -1,0 +1,16 @@
+---
+title: 'Covid-19 - Curso 2020 / 2021'
+subtitle: 'Universitat de València - Universidad Católica de València'
+author: 'Roberto Gil-Saura'
+date: 'Última actualización en `r Sys.Date()`'
+---
+
+# Introducción
+
+>  Documento redactado con fines académicos, en desarrollo y no revisado.
+
+NOTA DEL AUTOR: 
+
+**_El presente texto fue redactado con el ánimo de realizar un análisis de situación de tema de trabajado seleccionado para este año. Los alumnos realizaron una búsqueda de fuentes bibliográficas y redactaron un documento similar a éste, cada uno con sus fuentes de información. El objetivo era realizar una aproximación personal al tema de trabajo y así poder ver de primera mano el estado de la situación, qué se estaba escribiendo, cómo, etc. . Para la mayoría de los alumnos este trabajo fue la primera vez que se aproximaban a una investigación de este tipo, un proyecto de investigación comercial o de mercados completo._**
+
+**_Este texto fue la solución aportada por el docente a la tarea inicial de análisis de situación._**

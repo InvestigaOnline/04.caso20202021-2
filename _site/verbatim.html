@@ -1,0 +1,5722 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Verbatim</title>
+
+<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<!DOCTYPE html>
+<head><link rel="shortcut icon" href="https://drive.google.com/uc?export=view&id=1JbeH3BFMq-xjBIroa3lcnqhOJS4Ap-RB">&nbsp;</head>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Covid-19 ::|:: Ola 2</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Introducción</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Preliminares
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="analisis.html">Análisis</a>
+    </li>
+    <li>
+      <a href="ficha.html">Ficha</a>
+    </li>
+    <li>
+      <a href="perfil.html">Perfil</a>
+    </li>
+    <li>
+      <a href="o.html">Objetivos</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resultados
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="o1.html">Objetivo.1</a>
+    </li>
+    <li>
+      <a href="o2.html">Objetivo.2</a>
+    </li>
+    <li>
+      <a href="o3.html">Objetivo.3</a>
+    </li>
+    <li>
+      <a href="o4.html">Objetivo.4</a>
+    </li>
+    <li>
+      <a href="escalas.html">Escalas</a>
+    </li>
+    <li>
+      <a href="otros01.html">Tablas cruzadas (1)</a>
+    </li>
+    <li>
+      <a href="otros02.html">Tablas cruzadas (2)</a>
+    </li>
+    <li>
+      <a href="otros03.html">Tablas cruzadas (3)</a>
+    </li>
+    <li>
+      <a href="otros04.html">Tablas cruzadas (4)</a>
+    </li>
+    <li>
+      <a href="verbatim.html">Verbatim</a>
+    </li>
+    <li>
+      <a href="qst.html">Cuestionario</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="conclusiones.html">Conclusiones</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">
+    <span class="fas fa-question-circle"></span>
+     
+    Acerca de ...
+  </a>
+</li>
+<li>
+  <a href="https://www.investigaonline.com">
+    <span class="fas fa-search-plus"></span>
+     
+    InvestigaOnline.com
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Verbatim</h1>
+
+</div>
+
+
+<p>El siguiente documento presenta el resultado de la codificación de las preguntas abiertas. El procedimiento seguido ha sido el estándar:</p>
+<ul>
+<li>verbatim de los literales</li>
+<li>creación de claves</li>
+<li>imputación del código clave a registro</li>
+</ul>
+<p>El resultado del proceso se muestra en forma de tabla. Cada tabla tiene los campos:</p>
+<ul>
+<li>tipo, identifica si es una clave o un literal</li>
+<li>antecesor, identifica si es una clave de nivel superior o una subclave de la anterior (representación de <em>nets</em>)</li>
+<li>descripción, literal codificado</li>
+<li>código / frecuencia, código de la clave o frecuencia del literal según campo <em>tipo</em>.</li>
+</ul>
+<div id="marcas" class="section level2">
+<h2>Marcas</h2>
+<blockquote>
+<p>Pregunta Q00410</p>
+</blockquote>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Tipo
+</th>
+<th style="text-align:left;">
+Antecesor
+</th>
+<th style="text-align:left;">
+Descripción
+</th>
+<th style="text-align:right;">
+Código / Frecuencia
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Adidas
+</td>
+<td style="text-align:right;">
+101
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Adidas
+</td>
+<td style="text-align:left;">
+-adidas
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Adidas
+</td>
+<td style="text-align:left;">
+Adidas
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Alcampo
+</td>
+<td style="text-align:right;">
+102
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Alcampo
+</td>
+<td style="text-align:left;">
+Alcampo
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Alcampo
+</td>
+<td style="text-align:left;">
+Al campo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Aldi
+</td>
+<td style="text-align:right;">
+103
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Aldi
+</td>
+<td style="text-align:left;">
+Aldi
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Aldi
+</td>
+<td style="text-align:left;">
+-Aldy
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+amazon
+</td>
+<td style="text-align:right;">
+104
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+amazon
+</td>
+<td style="text-align:left;">
+amazon-
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+amazon
+</td>
+<td style="text-align:left;">
+-amazon
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+amazon
+</td>
+<td style="text-align:left;">
+Amazon
+</td>
+<td style="text-align:right;">
+52
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Apple
+</td>
+<td style="text-align:right;">
+105
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Apple
+</td>
+<td style="text-align:left;">
+-apple
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Apple
+</td>
+<td style="text-align:left;">
+Apple
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Ariel
+</td>
+<td style="text-align:right;">
+106
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ariel
+</td>
+<td style="text-align:left;">
+-ariel
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ariel
+</td>
+<td style="text-align:left;">
+Ariel
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Asevi
+</td>
+<td style="text-align:right;">
+107
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Asevi
+</td>
+<td style="text-align:left;">
+-Asevi
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Asevi
+</td>
+<td style="text-align:left;">
+Asevi
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Bimbo
+</td>
+<td style="text-align:right;">
+108
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Bimbo
+</td>
+<td style="text-align:left;">
+-bimbo
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Bimbo
+</td>
+<td style="text-align:left;">
+Bimbo
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Burger King
+</td>
+<td style="text-align:right;">
+109
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Burger King
+</td>
+<td style="text-align:left;">
+Burger King
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Burger King
+</td>
+<td style="text-align:left;">
+Burguer King
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Campofrio
+</td>
+<td style="text-align:right;">
+110
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Campofrio
+</td>
+<td style="text-align:left;">
+Campo frio
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Campofrio
+</td>
+<td style="text-align:left;">
+Campofrio
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+carrefour
+</td>
+<td style="text-align:right;">
+111
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+carrefour
+</td>
+<td style="text-align:left;">
+carrefour
+</td>
+<td style="text-align:right;">
+34
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+carrefour
+</td>
+<td style="text-align:left;">
+-carrefour
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+carrefour
+</td>
+<td style="text-align:left;">
+Carrefur
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Coca cola
+</td>
+<td style="text-align:right;">
+112
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Coca cola
+</td>
+<td style="text-align:left;">
+Coca cola
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Coca cola
+</td>
+<td style="text-align:left;">
+Cocacola
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Coca cola
+</td>
+<td style="text-align:left;">
+-coca cola
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Coca cola
+</td>
+<td style="text-align:left;">
+-cocacola
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Coca cola
+</td>
+<td style="text-align:left;">
+Coca-Cola
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Cola Cao
+</td>
+<td style="text-align:right;">
+113
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Cola Cao
+</td>
+<td style="text-align:left;">
+Cola cao
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Cola Cao
+</td>
+<td style="text-align:left;">
+Colacao
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Cola Cao
+</td>
+<td style="text-align:left;">
+-colacao
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Consum
+</td>
+<td style="text-align:right;">
+114
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Consum
+</td>
+<td style="text-align:left;">
+<ul>
+<li>Consum
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Consum
+</td>
+<td style="text-align:left;">
+-consum
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Consum
+</td>
+<td style="text-align:left;">
+-charter
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Consum
+</td>
+<td style="text-align:left;">
+Comsum
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Consum
+</td>
+<td style="text-align:left;">
+Consum
+</td>
+<td style="text-align:right;">
+64
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Consum
+</td>
+<td style="text-align:left;">
+-consun
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Cruz Roja
+</td>
+<td style="text-align:right;">
+115
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Cruz Roja
+</td>
+<td style="text-align:left;">
+-cruz roja
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Cruz Roja
+</td>
+<td style="text-align:left;">
+Cruz roja
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Danone
+</td>
+<td style="text-align:right;">
+116
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Danone
+</td>
+<td style="text-align:left;">
+Danone
+</td>
+<td style="text-align:right;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Danone
+</td>
+<td style="text-align:left;">
+-danone
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Decathlon
+</td>
+<td style="text-align:right;">
+117
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Decathlon
+</td>
+<td style="text-align:left;">
+-decathlon
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Decathlon
+</td>
+<td style="text-align:left;">
+Decathlon
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Decathlon
+</td>
+<td style="text-align:left;">
+Decatlón -
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Decathlon
+</td>
+<td style="text-align:left;">
+Decatlón
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Dia
+</td>
+<td style="text-align:right;">
+118
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Dia
+</td>
+<td style="text-align:left;">
+Dia
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:right;">
+119
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:left;">
+Corte ingled
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:left;">
+corte ingles
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:left;">
+Corte Inglés
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:left;">
+-corte ingles
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:left;">
+El corte infles
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:left;">
+-el corte ingles
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:left;">
+El corte inglés
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:left;">
+Hipercor
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+el corte ingles
+</td>
+<td style="text-align:left;">
+Supercor
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Gallo
+</td>
+<td style="text-align:right;">
+120
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Gallo
+</td>
+<td style="text-align:left;">
+-gallo
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Gallo
+</td>
+<td style="text-align:left;">
+Gallo
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Glovo
+</td>
+<td style="text-align:right;">
+121
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Glovo
+</td>
+<td style="text-align:left;">
+Globo
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Glovo
+</td>
+<td style="text-align:left;">
+GLOVO
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Glovo
+</td>
+<td style="text-align:left;">
+Glovoo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Google
+</td>
+<td style="text-align:right;">
+122
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Google
+</td>
+<td style="text-align:left;">
+Google
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+iberdrola
+</td>
+<td style="text-align:right;">
+123
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+iberdrola
+</td>
+<td style="text-align:left;">
+iberdrola
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+ikea
+</td>
+<td style="text-align:right;">
+124
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+ikea
+</td>
+<td style="text-align:left;">
+ikea
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+inditex
+</td>
+<td style="text-align:right;">
+125
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+inditex
+</td>
+<td style="text-align:left;">
+grupo Inditex
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+inditex
+</td>
+<td style="text-align:left;">
+inditex
+</td>
+<td style="text-align:right;">
+37
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+inditex
+</td>
+<td style="text-align:left;">
+Oysho
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+inditex
+</td>
+<td style="text-align:left;">
+Pull and bear
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+inditex
+</td>
+<td style="text-align:left;">
+Stradi
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+inditex
+</td>
+<td style="text-align:left;">
+zara
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+inditex
+</td>
+<td style="text-align:left;">
+-zara
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Leche Asturiana
+</td>
+<td style="text-align:right;">
+126
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Leche Asturiana
+</td>
+<td style="text-align:left;">
+Asturiana
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Leche Asturiana
+</td>
+<td style="text-align:left;">
+-asturiana
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Leche Asturiana
+</td>
+<td style="text-align:left;">
+-Elche asturiana
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Leche Asturiana
+</td>
+<td style="text-align:left;">
+La asturiana
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Leche Asturiana
+</td>
+<td style="text-align:left;">
+-leche la asturiana
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Lidl
+</td>
+<td style="text-align:right;">
+127
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Lidl
+</td>
+<td style="text-align:left;">
+Lidel
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Lidl
+</td>
+<td style="text-align:left;">
+Lidl
+</td>
+<td style="text-align:right;">
+13
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Lidl
+</td>
+<td style="text-align:left;">
+-lidl
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Lidl
+</td>
+<td style="text-align:left;">
+-Lydl
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+L’Oreal
+</td>
+<td style="text-align:right;">
+128
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+L’Oreal
+</td>
+<td style="text-align:left;">
+L?Oreal
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+L’Oreal
+</td>
+<td style="text-align:left;">
+Loreal
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mahou
+</td>
+<td style="text-align:right;">
+129
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Mahou
+</td>
+<td style="text-align:left;">
+Mahou
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:right;">
+130
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+-acendado
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+Acendado
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+-bosque verde
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+Bosque verde
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+Bosqueverde
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+Café molido hacendado
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+-deliplus
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+Deliplus
+</td>
+<td style="text-align:right;">
+8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+DELYPLUSS
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+-hacendado
+</td>
+<td style="text-align:right;">
+11
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+hacendado
+</td>
+<td style="text-align:right;">
+45
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+mecadona
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:right;">
+120
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+-mercadona
+</td>
+<td style="text-align:right;">
+18
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mercadona
+</td>
+<td style="text-align:left;">
+Mercafona
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Movistar
+</td>
+<td style="text-align:right;">
+131
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Movistar
+</td>
+<td style="text-align:left;">
+Moviestar
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Movistar
+</td>
+<td style="text-align:left;">
+Movistar
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Nestlé
+</td>
+<td style="text-align:right;">
+132
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Nestlé
+</td>
+<td style="text-align:left;">
+-nescafe
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Nestlé
+</td>
+<td style="text-align:left;">
+Nescafe
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Nestlé
+</td>
+<td style="text-align:left;">
+Nescafe Dolce Gusto
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Nestlé
+</td>
+<td style="text-align:left;">
+Nespresso
+</td>
+<td style="text-align:right;">
+4
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Nestlé
+</td>
+<td style="text-align:left;">
+-nestle
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Nestlé
+</td>
+<td style="text-align:left;">
+Nestlé
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Nestlé
+</td>
+<td style="text-align:left;">
+Nestle
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Nestlé
+</td>
+<td style="text-align:left;">
+-netsle
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Netflix
+</td>
+<td style="text-align:right;">
+133
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Netflix
+</td>
+<td style="text-align:left;">
+Netflix
+</td>
+<td style="text-align:right;">
+9
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Nike
+</td>
+<td style="text-align:right;">
+134
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Nike
+</td>
+<td style="text-align:left;">
+-nike
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Nike
+</td>
+<td style="text-align:left;">
+Nike
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:right;">
+135
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-.
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-…
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-….
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-….l
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-1
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-2
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-3
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-5
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-7
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-8
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-a
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-b
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-c
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-kk
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-m
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-me da igual
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+Nada me viene
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+Ni idea
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+Nine
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:right;">
+16
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-ninguna
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+no
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-no Lo de
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+No lo se-
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-no Lo se
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+No lo se
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-no recuerdo ninguna mas
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-no sé
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-no se
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+No sé
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+No se
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-no se me ocurre nada
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+se me
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Ninguna
+</td>
+<td style="text-align:left;">
+-x
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Pascual
+</td>
+<td style="text-align:right;">
+136
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Pascual
+</td>
+<td style="text-align:left;">
+Pascual
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Pepsi
+</td>
+<td style="text-align:right;">
+137
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Pepsi
+</td>
+<td style="text-align:left;">
+Pepsi
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+pfizer
+</td>
+<td style="text-align:right;">
+138
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+pfizer
+</td>
+<td style="text-align:left;">
+Anian
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+pfizer
+</td>
+<td style="text-align:left;">
+Fizer
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+pfizer
+</td>
+<td style="text-align:left;">
+pfizer
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+pfizer
+</td>
+<td style="text-align:left;">
+Pzifer
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+pfizer
+</td>
+<td style="text-align:left;">
+Pzzer
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Real Madrid
+</td>
+<td style="text-align:right;">
+139
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Real Madrid
+</td>
+<td style="text-align:left;">
+Real Madrid
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Repsol
+</td>
+<td style="text-align:right;">
+140
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Repsol
+</td>
+<td style="text-align:left;">
+Repsol
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Repsol
+</td>
+<td style="text-align:left;">
+Respol
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Sanytol
+</td>
+<td style="text-align:right;">
+141
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Sanytol
+</td>
+<td style="text-align:left;">
+Sanitol
+</td>
+<td style="text-align:right;">
+22
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Sanytol
+</td>
+<td style="text-align:left;">
+-Sanytol
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+Sanytol
+</td>
+<td style="text-align:left;">
+Sanytol
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+uber
+</td>
+<td style="text-align:right;">
+142
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+uber
+</td>
+<td style="text-align:left;">
+-uber
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+uber
+</td>
+<td style="text-align:left;">
+UBER
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+uber
+</td>
+<td style="text-align:left;">
+Ubereats
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+</div>
+<div id="efectos-positivos-de-la-pandemia" class="section level2">
+<h2>Efectos positivos de la pandemia</h2>
+<blockquote>
+<p>Pregunta Q00231</p>
+</blockquote>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Tipo
+</th>
+<th style="text-align:left;">
+Antecesor
+</th>
+<th style="text-align:left;">
+Descripción
+</th>
+<th style="text-align:right;">
+Código / Frecuencia
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+ningún efecto positivo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+ningún efecto positivo
+</td>
+<td style="text-align:left;">
+Nongun efecto
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+ahorro
+</td>
+<td style="text-align:right;">
+101
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+ahorro
+</td>
+<td style="text-align:left;">
+Ahorrar
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+ahorro
+</td>
+<td style="text-align:left;">
+Ahorro y comida más sana
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+ahorro
+</td>
+<td style="text-align:left;">
+He ahorrado bastante
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+compra más próxima, local, barrio
+</td>
+<td style="text-align:right;">
+102
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra más próxima, local, barrio
+</td>
+<td style="text-align:left;">
+apoyo al negocio local
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra más próxima, local, barrio
+</td>
+<td style="text-align:left;">
+Comprar en barrio
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra más próxima, local, barrio
+</td>
+<td style="text-align:left;">
+Compro más en tiendas de proximidad
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra más próxima, local, barrio
+</td>
+<td style="text-align:left;">
+Compro más en tiendas y no tanto en supermercados
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+compra más rápida
+</td>
+<td style="text-align:right;">
+103
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra más rápida
+</td>
+<td style="text-align:left;">
+Más rapidez y concreción
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra más rápida
+</td>
+<td style="text-align:left;">
+Pierdo menos tiempo en la compra, cuanto menos tarde menos riesgo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra más rápida
+</td>
+<td style="text-align:left;">
+rapidez a la hora de comprar
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:right;">
+104
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+Compra más organizada
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+Comprar lo que uno necesita realmente
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+Gasto menos en caprichos
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+Hago una compra semanal, de esta forma pierdo menos tiempo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+He comprado con mas cabeza organizando las comidas y cenas semanalmente para no desperdiciar nada.
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+Ir innecesariamente a los supermercados, organizar mejor las listas de compras
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+ir menos al supermercado
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+Ir menos veces
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+Más planificación en las comidas y meter más verduras en la dieta
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+mas responsable
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+Mayor planificación
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+Planificar mejor las compras
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+Planifico mejor para no ir a comprar diariamente
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra organizada
+</td>
+<td style="text-align:left;">
+Quizá una previsión mayor para estar menos tiempo haciendo la compra.
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+compra sana
+</td>
+<td style="text-align:right;">
+105
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra sana
+</td>
+<td style="text-align:left;">
+comprar cosas mas sanas
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra sana
+</td>
+<td style="text-align:left;">
+Comprar productos más sanos
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra sana
+</td>
+<td style="text-align:left;">
+Compró comida más sana
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra sana
+</td>
+<td style="text-align:left;">
+mas saludable
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+compra sana
+</td>
+<td style="text-align:left;">
+Mirar lo q como
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:right;">
+106
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Hay más higiene en la sociedad
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+más cuidado
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Mas gasto en productos de limpieza
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Mas higeniciante
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+más higiene a la hora de traer los productos adquiridos en un supermercado
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Más importancia a la limpieza
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+mas limpieza y desinfeccion
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Más limpio todo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Más tiempo para hacer limpieza
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Mayor desinfección i hàbitos saludables
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Mejor limpieza general
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Menor contacto con el producto porlo que el producto o el packaging no se deterioran tan fácilmente Como en el caso de las rosquillas o papas
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+nos hemos dado cuenta como sociedad que tenemos que tener mas higiene en general
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Productos desinfección
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Siempre fui exigen con la higiene
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Siempre uso guantes al escoger las frutas y las verduras
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más higiene (cantidad y/o gasto)
+</td>
+<td style="text-align:left;">
+Utilizar más productos de desinfección comparado con antes
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+mayor precaución
+</td>
+<td style="text-align:right;">
+107
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor precaución
+</td>
+<td style="text-align:left;">
+Con más precaución
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor precaución
+</td>
+<td style="text-align:left;">
+La precaucion
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor precaución
+</td>
+<td style="text-align:left;">
+Llevar más cuidado
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor precaución
+</td>
+<td style="text-align:left;">
+Ser más prudente, controlador y cuidadoso
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor precaución
+</td>
+<td style="text-align:left;">
+Soy más cauteloso y cuidadoso
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+online
+</td>
+<td style="text-align:right;">
+109
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+online
+</td>
+<td style="text-align:left;">
+Compra online
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+online
+</td>
+<td style="text-align:left;">
+Comprar más online
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+online
+</td>
+<td style="text-align:left;">
+Compro online
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+online
+</td>
+<td style="text-align:left;">
+He considerado la opción hacer la compra online.
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+online
+</td>
+<td style="text-align:left;">
+he empezado a utilizar mas las compras online
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+online
+</td>
+<td style="text-align:left;">
+La compra online me ahorra mucho tiempo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+online
+</td>
+<td style="text-align:left;">
+online
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+organizacion
+</td>
+<td style="text-align:right;">
+110
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+organizacion
+</td>
+<td style="text-align:left;">
+En la selección de productos
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+organizacion
+</td>
+<td style="text-align:left;">
+Mayor conciencia de la necesidad
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+organizacion
+</td>
+<td style="text-align:left;">
+Mejor organización y provecho de los alimentos.
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+organizacion
+</td>
+<td style="text-align:left;">
+Organización
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+organizacion
+</td>
+<td style="text-align:left;">
+Organizar la comidas semanalmente
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:right;">
+111
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+comida a domicilio
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+Comodidad
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+Considerar cosas que antes no hacia
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+-donde nas confianza me han dado
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+dosificar
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+escasez
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+He seguido con mis habitos
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+Menor consumo de alcohol
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+Mucho
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+Poco
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+Positivo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otras
+</td>
+<td style="text-align:left;">
+Sigo igual
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="efectos-negativos-de-la-pandemia" class="section level2">
+<h2>Efectos negativos de la pandemia</h2>
+<blockquote>
+<p>Pregunta Q00232</p>
+</blockquote>
+<table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Tipo
+</th>
+<th style="text-align:left;">
+Antecesor
+</th>
+<th style="text-align:left;">
+Descripción
+</th>
+<th style="text-align:right;">
+Código / Frecuencia
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+ningún efecto negativo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+ningún efecto negativo
+</td>
+<td style="text-align:left;">
+-ninguno
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+ningún efecto negativo
+</td>
+<td style="text-align:left;">
+Ninguno
+</td>
+<td style="text-align:right;">
+2
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+ningún efecto negativo
+</td>
+<td style="text-align:left;">
+Negativo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+ningún efecto negativo
+</td>
+<td style="text-align:left;">
+No
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+ningún efecto negativo
+</td>
+<td style="text-align:left;">
+No Lo se
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+ningún efecto negativo
+</td>
+<td style="text-align:left;">
+Igual que antes
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+mayor gasto
+</td>
+<td style="text-align:right;">
+102
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor gasto
+</td>
+<td style="text-align:left;">
+gasto más en productos de higiene
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor gasto
+</td>
+<td style="text-align:left;">
+Más gasto
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor gasto
+</td>
+<td style="text-align:left;">
+Más gastos por la compra de productos desinfectantes
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor gasto
+</td>
+<td style="text-align:left;">
+He tenido que gastar más en productos de higiene y prevención
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor gasto
+</td>
+<td style="text-align:left;">
+Lo que me ahorro en otras cosas se gasta en alcohol o mascarillas
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor gasto
+</td>
+<td style="text-align:left;">
+Tengo que comprar mascarillas
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor gasto
+</td>
+<td style="text-align:left;">
+-ahorro
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+miedo
+</td>
+<td style="text-align:right;">
+103
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+miedo
+</td>
+<td style="text-align:left;">
+-miedo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+miedo
+</td>
+<td style="text-align:left;">
+-miedo al contagio
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+miedo
+</td>
+<td style="text-align:left;">
+Da más miedo salir a comprar
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+miedo
+</td>
+<td style="text-align:left;">
+He realizado las compras con algo más de miedo que antes de la pandemia
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+miedo
+</td>
+<td style="text-align:left;">
+miedo al contagio
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+miedo
+</td>
+<td style="text-align:left;">
+Mayor inseguridad al poder estar expuesta al covid-19
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+miedo
+</td>
+<td style="text-align:left;">
+Que me cuesta más en salir por precaución y tambien en la desinfección de las compras
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+miedo
+</td>
+<td style="text-align:left;">
+la ignorancia es grata, ahora que sabemos todo lo que se puede transmitir, me parece que todos estamos un poco freaky
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+miedo
+</td>
+<td style="text-align:left;">
+Más estricto
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+mayor tiempo / menos compras
+</td>
+<td style="text-align:right;">
+104
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor tiempo / menos compras
+</td>
+<td style="text-align:left;">
+-mayor tiempo de espera
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor tiempo / menos compras
+</td>
+<td style="text-align:left;">
+Hago la compra en menos tiempo
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor tiempo / menos compras
+</td>
+<td style="text-align:left;">
+Mayor tiempo dedicado a cada compra al ser menos frecuentes.
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor tiempo / menos compras
+</td>
+<td style="text-align:left;">
+Más tiempo de desinfección en la compra
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor tiempo / menos compras
+</td>
+<td style="text-align:left;">
+Menos compras-
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor tiempo / menos compras
+</td>
+<td style="text-align:left;">
+-que comparo menos
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor tiempo / menos compras
+</td>
+<td style="text-align:left;">
+Si me falta algo de la compra o se me olvida no bajo a comprarlo me espero a la siguiente compra grande
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor tiempo / menos compras
+</td>
+<td style="text-align:left;">
+Hacemos una compra semanal y el peso de carga es muy grande
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+mayor tiempo / menos compras
+</td>
+<td style="text-align:left;">
+Menos diversificación de tiendas
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+más compras / acumular
+</td>
+<td style="text-align:right;">
+105
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más compras / acumular
+</td>
+<td style="text-align:left;">
+Compro más productos sobre-envasados
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más compras / acumular
+</td>
+<td style="text-align:left;">
+-compro mas
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más compras / acumular
+</td>
+<td style="text-align:left;">
+Se compra más comida
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más compras / acumular
+</td>
+<td style="text-align:left;">
+Que al principio te puede el ansia de comprar mucho por el hecho de no saber que va a pasar
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más compras / acumular
+</td>
+<td style="text-align:left;">
+-acumular mas en el hogar
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más compras / acumular
+</td>
+<td style="text-align:left;">
+Acumuló más comida
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más compras / acumular
+</td>
+<td style="text-align:left;">
+Demasiada cantidad de alimentos
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+más compras / acumular
+</td>
+<td style="text-align:left;">
+Desperdicio más comida y tengo menos variedad
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:right;">
+106
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:left;">
+-más colas en compras presenciales Tener que estar pendiente de mantener distancias y que nadie se te acerque
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:left;">
+Antes ir a hacer la compra era un momento en el que te detenías y mirabas más ahora vas en alerta
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:left;">
+El horario de realizar la compra, cuando hay menos afluencia de personas en los comercios
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:left;">
+Mucha gente dentro comprando
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:left;">
+Agobio con la gente
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:left;">
+Desconfianza
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:left;">
+Estar expuesto
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:left;">
+Estoy más inseguro
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:left;">
+la inseguridad de estar expuesto
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:left;">
+temor al contagio
+</td>
+<td style="text-align:right;">
+3
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+medidas de seguridad personal
+</td>
+<td style="text-align:left;">
+Mucho más precaución.
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+escasez productos
+</td>
+<td style="text-align:right;">
+107
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+escasez productos
+</td>
+<td style="text-align:left;">
+falta de productos
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+escasez productos
+</td>
+<td style="text-align:left;">
+Fin de existencias
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+escasez productos
+</td>
+<td style="text-align:left;">
+En muchas tiendas no quedaba el alimento que ne cesitaba
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+higiene
+</td>
+<td style="text-align:right;">
+108
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+higiene
+</td>
+<td style="text-align:left;">
+Me tengo que poner la mascarilla y ponerme el gel
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+higiene
+</td>
+<td style="text-align:left;">
+Me he obsesionado con los productos de limpieza que llevan lejia.
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+higiene
+</td>
+<td style="text-align:left;">
+Limpieza de cada producto, mas paranoia
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+higiene
+</td>
+<td style="text-align:left;">
+La desinfección de los productos que entran en casa
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+CLAVE
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:right;">
+109
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+-comodidad
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+-se haga más dinero
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Calidad, frescos y menos procesados, vitaminas e higiene.
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Compro poco en comercio fisico
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Comprábamos más porque estábamos más en casa
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Contaminación
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+El alejamiento con las personas
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+En productos por capricho
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+evito caprichos
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Incomodidad a la compra
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Las colas
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Lo necesario para salir lo menos posible y ceca de mi casa
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+mas faena
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Mas variedad de productos
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Mayor cantidad de dulces procesados
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Menos ecológico
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Mucho
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LITERAL
+</td>
+<td style="text-align:left;">
+otros
+</td>
+<td style="text-align:left;">
+Más rapido
+</td>
+<td style="text-align:right;">
+1
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<br>
+<hr>
+<div style="text-align: center;">All rights reserved - 2008-2021 (c) - InvestigaOnline.com</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

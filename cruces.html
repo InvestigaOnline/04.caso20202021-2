@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Otros análisis (Objetivo 1)</title>
+
+<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.17/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="site_libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<!DOCTYPE html>
+<head><link rel="shortcut icon" href="https://drive.google.com/uc?export=view&id=1JbeH3BFMq-xjBIroa3lcnqhOJS4Ap-RB">&nbsp;</head>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Covid-19 ::|:: Ola 2</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Introducción</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Preliminares
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="analisis.html">Análisis</a>
+    </li>
+    <li>
+      <a href="ficha.html">Ficha</a>
+    </li>
+    <li>
+      <a href="perfil.html">Perfil</a>
+    </li>
+    <li>
+      <a href="o.html">Objetivos</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resultados (Ola 2)
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="o1.html">Objetivo.1</a>
+    </li>
+    <li>
+      <a href="o3.html">Objetivo.3</a>
+    </li>
+    <li>
+      <a href="o4.html">Objetivo.4</a>
+    </li>
+    <li>
+      <a href="o4.html">Objetivo.6</a>
+    </li>
+    <li>
+      <a href="o4.html">Objetivo.7</a>
+    </li>
+    <li>
+      <a href="o4.html">Objetivo.8</a>
+    </li>
+    <li>
+      <a href="o4.html">Objetivo.9</a>
+    </li>
+    <li>
+      <a href="escalas.html">Escalas</a>
+    </li>
+    <li>
+      <a href="cruces.html">Tablas cruzadas (1)</a>
+    </li>
+    <li>
+      <a href="verbatim.html">Verbatim</a>
+    </li>
+    <li>
+      <a href="qst.html">Cuestionario</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="conclusiones.html">Conclusiones</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">
+    <span class="fas fa-question-circle"></span>
+     
+    Acerca de ...
+  </a>
+</li>
+<li>
+  <a href="https://www.investigaonline.com">
+    <span class="fas fa-search-plus"></span>
+     
+    InvestigaOnline.com
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Otros análisis (Objetivo 1)</h1>
+
+</div>
+
+
+<div id="tablas---sexo" class="section level1">
+<h1>Tablas - Sexo</h1>
+<div id="htmlwidget-c7857a6c4b3140a197cb" style="width:900px;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c7857a6c4b3140a197cb">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","caption":"<caption>Objetivo 1<\/caption>","data":[["Q00010 Cambio en hábitos de consumo","","","Q00011 Cambio en hábitos de compra","","","Q00012 Contagio próximo","","","Q00110_1 me siento mareado, aturdido o  sin aliento cuando leo o escucho las noticias sobre el coronavirus.","","","","","","Q00110_2 tengo dificultad  para conciliar el sueño  o quedarme dormido porque estoy pensando en el coronavirus.","","","","","","Q00110_3 me siento paralizado o frio cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","","","","Q00110_4 he perdido el interés en comer cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","","","","Q00110_5 tengo náuseas o problemas estomacales cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","","","","Q00120_1 tengo pensamientos inquietantes de que podría haberme contagiado con el coronavirus.","","","","","","Q00120_2 tengo pensamientos inquietantes de que ciertas personas que vi / contacté podrían tener el coronavirus.","","","","","","Q00120_3 no puedo dejar de pensar en el coronavirus.","","","","","","Q00120_4 sueño con el coronavirus.","","","","","","Q00130_1 cada día le tengo más miedo a la COVID-19.","","","","","","Q00130_2 me incomoda pensar en la COVID-19.","","","","","","Q00130_3 mis manos se humedecen (me sudan las manos) cuando pienso en la COVID-19.","","","","","","Q00130_4 tengo miedo de perder la vida por la COVID-19.","","","","","","Q00130_5 cuando veo noticias e historias sobre la COVID-19 en las redes sociales, me pongo nervioso o ansioso.","","","","","","Q00130_6 no puedo dormir porque me preocupa contagiarme del coronavirus.","","","","","","Q00130_7 mi corazón se acelera o palpita cuando pienso en contagiarme del coronavirus.","","","","","","Q00140_1 Estados emocionales","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","Q00150 Cambio de nuestras vidas","","","","","Q00160 Perspectiva de las relaciones sociales","","","","Q00170 Nivel de preocupación a la exposición al virus en establecimientos","","","","","Q00110_1 me siento mareado, aturdido o  sin aliento cuando leo o escucho las noticias sobre el coronavirus.","","","Q00110_2 tengo dificultad  para conciliar el sueño  o quedarme dormido porque estoy pensando en el coronavirus.","","","Q00110_3 me siento paralizado o frio cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","Q00110_4 he perdido el interés en comer cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","Q00110_5 tengo náuseas o problemas estomacales cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","Q00120_1 tengo pensamientos inquietantes de que podría haberme contagiado con el coronavirus.","","","Q00120_2 tengo pensamientos inquietantes de que ciertas personas que vi / contacté podrían tener el coronavirus.","","","Q00120_3 no puedo dejar de pensar en el coronavirus.","","","Q00120_4 sueño con el coronavirus.","","","Q00130_1 cada día le tengo más miedo a la COVID-19.","","","Q00130_2 me incomoda pensar en la COVID-19.","","","Q00130_3 mis manos se humedecen (me sudan las manos) cuando pienso en la COVID-19.","","","Q00130_4 tengo miedo de perder la vida por la COVID-19.","","","Q00130_5 cuando veo noticias e historias sobre la COVID-19 en las redes sociales, me pongo nervioso o ansioso.","","","Q00130_6 no puedo dormir porque me preocupa contagiarme del coronavirus.","","","Q00130_7 mi corazón se acelera o palpita cuando pienso en contagiarme del coronavirus.","",""],["sí, han cambiado","no, no han cambiado","#Total cases","sí, ha cambiado","no, no ha cambiado","#Total cases","sí","no","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","&amp;nbsp;","comprometido/a","confiado/a","creativo/a","decepcionado/a","deprimido/a","en shock","enfadado/a","esperanzado/a","feliz","incrédulo/a","&amp;nbsp;","inseguro/a","nervioso/a","obsesionado/a","preocupado/a","relajado/a","seguro/a","solo/a","temeroso/a","tranquilo/a","triste","&amp;nbsp;","vulnerable","abrumado/a","activo/a","agradecido/a","ansioso/a","calmado/a","cansado/a","#Total cases","no tendrá ningún impacto","cambiará nuestras vidas algo","cambiará nuestras vidas bastante","cambiará nuestras vidas completamente","#Total cases","mejor","igual","peor","#Total cases","sin ninguna preocupación","algo preocupado","bastante preocupado","muy preocupado","#Total cases","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        DC02 Sexo\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+<div id="tablas---edad" class="section level1">
+<h1>Tablas - Edad</h1>
+<div id="htmlwidget-9c6821817451c7bbefbe" style="width:900px;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9c6821817451c7bbefbe">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","caption":"<caption>Objetivo 1<\/caption>","data":[["Q00010 Cambio en hábitos de consumo","","","Q00011 Cambio en hábitos de compra","","","Q00012 Contagio próximo","","","Q00110_1 me siento mareado, aturdido o  sin aliento cuando leo o escucho las noticias sobre el coronavirus.","","","","","","Q00110_2 tengo dificultad  para conciliar el sueño  o quedarme dormido porque estoy pensando en el coronavirus.","","","","","","Q00110_3 me siento paralizado o frio cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","","","","Q00110_4 he perdido el interés en comer cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","","","","Q00110_5 tengo náuseas o problemas estomacales cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","","","","Q00120_1 tengo pensamientos inquietantes de que podría haberme contagiado con el coronavirus.","","","","","","Q00120_2 tengo pensamientos inquietantes de que ciertas personas que vi / contacté podrían tener el coronavirus.","","","","","","Q00120_3 no puedo dejar de pensar en el coronavirus.","","","","","","Q00120_4 sueño con el coronavirus.","","","","","","Q00130_1 cada día le tengo más miedo a la COVID-19.","","","","","","Q00130_2 me incomoda pensar en la COVID-19.","","","","","","Q00130_3 mis manos se humedecen (me sudan las manos) cuando pienso en la COVID-19.","","","","","","Q00130_4 tengo miedo de perder la vida por la COVID-19.","","","","","","Q00130_5 cuando veo noticias e historias sobre la COVID-19 en las redes sociales, me pongo nervioso o ansioso.","","","","","","Q00130_6 no puedo dormir porque me preocupa contagiarme del coronavirus.","","","","","","Q00130_7 mi corazón se acelera o palpita cuando pienso en contagiarme del coronavirus.","","","","","","Q00140_1 Estados emocionales","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","Q00150 Cambio de nuestras vidas","","","","","Q00160 Perspectiva de las relaciones sociales","","","","Q00170 Nivel de preocupación a la exposición al virus en establecimientos","","","","","Q00110_1 me siento mareado, aturdido o  sin aliento cuando leo o escucho las noticias sobre el coronavirus.","","","Q00110_2 tengo dificultad  para conciliar el sueño  o quedarme dormido porque estoy pensando en el coronavirus.","","","Q00110_3 me siento paralizado o frio cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","Q00110_4 he perdido el interés en comer cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","Q00110_5 tengo náuseas o problemas estomacales cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","Q00120_1 tengo pensamientos inquietantes de que podría haberme contagiado con el coronavirus.","","","Q00120_2 tengo pensamientos inquietantes de que ciertas personas que vi / contacté podrían tener el coronavirus.","","","Q00120_3 no puedo dejar de pensar en el coronavirus.","","","Q00120_4 sueño con el coronavirus.","","","Q00130_1 cada día le tengo más miedo a la COVID-19.","","","Q00130_2 me incomoda pensar en la COVID-19.","","","Q00130_3 mis manos se humedecen (me sudan las manos) cuando pienso en la COVID-19.","","","Q00130_4 tengo miedo de perder la vida por la COVID-19.","","","Q00130_5 cuando veo noticias e historias sobre la COVID-19 en las redes sociales, me pongo nervioso o ansioso.","","","Q00130_6 no puedo dormir porque me preocupa contagiarme del coronavirus.","","","Q00130_7 mi corazón se acelera o palpita cuando pienso en contagiarme del coronavirus.","",""],["sí, han cambiado","no, no han cambiado","#Total cases","sí, ha cambiado","no, no ha cambiado","#Total cases","sí","no","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","&amp;nbsp;","comprometido/a","confiado/a","creativo/a","decepcionado/a","deprimido/a","en shock","enfadado/a","esperanzado/a","feliz","incrédulo/a","&amp;nbsp;","inseguro/a","nervioso/a","obsesionado/a","preocupado/a","relajado/a","seguro/a","solo/a","temeroso/a","tranquilo/a","triste","&amp;nbsp;","vulnerable","abrumado/a","activo/a","agradecido/a","ansioso/a","calmado/a","cansado/a","#Total cases","no tendrá ningún impacto","cambiará nuestras vidas algo","cambiará nuestras vidas bastante","cambiará nuestras vidas completamente","#Total cases","mejor","igual","peor","#Total cases","sin ninguna preocupación","algo preocupado","bastante preocupado","muy preocupado","#Total cases","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"8\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        DC01QT Edad\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        menos de 18\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        de 18 a 25\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        de 26 a 34\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        de 35 a 44\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        de 45 a 54\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        de 55 a 64\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        más de 64\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        no contesta\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'text-align':'right'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'text-align':'right'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+<div id="tablas---nsce" class="section level1">
+<h1>Tablas - NSCE</h1>
+<div id="htmlwidget-6a5a0f6cc1989456e245" style="width:900px;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6a5a0f6cc1989456e245">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","caption":"<caption>Objetivo 1<\/caption>","data":[["Q00010 Cambio en hábitos de consumo","","","Q00011 Cambio en hábitos de compra","","","Q00012 Contagio próximo","","","Q00110_1 me siento mareado, aturdido o  sin aliento cuando leo o escucho las noticias sobre el coronavirus.","","","","","","Q00110_2 tengo dificultad  para conciliar el sueño  o quedarme dormido porque estoy pensando en el coronavirus.","","","","","","Q00110_3 me siento paralizado o frio cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","","","","Q00110_4 he perdido el interés en comer cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","","","","Q00110_5 tengo náuseas o problemas estomacales cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","","","","Q00120_1 tengo pensamientos inquietantes de que podría haberme contagiado con el coronavirus.","","","","","","Q00120_2 tengo pensamientos inquietantes de que ciertas personas que vi / contacté podrían tener el coronavirus.","","","","","","Q00120_3 no puedo dejar de pensar en el coronavirus.","","","","","","Q00120_4 sueño con el coronavirus.","","","","","","Q00130_1 cada día le tengo más miedo a la COVID-19.","","","","","","Q00130_2 me incomoda pensar en la COVID-19.","","","","","","Q00130_3 mis manos se humedecen (me sudan las manos) cuando pienso en la COVID-19.","","","","","","Q00130_4 tengo miedo de perder la vida por la COVID-19.","","","","","","Q00130_5 cuando veo noticias e historias sobre la COVID-19 en las redes sociales, me pongo nervioso o ansioso.","","","","","","Q00130_6 no puedo dormir porque me preocupa contagiarme del coronavirus.","","","","","","Q00130_7 mi corazón se acelera o palpita cuando pienso en contagiarme del coronavirus.","","","","","","Q00140_1 Estados emocionales","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","Q00150 Cambio de nuestras vidas","","","","","Q00160 Perspectiva de las relaciones sociales","","","","Q00170 Nivel de preocupación a la exposición al virus en establecimientos","","","","","Q00110_1 me siento mareado, aturdido o  sin aliento cuando leo o escucho las noticias sobre el coronavirus.","","","Q00110_2 tengo dificultad  para conciliar el sueño  o quedarme dormido porque estoy pensando en el coronavirus.","","","Q00110_3 me siento paralizado o frio cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","Q00110_4 he perdido el interés en comer cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","Q00110_5 tengo náuseas o problemas estomacales cuando pienso que puedo estar expuesto a un contagio por coronavirus.","","","Q00120_1 tengo pensamientos inquietantes de que podría haberme contagiado con el coronavirus.","","","Q00120_2 tengo pensamientos inquietantes de que ciertas personas que vi / contacté podrían tener el coronavirus.","","","Q00120_3 no puedo dejar de pensar en el coronavirus.","","","Q00120_4 sueño con el coronavirus.","","","Q00130_1 cada día le tengo más miedo a la COVID-19.","","","Q00130_2 me incomoda pensar en la COVID-19.","","","Q00130_3 mis manos se humedecen (me sudan las manos) cuando pienso en la COVID-19.","","","Q00130_4 tengo miedo de perder la vida por la COVID-19.","","","Q00130_5 cuando veo noticias e historias sobre la COVID-19 en las redes sociales, me pongo nervioso o ansioso.","","","Q00130_6 no puedo dormir porque me preocupa contagiarme del coronavirus.","","","Q00130_7 mi corazón se acelera o palpita cuando pienso en contagiarme del coronavirus.","",""],["sí, han cambiado","no, no han cambiado","#Total cases","sí, ha cambiado","no, no ha cambiado","#Total cases","sí","no","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","1","2","3","4","5","#Total cases","&amp;nbsp;","comprometido/a","confiado/a","creativo/a","decepcionado/a","deprimido/a","en shock","enfadado/a","esperanzado/a","feliz","incrédulo/a","&amp;nbsp;","inseguro/a","nervioso/a","obsesionado/a","preocupado/a","relajado/a","seguro/a","solo/a","temeroso/a","tranquilo/a","triste","&amp;nbsp;","vulnerable","abrumado/a","activo/a","agradecido/a","ansioso/a","calmado/a","cansado/a","#Total cases","no tendrá ningún impacto","cambiará nuestras vidas algo","cambiará nuestras vidas bastante","cambiará nuestras vidas completamente","#Total cases","mejor","igual","peor","#Total cases","sin ninguna preocupación","algo preocupado","bastante preocupado","muy preocupado","#Total cases","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N","Mean","Std. dev.","Unw. valid N"],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"7\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        STEP12 NSCE\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        a1\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        a2\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        b\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        c\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        d\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        e1\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        e2\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7,8,9]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'text-align':'right'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+
+<br>
+<hr>
+<div style="text-align: center;">All rights reserved - 2008-2021 (c) - InvestigaOnline.com</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

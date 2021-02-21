@@ -1,0 +1,56 @@
+---
+title: 'Fiabilidad de escalas'
+---
+
+# Introducción
+
+Para analizar la consistencia de las escalas utilizadas, realizamos un análisis de fiabilidad basa en el cálculo del Alfa de Cronbach. Para cada escala, se nos devuelve el valor del coeficiente Alfa de Cronbach, así como otros estadísticos que describimos seguidamente.
+
+* _raw_alpha_: coeficiente alfa con las puntuaciones observadas. Esta es el valor de Alfa generalmente usado para evaluar la fiabilidad de una escala. Es también el que se reporta en publicaciones y reportes técnicos. El valor de Alfa puede asumir valores entre 0 y 1. Valores cercanos a 1 son mejores, pues indican mayor consistencia interna. Por convención y para fines prácticos, valores de alfa iguales o mayores a 0.7 se consideran aceptables, mayores a 0.8 son buenos, y mayores a 0.9 son excelentes.Valores por debajo de 0.5 y cercanos a 0 indican que una escala tiene una pobre confiabilidad.
+
+* _std.alpha_: coeficiente alfa con las puntuaciones estandarizadas. Este valor se obtiene estandarizando las puntuaciones de la escala antes de calcular alfa. Es útil cuando nuestros ítemes no tienen el mismo rango de valores posibles, pues así evitamos sesgar los resultados. Por lo general, obtenemos valores que son poco diferentes a los obtenidos con las puntuaciones observadas.
+
+* _G6(smc), Lambda 6 de Guttman (λ6)_: otra medida de confiabilidad, obtenida a partir del coeficiente de determinación de cada ítem con respecto a todos los demás, es decir, de correlaciones múltiples al cuadrado.  Lambda 6 tiende a ser menos sensible al número de ítems en la escala. Al igual que Alfa, asume valores de 0 a 1 y para fines prácticos lo interpretamos de la misma manera.
+
+* _average_r_: correlación promedio entre los ítemes. Es el valor promedio de correlación entre los ítem. Cuanto más cercano sea este valor a 1, los ítems han tenido más asociación entre ellos. Este resultado nos ilustra que es posible obtener valores altos de Alfa, aunque los reactivos no tengan correlaciones fuertes entre ellos. Por lo tanto, no podemos asumir que tenemos ítems con una fuerte asociación entre ellos únicamente a partir del valor de Alfa, necesitamos explorar estos resultados primero.
+
+* _95% confidence boundaries_: es el intervalo de confianza al 95% del valor de Alfa calculado. Se nos muestra el valor del límite inferior (lower) y superior (upper) del intervalo. Intervalos amplios nos indican que el valor de Alfa tiene un mayor error de medida, por lo que debemos ser cuidadosos en las interpretaciones que hagamos y las decisiones que tomemos.
+
+* _Reliability if an item is dropped_: medida de confiabilidad si un ítem es quitado). Esta tabla nos muestra cómo cambiaría Alfa y los demás indicadores de confiabilidad si un ítem se quita de la escala analizada. Habrá casos en los que Alfa mejora al quitar un ítem. La decisión de efectivamente quitar un ítem depende de que tanto mejora la confiabilidad y en qué medida se afecta la validez de la escala. Este puede convertirse en un proceso iterativo, en el que después de quitar ítems, volvemos a calcular el Alfa de Cronbach, y nos encontramos que aún puede mejorar nuestra confiabilidad quitando un ítem distinto. Es necesario considerar las características particulares de cada escala para encontrar un balance entre ganancias o perdidas en confiabilidad y la integridad de la escala. También es necesario tomar en cuenta los demás resultados reportados en este análisis con respecto a cada ítem.
+
+* _Non missing response frequency for each item_: medida de frecuencia de respuesta no perdida para cada ítem; proporción de respuesta para cada opción posible para cada uno de los ítemes, incluidas las respuestas perdidas. Esta información es útil para el análisis de resultados inusuales. 
+
+Se han revisado las medidas derivadas de la obtención del coeficiente Alfa de Cronbach, así como la manera de interpretar este coeficiente y los resultados asociados a él más relevantes.  Los resultados obtenidos de la función `alpha()` nos pueden ayudar a un mejor análisis de la confiabilidad e una escala, pero es importante recordar qué puede y qué no puede decirnos el coeficiente Alfa de Cronbach con respecto a una escala psicométrica, para evitar malas interpretaciones. El Alfa de Cronbach nos da una medida de la consistencia interna de una escala, que sus ítems apuntan en la misma dirección, pero no nos dice nada sobre su validez o la calidad de sus reactivos.  Estas son características diferentes de las escalas que requieren de otros análisis.
+
+Aquí mostramos los resultados de este análisis.
+
+## Escala de ansiedad
+
+```{r echo = FALSE}
+options(width=9999)
+
+alpha(select(data,Q00110_1, Q00110_2, Q00110_3, Q00110_4, Q00110_5))
+```
+
+## Escala de temor
+
+```{r echo = FALSE}
+alpha(select(data,Q00120_1, Q00120_2, Q00120_3, Q00120_4))
+```
+
+## Escala de obsesión
+
+```{r echo = FALSE}
+alpha(select(data,Q00130_1, Q00130_2, Q00130_3, Q00130_4, Q00130_5, Q00130_6, Q00130_7))
+```
+
+
+# Referencias
+
+- Bosco, J., (2018). Alfa de Cronbach - Psicometría con R, visitado en https://rpubs.com/jboscomendoza/alfa_cronbach_r
+
+- Cortina, J. M. (1993). What is Coefficient Alpha? An Examination of Theory and Applications. Journal of Applied Psychology, 78(1), 98-104.
+
+- Graham, J. M. (2006). Congeneric and (Essentially) Tau-Equivalent Estimates of Score Reliability: What They Are and How to Use Them. Educational and Psychological Measurement, 66(6), 930-944.
+
+- Sijtsma, K. (2009). On the Use, the Misuse, and the Very Limited Usefulness of Cronbach’s Alpha. Psychometrika, 74(1), 107-120.

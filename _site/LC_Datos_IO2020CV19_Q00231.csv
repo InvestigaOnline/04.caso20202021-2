@@ -1,0 +1,90 @@
+Libro de claves
+TIPO EXTRACCION	1
+TIPO	PADRE	DESCRIPCION	VALOR
+CLAVE		ningún efecto positivo	1
+LITERAL	ningún efecto positivo	Nongun efecto	1
+CLAVE		ahorro	101
+LITERAL	ahorro	Ahorrar	1
+LITERAL	ahorro	Ahorro y comida más sana	1
+LITERAL	ahorro	He ahorrado bastante	1
+CLAVE		compra más próxima, local, barrio	102
+LITERAL	compra más próxima, local, barrio	apoyo al negocio local	1
+LITERAL	compra más próxima, local, barrio	Comprar en barrio	1
+LITERAL	compra más próxima, local, barrio	Compro más en tiendas de proximidad	1
+LITERAL	compra más próxima, local, barrio	Compro más en tiendas y no tanto en supermercados	1
+CLAVE		compra más rápida	103
+LITERAL	compra más rápida	Más rapidez y concreción	1
+LITERAL	compra más rápida	Pierdo menos tiempo en la compra, cuanto menos tarde menos riesgo	1
+LITERAL	compra más rápida	rapidez a la hora de comprar	1
+CLAVE		compra organizada	104
+LITERAL	compra organizada	Compra más organizada	1
+LITERAL	compra organizada	Comprar lo que uno necesita realmente	1
+LITERAL	compra organizada	Gasto menos en caprichos	1
+LITERAL	compra organizada	Hago una compra semanal, de esta forma pierdo menos tiempo	1
+LITERAL	compra organizada	He comprado con mas cabeza organizando las comidas y cenas semanalmente para no desperdiciar nada.	1
+LITERAL	compra organizada	Ir innecesariamente a los supermercados, organizar mejor las listas de compras	1
+LITERAL	compra organizada	ir menos al supermercado	1
+LITERAL	compra organizada	Ir menos veces	1
+LITERAL	compra organizada	Más planificación en las comidas y meter más verduras en la dieta	1
+LITERAL	compra organizada	mas responsable	1
+LITERAL	compra organizada	Mayor planificación	1
+LITERAL	compra organizada	Planificar mejor las compras	1
+LITERAL	compra organizada	Planifico mejor para no ir a comprar diariamente	1
+LITERAL	compra organizada	Quizá una previsión mayor para estar menos tiempo haciendo la compra.	1
+CLAVE		compra sana	105
+LITERAL	compra sana	comprar cosas mas sanas	1
+LITERAL	compra sana	Comprar productos más sanos	1
+LITERAL	compra sana	Compró comida más sana	1
+LITERAL	compra sana	mas saludable	1
+LITERAL	compra sana	Mirar lo q como	1
+CLAVE		más higiene (cantidad y/o gasto)	106
+LITERAL	más higiene (cantidad y/o gasto)	Hay más higiene en la sociedad	1
+LITERAL	más higiene (cantidad y/o gasto)	más cuidado	1
+LITERAL	más higiene (cantidad y/o gasto)	Mas gasto en productos de limpieza	1
+LITERAL	más higiene (cantidad y/o gasto)	Mas higeniciante	1
+LITERAL	más higiene (cantidad y/o gasto)	más higiene a la hora de traer los productos adquiridos en un supermercado	1
+LITERAL	más higiene (cantidad y/o gasto)	Más importancia a la limpieza	1
+LITERAL	más higiene (cantidad y/o gasto)	mas limpieza y desinfeccion	1
+LITERAL	más higiene (cantidad y/o gasto)	Más limpio todo	1
+LITERAL	más higiene (cantidad y/o gasto)	Más tiempo para hacer limpieza	1
+LITERAL	más higiene (cantidad y/o gasto)	Mayor desinfección i hàbitos saludables	1
+LITERAL	más higiene (cantidad y/o gasto)	Mejor limpieza general	1
+LITERAL	más higiene (cantidad y/o gasto)	Menor contacto con el producto porlo que el producto o el packaging no se deterioran tan fácilmente Como en el caso de las rosquillas o papas	1
+LITERAL	más higiene (cantidad y/o gasto)	nos hemos dado cuenta como sociedad que tenemos que tener mas higiene en general	1
+LITERAL	más higiene (cantidad y/o gasto)	Productos desinfección	1
+LITERAL	más higiene (cantidad y/o gasto)	Siempre fui exigen con la higiene	1
+LITERAL	más higiene (cantidad y/o gasto)	Siempre uso guantes al escoger las frutas y las verduras	1
+LITERAL	más higiene (cantidad y/o gasto)	Utilizar más productos de desinfección comparado con antes	1
+CLAVE		mayor precaución	107
+LITERAL	mayor precaución	Con más precaución	1
+LITERAL	mayor precaución	La precaucion	1
+LITERAL	mayor precaución	Llevar más cuidado	1
+LITERAL	mayor precaución	Ser más prudente, controlador y cuidadoso	1
+LITERAL	mayor precaución	Soy más cauteloso y cuidadoso	1
+CLAVE		online	109
+LITERAL	online	Compra online	1
+LITERAL	online	Comprar más online	1
+LITERAL	online	Compro online	1
+LITERAL	online	He considerado la opción hacer la compra online.	1
+LITERAL	online	he empezado a utilizar mas las compras online	1
+LITERAL	online	La compra online me ahorra mucho tiempo	1
+LITERAL	online	online	1
+CLAVE		organizacion	110
+LITERAL	organizacion	En la selección de productos	1
+LITERAL	organizacion	Mayor conciencia de la necesidad	1
+LITERAL	organizacion	Mejor organización y provecho de los alimentos.	1
+LITERAL	organizacion	Organización	1
+LITERAL	organizacion	Organizar la comidas semanalmente	1
+CLAVE		otras	111
+LITERAL	otras	comida a domicilio	1
+LITERAL	otras	Comodidad	1
+LITERAL	otras	Considerar cosas que antes no hacia	1
+LITERAL	otras	-donde nas confianza me han dado	1
+LITERAL	otras	dosificar	1
+LITERAL	otras	escasez	1
+LITERAL	otras	He seguido con mis habitos	1
+LITERAL	otras	Menor consumo de alcohol	1
+LITERAL	otras	Mucho	1
+LITERAL	otras	Poco	1
+LITERAL	otras	Positivo	1
+LITERAL	otras	Sigo igual	2

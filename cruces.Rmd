@@ -1,0 +1,81 @@
+---
+title: 'Otros análisis (Objetivo 1)'
+---
+
+# Tablas - Sexo
+
+
+```{r echo = FALSE}
+tab <- data %>%
+     tab_prepend_names() %>% 
+     tab_cols(total(),DC02) %>% 
+	tab_cells(Q00010, 
+	          Q00011,
+	          Q00012,
+	          Q00110_1 %to% Q00110_5,
+	          Q00120_1 %to% Q00120_4,
+	          Q00130_1 %to% Q00130_7,
+	          mrset(..f(Q00140_), W1, W2, W3),
+	          Q00150,
+	          Q00160,
+	          Q00170
+	          ) %>%
+	tab_stat_cpct() %>%
+     tab_cells(Q00110_1 %to% Q00130_7) %>% 
+     tab_stat_mean_sd_n() %>% 
+     tab_pivot() %>% 
+	tab_caption('Objetivo 1')
+as.datatable_widget(tab, width=900)
+```
+
+
+# Tablas - Edad
+
+```{r echo = FALSE}
+tab <- data %>%
+     tab_prepend_names() %>% 
+     tab_cols(total(),DC01QT) %>% 
+	tab_cells(Q00010, 
+	          Q00011,
+	          Q00012,
+	          Q00110_1 %to% Q00110_5,
+	          Q00120_1 %to% Q00120_4,
+	          Q00130_1 %to% Q00130_7,
+	          mrset(..f(Q00140_), W1, W2, W3),
+	          Q00150,
+	          Q00160,
+	          Q00170
+	          ) %>%
+	tab_stat_cpct() %>%
+     tab_cells(Q00110_1 %to% Q00130_7) %>% 
+     tab_stat_mean_sd_n() %>% 
+     tab_pivot() %>% 
+	tab_caption('Objetivo 1')
+as.datatable_widget(tab, width=900)
+```
+
+
+# Tablas - NSCE
+
+```{r echo = FALSE}
+tab <- data %>%
+     tab_prepend_names() %>% 
+     tab_cols(total(),STEP12) %>% 
+	tab_cells(Q00010, 
+	          Q00011,
+	          Q00012,
+	          Q00110_1 %to% Q00110_5,
+	          Q00120_1 %to% Q00120_4,
+	          Q00130_1 %to% Q00130_7,
+	          mrset(..f(Q00140_), W1, W2, W3),
+	          Q00150,
+	          Q00160,
+	          Q00170
+	          ) %>%
+	tab_stat_cpct() %>%
+     tab_cells(Q00110_1 %to% Q00130_7) %>% 
+     tab_stat_mean_sd_n() %>% 
+     tab_pivot() %>% 
+	tab_caption('Objetivo 1')
+as.datatable_widget(tab, width=900)
+```

@@ -1,0 +1,56 @@
+name: "Covid-19 - Caso 2020 / 2021 (Ola 2)"
+navbar:
+  title: "Covid-19 ::|:: Ola 2"
+  left:
+    - text: "Introducción"
+      href: index.html
+    - text: "Preliminares"
+      menu:
+      - text: "Análisis"
+        href: analisis.html
+      - text: "Ficha"
+        href: ficha.html
+      - text: "Perfil"
+        href: perfil.html
+      - text: "Objetivos"
+        href: o.html
+    - text: "Resultados (Ola 2)"
+      menu:
+      - text: "Objetivo.1"
+        href: o1.html
+      - text: "Objetivo.3"
+        href: o3.html
+      - text: "Objetivo.4"
+        href: o4.html
+      - text: "Objetivo.6"
+        href: o4.html
+      - text: "Objetivo.7"
+        href: o4.html
+      - text: "Objetivo.8"
+        href: o4.html
+      - text: "Objetivo.9"
+        href: o4.html
+      - text: "Escalas"
+        href: escalas.html
+      - text: "Tablas cruzadas (1)"
+        href: cruces.html
+      - text: "Verbatim"
+        href: verbatim.html
+      - text: "Cuestionario"
+        href: qst.html
+    - text: "Conclusiones"
+      href: conclusiones.html
+  right:
+    - text: "Acerca de ..."
+      icon: fa-question-circle
+      href: about.html
+    - text: "InvestigaOnline.com"
+      icon: fa-search-plus
+      href: "https://www.investigaonline.com"
+output:
+  html_document:
+    theme: paper
+    includes:
+      in_header: header.html
+      after_body: footer.html
+    css: 'style.css'
