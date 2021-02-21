@@ -2,11 +2,11 @@
 title: 'Cuestionario'
 ---
 
-# Cuestionario
+# Cuestionario (Ola 2)
 
 Para descargar una versión del cuestionario en papel, como instrumento de trabajo y consulta para los nombres de los campos, aquí clic en el siguiente [enlace](https://drive.google.com/uc?export=view&id=1B7Majq9CZd-KoxFY_1QpGaQex6cNhCwS).
 
-# Preview cuestionario online
+# Preview cuestionario online (Ola 2)
 
 Para iniciar un _preview_ del cuestionario online, haga clic en el siguiente <a href='https://io.tesintegra.net/html/view/preview.php?pid=IO2020CV19' target='_blank'>enlace</a>.
 

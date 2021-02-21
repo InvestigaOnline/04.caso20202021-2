@@ -2,17 +2,17 @@ name: "Covid-19 - Caso 2020 / 2021 (Ola 2)"
 navbar:
   title: "Covid-19 ::|:: Ola 2"
   left:
-    - text: "Introducción"
-      href: index.html
-    - text: "Preliminares"
+    - text: "Presentación"
       menu:
-      - text: "Análisis"
+      - text: "Introducción"
+        href: index.html
+      - text: "Preliminares"
         href: analisis.html
-      - text: "Ficha"
+      - text: "Ficha técnica"
         href: ficha.html
-      - text: "Perfil"
+      - text: "Perfil de la muestra"
         href: perfil.html
-      - text: "Objetivos"
+      - text: "Objetivos del estudio"
         href: o.html
     - text: "Resultados (Ola 2)"
       menu:
@@ -30,8 +30,6 @@ navbar:
         href: o4.html
       - text: "Objetivo.9"
         href: o4.html
-      - text: "Escalas"
-        href: escalas.html
       - text: "Tablas cruzadas (1)"
         href: cruces.html
       - text: "Verbatim"

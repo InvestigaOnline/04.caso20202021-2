@@ -20,7 +20,7 @@ suppressMessages(library(readr,quietly =TRUE))
 set.seed(311265)
 
 data.total <- suppressMessages(read_spss('~/R/r-data/04.caso20202021/Datos_IO2020CV19.sav'))
-data.total <- filter(data.total, DURACION > 0 & OLA == 2)
+data.total <- filter(data.total, DURACION > 0)
 data <- data.total %>%  where(ESTADO == 1)
 participantes <- nrow(data.total)
 nointer <- nrow(data.total %>%  where(DURACION == 0))
