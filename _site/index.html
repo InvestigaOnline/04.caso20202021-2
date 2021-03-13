@@ -12,15 +12,24 @@
 <meta name="author" content="Roberto Gil-Saura" />
 
 
-<title>Covid-19 - Curso 2020 / 2021</title>
+<title>Curso 2020/2021</title>
 
-<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -39,11 +48,6 @@
     </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -56,32 +60,6 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -93,10 +71,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -113,40 +87,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 64px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h2 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h3 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h4 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h5 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
-.section h6 {
-  padding-top: 69px;
-  margin-top: -69px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -174,7 +121,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -186,7 +133,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -197,10 +144,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -212,7 +172,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -299,22 +258,22 @@ $(document).ready(function () {
       <a href="index.html">Introducción</a>
     </li>
     <li>
-      <a href="analisis.html">Preliminares</a>
+      <a href="aba_analisis.html">Preliminares</a>
     </li>
     <li>
-      <a href="ficha.html">Ficha técnica</a>
+      <a href="aba_ficha.html">Ficha técnica</a>
     </li>
     <li>
-      <a href="perfil.html">Perfil de la muestra</a>
+      <a href="aba_perfil.html">Perfil de la muestra</a>
     </li>
     <li>
-      <a href="o.html">Objetivos del estudio</a>
+      <a href="aba_o.html">Objetivos del estudio</a>
     </li>
   </ul>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Resultados (Ola 2)
+    Resultados
      
     <span class="caret"></span>
   </a>
@@ -329,16 +288,16 @@ $(document).ready(function () {
       <a href="o4.html">Objetivo.4</a>
     </li>
     <li>
-      <a href="o4.html">Objetivo.6</a>
+      <a href="o6.html">Objetivo.6</a>
     </li>
     <li>
-      <a href="o4.html">Objetivo.7</a>
+      <a href="o7.html">Objetivo.7</a>
     </li>
     <li>
-      <a href="o4.html">Objetivo.8</a>
+      <a href="o8.html">Objetivo.8</a>
     </li>
     <li>
-      <a href="o4.html">Objetivo.9</a>
+      <a href="o9.html">Objetivo.9</a>
     </li>
     <li>
       <a href="cruces.html">Tablas cruzadas (1)</a>
@@ -375,26 +334,31 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
-<h1 class="title toc-ignore">Covid-19 - Curso 2020 / 2021</h1>
+<h1 class="title toc-ignore">Curso 2020/2021</h1>
 <h3 class="subtitle">Universitat de València - Universidad Católica de València</h3>
 <h4 class="author">Roberto Gil-Saura</h4>
-<h4 class="date">Última actualización en 2021-02-21</h4>
+<h4 class="date">Última actualización en 2021-03-13</h4>
 
 </div>
 
 
 <div id="introducción" class="section level1">
 <h1>Introducción</h1>
-<blockquote>
-<p>Documento redactado con fines académicos, en desarrollo y no revisado.</p>
-</blockquote>
 <p>NOTA DEL AUTOR:</p>
-<p><strong><em>El presente texto fue redactado con el ánimo de realizar un análisis de situación de tema de trabajado seleccionado para este año. Los alumnos realizaron una búsqueda de fuentes bibliográficas y redactaron un documento similar a éste, cada uno con sus fuentes de información. El objetivo era realizar una aproximación personal al tema de trabajo y así poder ver de primera mano el estado de la situación, qué se estaba escribiendo, cómo, etc. . Para la mayoría de los alumnos este trabajo fue la primera vez que se aproximaban a una investigación de este tipo, un proyecto de investigación comercial o de mercados completo.</em></strong></p>
-<p><strong><em>Este texto fue la solución aportada por el docente a la tarea inicial de análisis de situación.</em></strong></p>
+<blockquote>
+<p>El presente texto fue redactado con el ánimo de realizar un análisis de situación de tema de trabajado seleccionado para este año. Los alumnos realizaron una búsqueda de fuentes bibliográficas y redactaron un documento similar a éste, cada uno con sus fuentes de información. El objetivo era realizar una aproximación personal al tema de trabajo y así poder ver de primera mano el estado de la situación, qué se estaba escribiendo, cómo, etc. . Para la mayoría de los alumnos este trabajo fue la primera vez que se aproximaban a una investigación de este tipo, un proyecto de investigación comercial o de mercados completo.</p>
+</blockquote>
+<p>En esta segunda ola, trataremos de profundizar en los aspectos que se hayan derivado del período acaecido entre actuaciones de investigación. Enfocaremos nuestro trabajo a realizar una valoración de las medidas que la Generalitat Valenciana ha venido tomando desde el inicio del nuevo año, y en especial desde la instauración de las nuevas medidas más restrictivas que en la actualidad (21 de enero de 2021) se presentan. Del mismo modo, variamos el enfoque de objetivos más a los efectos de la pandemia en las personas, nuevamente desde el punto de vista emocional, pero también en otros ámbitos del desarrollo personal.</p>
+<div id="briefing-inicial" class="section level2">
+<h2>Briefing inicial</h2>
+<p>Nuestro cliente desea que profundicemos sobre las valoraciones de esas medidas, la creencia de su impacto positivo / negativo en la sociedad, ídem a nivel personal y la importancia que esa medida puede tener en el conjunto de la sociedad para atajar la evolución de la pandemia. Nótese que en el momento que se redacta este documento, la vacuna ya se encuentra disponible y es un motivo de esperanza para toda la sociedad en general.</p>
+<p>El objetivo general de esta investigación es comparar la situación antes de la tercera ola de la pandemia que situaremos después de las fiestas de la Navidad y derivada de las actuaciones de la sociedad entre las festividad de inicio de diciembre de 2020 y las festividades de inicio de 2021. Debemos buscar comprender al nuevo consumidor, para poder concluir acerca de la valoración de estos a instituciones, organizaciones en genéricas y como no a las marcas, grandes beneficiadas o perjudicadas del momento pandémico.</p>
+<p>De este modo, algunas de las cuestiones que suscitaron interés en la primera investigación deberían repetirse, a la par que se profundizará en nuevas valoraciones como por ejemplo el teletrabajo (si ha sido necesario) ha cambiado o está cambiando las relaciones trabajo - familia, la clasificación de la sociedad en función de su actitud hacia la pandemia y sus repercusiones, la mayor digitalización y por último, una valoración sobre las medidas que recientemente se han introducido, principalmente en la Comunitat Valenciana (sólo residentes).</p>
+</div>
 </div>
 
 <br>
@@ -427,7 +391,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

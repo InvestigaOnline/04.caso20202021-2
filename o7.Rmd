@@ -1,0 +1,236 @@
+---
+title: 'Objetivo 7'
+---
+
+# Nueva experiencia de digitalización
+
+> Entedemos por digitalización, a los cambios asociados con la aplicación de nuevas tecnologías en cualquier aspecto de nuestra vida en el hogar, trabajo o en la sociedad en general. 
+
+Así, queremos que eches la vista atrás y recuerdes como era tu vida antes de la pandemia con respecto al uso de herramientas informáticas y aplicaciones en ordenadores, móviles y cualquier otro dispositivo; en una escala de 1 a 10, donde el 1 es nada digitalizado y 10 absolutamente digitalizado, a tu modo de entender, ¿cómo te auto calificarías antes del período de la pandemia?
+[Q207010A]
+
+```{r echo = FALSE, warning = FALSE, messages = FALSE, comment = NA}
+var_lab(data$Q207010A) <- 'Q207010A. Autocalificación en el uso de herramientas informáticas y aplicaciones en ordenador antes de la pandemia'
+# tabla
+#================================================================================
+tab <- data %>%
+	tab_cells(Q207010A) %>%
+	tab_stat_cpct(label='% casos', total_row_position='none') %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(var_lab(data$Q207010A))
+as.datatable_widget(tab)
+# grafico
+#================================================================================
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q207010A) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+     hc_title(text=var_lab(data$Q207010A)) %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab$row_labels) %>% 
+     hc_add_series(round(tab$`#Total|% casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```
+
+
+Y en la actualidad y utilizando la misma escala, ¿cómo consideras que es el grado de digitalización en tu vida?
+[Q207010B]
+
+```{r echo = FALSE, warning = FALSE, messages = FALSE, comment = NA}
+var_lab(data$Q207010B) <- 'Q207010B. Autocalificación en el uso de herramientas informáticas y aplicaciones en ordenador actualmente'
+# tabla
+#================================================================================
+tab <- data %>%
+	tab_cells(Q207010B) %>%
+	tab_stat_cpct(label='% casos', total_row_position='none') %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(var_lab(data$Q207010B))
+as.datatable_widget(tab)
+# grafico
+#================================================================================
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q207010B) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+     hc_title(text=var_lab(data$Q207010B)) %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab$row_labels) %>% 
+     hc_add_series(round(tab$`#Total|% casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```
+
+Con una perspectiva global, ¿has aumentado el consumo de contenidos en Internet en tu hogar durante este último año? (contenidos: videos, herramientas, noticias, compras…)
+[Q207020]
+
+```{r echo = FALSE, warning = FALSE, messages = FALSE, comment = NA}
+var_lab(data$Q207020) <- 'Q207020. Aumento del consumo de contenidos en Internet en hogar durante este último año'
+# tabla
+#================================================================================
+tab <- data %>%
+	tab_cells(Q207020) %>%
+	tab_stat_cpct(label='% casos', total_row_position='none') %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(var_lab(data$Q207020))
+as.datatable_widget(tab)
+# grafico
+#================================================================================
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q207020) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+     hc_title(text=var_lab(data$Q207020)) %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab$row_labels) %>% 
+     hc_add_series(round(tab$`#Total|% casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```
+
+
+Y, ¿se ha equipado tu hogar con nuevos dispositivos (propios o compartidos) que permitan desarrollar la actividad digital profesional, de estudios o personal de una mejor forma?
+[Q207030]
+
+```{r echo = FALSE, warning = FALSE, messages = FALSE, comment = NA}
+var_lab(data$Q207030) <- 'Q207030. Mejor equipamiento del hogar ...'
+# tabla
+#================================================================================
+tab <- data %>%
+	tab_cells(Q207030) %>%
+	tab_stat_cpct(label='% casos', total_row_position='none') %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(var_lab(data$Q207030))
+as.datatable_widget(tab)
+# grafico
+#================================================================================
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q207030) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+     hc_title(text=var_lab(data$Q207030)) %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab$row_labels) %>% 
+     hc_add_series(round(tab$`#Total|% casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```
+
+Del mismo modo, ¿se ha mejorado la conexión a Internet de tu hogar con el objetivo de desarrollar la actividad digital profesional, de estudios o personal de una mejor forma?
+[Q207040]
+
+```{r echo = FALSE, warning = FALSE, messages = FALSE, comment = NA}
+var_lab(data$Q207040) <- 'Q20740. Mejora de conexión en el hogar ...'
+# tabla
+#================================================================================
+tab <- data %>%
+	tab_cells(Q207040) %>%
+	tab_stat_cpct(label='% casos', total_row_position='none') %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(var_lab(data$Q207040))
+as.datatable_widget(tab)
+# grafico
+#================================================================================
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q207040) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+     hc_title(text=var_lab(data$Q207040)) %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab$row_labels) %>% 
+     hc_add_series(round(tab$`#Total|% casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```
+
+ 
+
+Del mismo modo, nos gustaría saber si has incrementado el uso de las siguientes actividades durante este último año? Para ello, te proponemos indiques el tramo porcentual en el que crees que has aumentado cada una de ellas. Es aproximado, una percepción.
+[Q207050]
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q207050_1) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207050_2) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207050_3) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207050_4) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207050_5) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207050_6) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+				
+#cuadro
+#===============================================
+tab <- data %>%
+     tab_cells('|'=unvr(Q207050_1)) %>%tab_stat_cpct(label=var_lab(Q207050_1), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207050_2)) %>%tab_stat_cpct(label=var_lab(Q207050_2), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207050_3)) %>%tab_stat_cpct(label=var_lab(Q207050_3), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207050_4)) %>%tab_stat_cpct(label=var_lab(Q207050_4), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207050_5)) %>%tab_stat_cpct(label=var_lab(Q207050_5), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207050_6)) %>%tab_stat_cpct(label=var_lab(Q207050_6), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab$row_labels <- str_replace_all(tab$row_labels, "Q207050. Incremento porcentual en: \\| ", "")
+tab$row_labels <- str_replace_all(tab$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='Incremento porcentual en: ...') %>% 
+     hc_chart(type = 'bar', polar=FALSE) %>%
+     hc_xAxis(categories = tab$row_labels) %>% 
+     hc_add_series(round(tab$`No se ha incrementado`,1), name='No se ha incrementado', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab$`un 25% o menos`,1), name='un 25% o menos', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab$`entre un 25 y un 50%`,1), name='entre un 25 y un 50%', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab$`entre un 50 y un 75%`,1), name='entre un 50 y un 75%', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab$`un 75% o más`,1), name='un 75% o más', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```
+
+Y ahora, hacemos el mismo ejercicio pero con las siguientes actividades más centradas en la vida personal. Queremos saber si has aumentado su realización de forma digital.
+[Q207060]
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q207060_1) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207060_2) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207060_3) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207060_4) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207060_5) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207060_6) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207060_7) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+val_lab(data$Q207060_8) <- c('No se ha incrementado'=0,'un 25% o menos'=1, 'entre un 25 y un 50%'=2, 'entre un 50 y un 75%'=3, 'un 75% o más'=4)
+				
+#cuadro
+#===============================================
+tab <- data %>%
+     tab_cells('|'=unvr(Q207060_1)) %>%tab_stat_cpct(label=var_lab(Q207060_1), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207060_2)) %>%tab_stat_cpct(label=var_lab(Q207060_2), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207060_3)) %>%tab_stat_cpct(label=var_lab(Q207060_3), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207060_4)) %>%tab_stat_cpct(label=var_lab(Q207060_4), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207060_5)) %>%tab_stat_cpct(label=var_lab(Q207060_5), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207060_6)) %>%tab_stat_cpct(label=var_lab(Q207060_6), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207060_7)) %>%tab_stat_cpct(label=var_lab(Q207060_7), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q207060_8)) %>%tab_stat_cpct(label=var_lab(Q207060_8), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab$row_labels <- str_replace_all(tab$row_labels, "Q207060. Incremento porcentual en: \\| ", "")
+tab$row_labels <- str_replace_all(tab$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='Incremento porcentual en: ...') %>% 
+     hc_chart(type = 'bar', polar=FALSE) %>%
+     hc_xAxis(categories = tab$row_labels) %>% 
+     hc_add_series(round(tab$`No se ha incrementado`,1), name='No se ha incrementado', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab$`un 25% o menos`,1), name='un 25% o menos', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab$`entre un 25 y un 50%`,1), name='entre un 25 y un 50%', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab$`entre un 50 y un 75%`,1), name='entre un 50 y un 75%', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab$`un 75% o más`,1), name='un 75% o más', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```

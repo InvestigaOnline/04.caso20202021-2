@@ -1,0 +1,243 @@
+---
+title: 'Perfil del target'
+---
+
+# Descripción de la muestra
+
+Recordemos que finalmente la muestra ha sido obtenida por medio de grupos de whatsapp (conocidos y familiares de alumnos) por lo que el muestreo de conveniencia ha sido el método indicado. Ello nos lleva a una muestra sesgada de individuos, no representativos de la estructura poblacional del universo señalado en la [ficha técnica](https://covid.investigaonline.com/ficha.html).
+
+La distribución por edades de los entrevistados ha sido la siguiente:
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(DC01QT) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Perfil:','Edad', sep = ''))
+as.datatable_widget(tab)
+
+df <- data %>%
+	tab_cells('|'=unvr(DC01QT)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Perfil de los entrevistados') %>% 
+    hc_subtitle(text = 'Tramos de Edad') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Edad", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+
+```
+
+
+Mientras que la distribución por sexos ha sido:
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(DC02) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Perfil:','SEXO', sep = ''))
+as.datatable_widget(tab)
+
+df <- data %>%
+	tab_cells('|'=unvr(DC02)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Perfil de los entrevistados') %>% 
+    hc_subtitle(text = 'Sexo') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Sexo", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+
+```
+
+
+Por último, se ha realizado a partir de los datos obtenidos del entrevistado sobre si era o no el mayor sustentador del hogar una imputación del nivel socio económico del hogar de residencia del entrevistado. Las preguntas del final del cuestionario pretendían estimar el volumen de ingresos de la unidad familiar donde reside o de donde depende el individuo entrevistado. Así, siguiendo los cálculos de la AIMC utilizados en el EGM español, los resultados se pueden ver en el gráfico.
+
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(STEP12) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Perfil:','STATUS HOGAR', sep = ''))
+as.datatable_widget(tab)
+
+df <- data %>%
+	tab_cells('|'=unvr(STEP12)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Perfil de los entrevistados') %>% 
+    hc_subtitle(text = 'NSC - Status del hogar - Escala AIMC 2015') %>% 
+    hc_chart(type = 'column', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "NSC - Status", showInLegend = TRUE, innerSize='75%', colorByPoint=TRUE) %>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+
+```
+
+La clave de los grupos es (valor imputado en euros del hogar entre miembros):
+
+* A1 Más de 3005 euros;
+* A2 De 2452 a 3005;
+* B De 2146 a 2451;
+* C De 1603 a 2145;
+* D De 1313 a 1602;
+* E1 De 745 a 1312;
+* E2 Hasta 744 euros
+
+Para más información acerca del mecanismo utilizado para esta imputación, ver este [enlace](https://www.aimc.es/otros-estudios-trabajos/clasificacion-socioeconomica/) de la [AIMC](https://www.aimc.es/).
+
+
+También en esta oportunidad, por necesidades del objetivo número 9 que versaba sobre las medidas anti - COVID tomadas por la Generalitat Valenciana, mostramos el nº de entrevistas que por autonomía ha sido obtenidas.
+
+
+```{r echo = FALSE, warning = FALSE}
+# tabla
+#================================================================================
+tab <- data %>%
+	tab_cells(CCAA) %>%
+	tab_stat_cpct(label='% casos', total_row_position='none') %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+     drop_rc() %>% 
+	tab_caption(var_lab(data$CCAA))
+as.datatable_widget(tab)
+# grafico
+#================================================================================
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$CCAA), "")
+tab$row_labels <- str_replace_all(tab$row_labels, '.\\|' , "")
+highchart() %>% 
+     hc_title(text='Perfil de los entrevistados') %>%
+     hc_subtitle(text='Comunidad autónoma de residencia') %>% 
+     hc_chart(type = 'bar', polar= FALSE) %>%
+     hc_xAxis(categories = tab$row_labels) %>% 
+     hc_add_series(round(tab$`#Total|% casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```
+
+
+Del mismo modo, para los objetivos 6 (teletrabajo) y 7 (digitalización) eran necesarios algunos datos relevantes de la conexión a Internet de los entrevistados. 
+
+Un dato básico, ¿dispones en la actualidad de conexión a Internet en tu hogar?
+[Q207000A]
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(Q207000A) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Conexión Internet', sep = ''))
+as.datatable_widget(tab)
+
+df <- data %>%
+	tab_cells('|'=unvr(Q207000A)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Perfil de los entrevistados') %>% 
+    hc_subtitle(text = 'Conexión a Internet') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Conexión", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+¿Qué tipo de conexión a Internet tienes en tu hogar? Si dispones de ambas, puedes señalar las dos.
+[Q207000B]
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(mrset_f(Q207000B)) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Conexión Internet', sep = ''))
+as.datatable_widget(tab)
+
+df <- data %>%
+	tab_cells('|'=unvr(mrset_f(Q207000B))) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Perfil de los entrevistados') %>% 
+    hc_subtitle(text = 'Tipo de conexión a Internet') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Tipo conexión", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+
+¿Dispones en tu hogar de dispositivos como ordenadores, portátiles o tabletas que te permitan la realización de tu trabajo profesional o estudio?
+[Q207000C]
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(Q207000C) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Dispositivos para teletrabajo / estudios online', sep = ''))
+as.datatable_widget(tab)
+
+df <- data %>%
+	tab_cells('|'=unvr(Q207000C)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Perfil de los entrevistados') %>% 
+    hc_subtitle(text = 'Posibilidad de utilizar dispositivos para teletrabajo / estudios online') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Dispositivos para teletrabajo", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+Y esta actividad de teletrabajo, ¿la has podido realizar junto a tu familia?
+[Q207000]
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(Q207000) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Realización de teletrabajo / estudios online junto con la familia', sep = ''))
+as.datatable_widget(tab)
+
+df <- data %>%
+	tab_cells('|'=unvr(Q207000)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = 'Perfil de los entrevistados') %>% 
+    hc_subtitle(text = 'Realización de teletrabajo / estudios online junto con la familia') %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Teletrabajo / estudios online", showInLegend = TRUE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```

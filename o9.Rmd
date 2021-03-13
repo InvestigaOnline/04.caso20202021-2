@@ -1,0 +1,708 @@
+---
+title: 'Objetivo 9'
+---
+
+Como ya debes saber, en la Comunitat Valenciana estamos teniendo una tercera ola de la pandemia con una virulencia mayor que las dos primeras. Tras tanto tiempo, ¿con qué grado de interés estás siguiendo las noticias que sobre la misma se ofrecen en los medios de comunicación? Utilice una escala de 1 a 10, donde el 1 es nada interesado y el 10 muy interesado en el seguimiento de las noticias.
+[Q209010]
+
+```{r echo = FALSE, warning = FALSE, messages = FALSE, comment = NA}
+var_lab(data$Q209010) <- 'Q209010. Grado de interés siguiendo las noticias'
+data$Q209010 <- recode(data$Q209010, 'Nada interesado' = 1 ~ 1, 'Muy interesado'=10 ~10, TRUE ~ copy, with_labels = TRUE)
+# tabla
+#================================================================================
+tab <- data %>%
+	tab_cells(Q209010) %>%
+     tab_subgroup(CCAA == 10) %>% 
+	tab_stat_cpct(label='% casos', total_row_position='none') %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+     tab_stat_mean() %>% 
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(var_lab(data$Q209010))
+as.datatable_widget(tab)
+# grafico
+#================================================================================
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q209010) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+     hc_title(text=var_lab(data$Q209010)) %>%
+     hc_subtitle(text=paste('Media: ', round(mean(data$Q209010, na.rm=TRUE),1), sep='')) %>% 
+     hc_chart(type = 'bar', polar=FALSE) %>%
+     hc_xAxis(categories = tab$row_labels) %>% 
+     hc_add_series(round(tab$`#Total|% casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```
+
+
+Y, ¿cuál es tu grado de preocupación sobre el desarrollo de la pandemia? Utiliza de igual forma una escala de 1 a 10, donde 1 es muy poco interesado y 10 muy interesado en el desarrollo de la pandemia.
+[Q209020]
+
+```{r echo = FALSE, warning = FALSE, messages = FALSE, comment = NA}
+var_lab(data$Q209020) <- 'Q209020. Grado de proecupación sobre el desarrollo de la pandemia'
+data$Q209010 <- recode(data$Q209010, 'Nada interesado' = 1 ~ 1, 'Muy interesado'=10 ~10, TRUE ~ copy, with_labels = TRUE)
+# tabla
+#================================================================================
+tab <- data %>%
+	tab_cells(Q209020) %>%
+	tab_stat_cpct(label='% casos', total_row_position='none') %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+     tab_stat_mean() %>% 
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(var_lab(data$Q209020))
+as.datatable_widget(tab)
+# grafico
+#================================================================================
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q209020) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+     hc_title(text=var_lab(data$Q209020)) %>%
+     hc_subtitle(text=paste('Media: ', round(mean(data$Q209020, na.rm=TRUE),1), sep='')) %>% 
+     hc_chart(type = 'bar', polar=FALSE) %>%
+     hc_xAxis(categories = tab$row_labels) %>% 
+     hc_add_series(round(tab$`#Total|% casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```
+
+Valoración sobre las medidas que recientemente implantó el gobierno de la Generalitat Valenciana. Utiliza una escala de 1 a 5 donde 1 será muy poco importante y 5 muy importante en función de la importancia del impacto que puede tener en el ámbito de nuestro territorio.
+
+¿Cómo de importante ha sido el impacto en el ámbito de la movilidad del ...?
+[Q209021]
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q209021_1) <- c('muy poco importante'=1, 'poco importante'=2, 'indiferente'=3, 'algo importante'=4, 'muy importante'=5)
+val_lab(data$Q209021_2) <- c('muy poco importante'=1, 'poco importante'=2, 'indiferente'=3, 'algo importante'=4, 'muy importante'=5)
+val_lab(data$Q209021_3) <- c('muy poco importante'=1, 'poco importante'=2, 'indiferente'=3, 'algo importante'=4, 'muy importante'=5)
+
+#cuadro
+#===============================================
+tab0 <- data %>%
+     tab_cells('|'=unvr(Q209021_1)) %>%tab_stat_cpct(label=var_lab(Q209021_1), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209021_2)) %>%tab_stat_cpct(label=var_lab(Q209021_2), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209021_3)) %>%tab_stat_cpct(label=var_lab(Q209021_3), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab1 <- data %>%
+     tab_cells(Q209021_1 %to% Q209021_3) %>% 
+     tab_stat_mean() %>%
+     tab_pivot()
+#unir el cuadro
+#===============================================
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q209021. ¿Cómo de importante ha sido el impacto en el ámbito de la movilidad del ...\\? \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab2)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='Importancia en el impacto en el ámbito de la movilidad de ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+highchart() %>% 
+     hc_title(text='Importancia en el impacto en el ámbito de la movilidad de ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$`muy poco importante`,1), name='muy poco importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`poco importante`,1), name='poco importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`indiferente`,1), name='indiferente', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`algo importante`,1), name='algo importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`muy importante`,1), name='muy importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+``` 
+
+¿Cómo de importante ha sido el impacto en el ámbito de las reuniones sociales?
+[Q209022]
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q209022_1) <- c('muy poco importante'=1, 'poco importante'=2, 'indiferente'=3, 'algo importante'=4, 'muy importante'=5)
+
+#cuadro
+#===============================================
+tab0 <- data %>%
+     tab_cells('|'=unvr(Q209022_1)) %>%tab_stat_cpct(label=var_lab(Q209022_1), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab1 <- data %>%
+     tab_cells(Q209022_1) %>% 
+     tab_stat_mean() %>%
+     tab_pivot()
+#unir el cuadro
+#===============================================
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q209022. \\¿Cómo de importante ha sido el impacto en el ámbito de las reuniones sociales? \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab2)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='Importancia en el impacto en el ámbito de la movilidad de las reuniones sociales ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(title=list(text='Reuniones de sólo 2 personas no convivientes.')) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+highchart() %>% 
+     hc_title(text='Importancia en el impacto en el ámbito de la movilidad de las reuniones sociales ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(title=list(text='Reuniones de sólo 2 personas no convivientes.')) %>% 
+     hc_add_series(round(tab2$`muy poco importante`,1), name='muy poco importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`poco importante`,1), name='poco importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`indiferente`,1), name='indiferente', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`algo importante`,1), name='algo importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`muy importante`,1), name='muy importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+``` 
+
+ 
+
+¿Cómo de importante ha sido el impacto en el ámbito de la hostelería, comercio y ocio de ...?
+[Q209023]
+
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q209023_1) <- c('muy poco importante'=1, 'poco importante'=2, 'indiferente'=3, 'algo importante'=4, 'muy importante'=5)
+val_lab(data$Q209023_2) <- c('muy poco importante'=1, 'poco importante'=2, 'indiferente'=3, 'algo importante'=4, 'muy importante'=5)
+val_lab(data$Q209023_3) <- c('muy poco importante'=1, 'poco importante'=2, 'indiferente'=3, 'algo importante'=4, 'muy importante'=5)
+val_lab(data$Q209023_4) <- c('muy poco importante'=1, 'poco importante'=2, 'indiferente'=3, 'algo importante'=4, 'muy importante'=5)
+val_lab(data$Q209023_5) <- c('muy poco importante'=1, 'poco importante'=2, 'indiferente'=3, 'algo importante'=4, 'muy importante'=5)
+
+#cuadro
+#===============================================
+tab0 <- data %>%
+     tab_cells('|'=unvr(Q209023_1)) %>%tab_stat_cpct(label=var_lab(Q209023_1), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209023_2)) %>%tab_stat_cpct(label=var_lab(Q209023_2), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209023_3)) %>%tab_stat_cpct(label=var_lab(Q209023_3), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209023_4)) %>%tab_stat_cpct(label=var_lab(Q209023_4), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209023_5)) %>%tab_stat_cpct(label=var_lab(Q209023_5), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab1 <- data %>%
+     tab_cells(Q209023_1 %to% Q209023_5) %>% 
+     tab_stat_mean() %>%
+     tab_pivot()
+#unir el cuadro
+#===============================================
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q209023. ¿Cómo de importante ha sido el impacto en el ámbito de la hostelería, comercio y ocio de ...\\? \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab2)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='Importancia en el impacto en el ámbito de la hostelería, comercio y ocio de ... ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+highchart() %>% 
+     hc_title(text='Importancia en el impacto en el ámbito de la hostelería, comercio y ocio de ... ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$`muy poco importante`,1), name='muy poco importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`poco importante`,1), name='poco importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`indiferente`,1), name='indiferente', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`algo importante`,1), name='algo importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`muy importante`,1), name='muy importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+``` 
+ 
+
+ 
+
+¿Cómo de importante ha sido el impacto en el ámbito de la educación?
+[Q209024]
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q209024_1) <- c('muy poco importante'=1, 'poco importante'=2, 'indiferente'=3, 'algo importante'=4, 'muy importante'=5)
+
+#cuadro
+#===============================================
+tab0 <- data %>%
+     tab_cells('|'=unvr(Q209024_1)) %>%tab_stat_cpct(label=var_lab(Q209024_1), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab1 <- data %>%
+     tab_cells(Q209024_1) %>% 
+     tab_stat_mean() %>%
+     tab_pivot()
+#unir el cuadro
+#===============================================
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q209024. ¿Cómo de importante ha sido el impacto en el ámbito de la educación\\? \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab2)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='Importancia en el impacto en el ámbito de la educación ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(title=list(text='Impartir la enseñanza universitaria de grado, de forma online.')) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+highchart() %>% 
+     hc_title(text='Importancia en el impacto en el ámbito de la educación ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(title=list(text='Impartir la enseñanza universitaria de grado, de forma online.')) %>% 
+     hc_add_series(round(tab2$`muy poco importante`,1), name='muy poco importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`poco importante`,1), name='poco importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`indiferente`,1), name='indiferente', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`algo importante`,1), name='algo importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`muy importante`,1), name='muy importante', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+``` 
+ 
+
+
+Ahora realizaremos una valoración sobre las expectativas que usted tiene de que esas medidas sirvan para reducir el impacto de la pandemia. Utiliza una escala de 1 a 5 donde 1 será muy poca expectiva y 5 mucha expectitiva de que las medidas tengan el éxito que de ellas se espera..
+
+ 
+
+¿Qué expectativa tienes sobre las medidas en el ámbito de la movilidad?
+[Q209031]
+
+	Ninguna expectativa	Poca expectativa	Indiferente	Algo de expectativa	Mucha expectativa
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q209031_1) <- c('ninguna expectativa'=1, 'poca expectativa'=2, 'indiferente'=3, 'algo de expectativa'=4, 'mucha expectativa'=5)
+val_lab(data$Q209031_2) <- c('ninguna expectativa'=1, 'poca expectativa'=2, 'indiferente'=3, 'algo de expectativa'=4, 'mucha expectativa'=5)
+val_lab(data$Q209031_3) <- c('ninguna expectativa'=1, 'poca expectativa'=2, 'indiferente'=3, 'algo de expectativa'=4, 'mucha expectativa'=5)
+
+#cuadro
+#===============================================
+tab0 <- data %>%
+     tab_cells('|'=unvr(Q209031_1)) %>%tab_stat_cpct(label=var_lab(Q209031_1), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209031_2)) %>%tab_stat_cpct(label=var_lab(Q209031_2), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209031_3)) %>%tab_stat_cpct(label=var_lab(Q209031_3), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab1 <- data %>%
+     tab_cells(Q209031_1 %to% Q209031_3) %>% 
+     tab_stat_mean() %>%
+     tab_pivot()
+#unir el cuadro
+#===============================================
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q209031. ¿Qué expectativa tienes sobre las medidas en el ámbito de la movilidad\\? \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab2)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='Expectativa en el impacto en el ámbito de la movilidad de ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+highchart() %>% 
+     hc_title(text='Expectativa en el impacto en el ámbito de la movilidad de ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$`ninguna expectativa`,1), name='ninguna expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`poca expectativa`,1), name='poca expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$indiferente,1), name='indiferente', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`algo de expectativa`,1), name='algo de expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`mucha expectativa`,1), name='mucha expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+``` 
+ 
+
+ 
+
+¿Qué expectativa tienes sobre las medidas en el ámbito de las reuniones sociales?
+[Q209032]
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q209032_1) <- c('ninguna expectativa'=1, 'poca expectativa'=2, 'indiferente'=3, 'algo de expectativa'=4, 'mucha expectativa'=5)
+
+#cuadro
+#===============================================
+tab0 <- data %>%
+     tab_cells('|'=unvr(Q209032_1)) %>%tab_stat_cpct(label=var_lab(Q209032_1), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab1 <- data %>%
+     tab_cells(Q209032_1) %>% 
+     tab_stat_mean() %>%
+     tab_pivot()
+#unir el cuadro
+#===============================================
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q209032. ¿Qué expectativa tienes sobre las medidas en el ámbito de las reuniones sociales\\? \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab2)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='Expectativa tienes sobre las medidas en el ámbito de las reuniones sociales ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_title(title=list(text='Expectativa tienes sobre las medidas en el ámbito de las reuniones sociales ...')) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+highchart() %>% 
+     hc_title(text='Expectativa tienes sobre las medidas en el ámbito de las reuniones sociales ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(title=list(text='Expectativa tienes sobre las medidas en el ámbito de las reuniones sociales ...')) %>% 
+     hc_add_series(round(tab2$`ninguna expectativa`,1), name='ninguna expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`poca expectativa`,1), name='poca expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$indiferente,1), name='indiferente', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`algo de expectativa`,1), name='algo de expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`mucha expectativa`,1), name='mucha expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+``` 
+ 
+
+¿Qué expectativa tienes sobre las medidas en el ámbito de la hostelería, comercio y ocio?
+[Q209033]
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q209033_1) <- c('ninguna expectativa'=1, 'poca expectativa'=2, 'indiferente'=3, 'algo de expectativa'=4, 'mucha expectativa'=5)
+val_lab(data$Q209033_2) <- c('ninguna expectativa'=1, 'poca expectativa'=2, 'indiferente'=3, 'algo de expectativa'=4, 'mucha expectativa'=5)
+val_lab(data$Q209033_3) <- c('ninguna expectativa'=1, 'poca expectativa'=2, 'indiferente'=3, 'algo de expectativa'=4, 'mucha expectativa'=5)
+val_lab(data$Q209033_4) <- c('ninguna expectativa'=1, 'poca expectativa'=2, 'indiferente'=3, 'algo de expectativa'=4, 'mucha expectativa'=5)
+val_lab(data$Q209033_5) <- c('ninguna expectativa'=1, 'poca expectativa'=2, 'indiferente'=3, 'algo de expectativa'=4, 'mucha expectativa'=5)
+
+#cuadro
+#===============================================
+tab0 <- data %>%
+     tab_cells('|'=unvr(Q209033_1)) %>%tab_stat_cpct(label=var_lab(Q209033_1), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209033_2)) %>%tab_stat_cpct(label=var_lab(Q209033_2), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209033_3)) %>%tab_stat_cpct(label=var_lab(Q209033_3), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209033_4)) %>%tab_stat_cpct(label=var_lab(Q209033_4), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q209033_5)) %>%tab_stat_cpct(label=var_lab(Q209033_5), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab1 <- data %>%
+     tab_cells(Q209033_1 %to% Q209033_5) %>% 
+     tab_stat_mean() %>%
+     tab_pivot()
+#unir el cuadro
+#===============================================
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q209033. ¿Qué expectativa tienes sobre las medidas en el ámbito de la hostelería, comercio y ocio\\? \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab2)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='Expectativa en el impacto en el ámbito de la hostelería, comercio y ocio ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+highchart() %>% 
+     hc_title(text='Expectativa en el impacto en el ámbito de la hostelería, comercio y ocio ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$`ninguna expectativa`,1), name='ninguna expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`poca expectativa`,1), name='poca expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$indiferente,1), name='indiferente', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`algo de expectativa`,1), name='algo de expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`mucha expectativa`,1), name='mucha expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+``` 
+ 
+
+¿Qué expectativa tienes sobre las medidas en el ámbito de la educación?
+[Q209034]
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q209034_1) <- c('ninguna expectativa'=1, 'poca expectativa'=2, 'indiferente'=3, 'algo de expectativa'=4, 'mucha expectativa'=5)
+
+#cuadro
+#===============================================
+tab0 <- data %>%
+     tab_cells('|'=unvr(Q209034_1)) %>%tab_stat_cpct(label=var_lab(Q209034_1), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab1 <- data %>%
+     tab_cells(Q209034_1) %>% 
+     tab_stat_mean() %>%
+     tab_pivot()
+#unir el cuadro
+#===============================================
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q209034. ¿Qué expectativa tienes sobre las medidas en el ámbito de la educación\\? \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab2)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='Expectativa de impartir la enseñanza universitaria de grado, de forma online ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_title(title=list(text='Expectativa tienes sobre las medidas en el ámbito de las reuniones sociales ...')) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+highchart() %>% 
+     hc_title(text='Expectativa de impartir la enseñanza universitaria de grado, de forma online ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(title=list(text='Expectativa tienes sobre las medidas en el ámbito de las reuniones sociales ...')) %>% 
+     hc_add_series(round(tab2$`ninguna expectativa`,1), name='ninguna expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`poca expectativa`,1), name='poca expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$indiferente,1), name='indiferente', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`algo de expectativa`,1), name='algo de expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`mucha expectativa`,1), name='mucha expectativa', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+``` 
+ 
+
+ 
+
+Para ir terminando …
+
+¿En qué grado consideras que la pandemia es una amenaza para …? Utiliza una escala de 1 a 10, donde 1 es ninguna amenaza y 10 es una gran amenaza.
+[Q209041]
+
+```{r echo = FALSE}
+tab0 <- data %>%
+        tab_cells('|'=unvr(Q209041_1)) %>% 
+        tab_stat_cpct(label=var_lab(Q209041_1), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q209041_2)) %>% 
+        tab_stat_cpct(label=var_lab(Q209041_2), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q209041_3)) %>% 
+        tab_stat_cpct(label=var_lab(Q209041_3), total_row_position='below') %>%
+        tab_pivot(stat_position='inside_columns') %>%
+        t()
+tab1 <- data %>%
+    tab_cells(Q209041_1 %to% Q209041_3) %>% 
+    tab_stat_mean() %>%
+    tab_pivot()
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+as.datatable_widget(tab2) 
+#grafico
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q209041. ¿En qué grado consideras que la pandemia es una amenaza para …\\? \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+highchart() %>% 
+     hc_chart(type = 'column', polar=TRUE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>%
+     hc_yAxis(min=0, max=10) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+     
+``` 
+
+ 
+
+Y, ¿para la economía…? Utiliza una escala de 1 a 10, donde 1 es ninguna amenaza y 10 es una gran amenaza.
+[Q209042]
+
+
+```{r echo = FALSE}
+tab0 <- data %>%
+        tab_cells('|'=unvr(Q209042_1)) %>% 
+        tab_stat_cpct(label=var_lab(Q209042_1), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q209042_2)) %>% 
+        tab_stat_cpct(label=var_lab(Q209042_2), total_row_position='below') %>%
+        tab_pivot(stat_position='inside_columns') %>%
+        t()
+tab1 <- data %>%
+    tab_cells(Q209042_1 %to% Q209042_2) %>% 
+    tab_stat_mean() %>%
+    tab_pivot()
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+as.datatable_widget(tab2) 
+#grafico
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q209042. ¿En qué grado consideras que la pandemia es una amenaza para la economía\\? \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+highchart() %>% 
+     hc_chart(type = 'column', polar=TRUE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>%
+     hc_yAxis(min=0, max=10) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+     
+``` 
+ 
+
+ 
+
+Y personalmente, ¿qué dificultad crees que para el cumplimiento de las medidas están teniendo…? Utiliza una escala de 1 a 10, donde 1 es ninguna dificultad y 10 es una gran dificultad.
+[Q209043]
+
+```{r echo = FALSE}
+tab0 <- data %>%
+        tab_cells('|'=unvr(Q209043_1)) %>% 
+        tab_stat_cpct(label=var_lab(Q209043_1), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q209043_2)) %>% 
+        tab_stat_cpct(label=var_lab(Q209043_2), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q209043_3)) %>% 
+        tab_stat_cpct(label=var_lab(Q209043_3), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q209043_4)) %>% 
+        tab_stat_cpct(label=var_lab(Q209043_4), total_row_position='below') %>%
+        tab_pivot(stat_position='inside_columns') %>%
+        t()
+tab1 <- data %>%
+    tab_cells(Q209043_1 %to% Q209043_4) %>% 
+    tab_stat_mean() %>%
+    tab_pivot()
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+as.datatable_widget(tab2) 
+#grafico
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q209043. ¿Qué dificultad crees que para el cumplimiento de las medidas están teniendo…\\? \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+highchart() %>% 
+     hc_chart(type = 'column', polar=TRUE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>%
+     hc_yAxis(min=0, max=10) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+     
+``` 
+ 
+
+
+Pensando de modo general, con respecto a nuestro país, España, ¿cómo ves tu futuro personal dentro de un año?
+[Q2090441]
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(Q2090441) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Futuro personal', sep = ''))
+as.datatable_widget(tab)
+
+df <- data %>%
+	tab_cells('|'=unvr(Q2090441)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = var_lab(data$Q2090441)) %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Futuro personal", showInLegend = FALSE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+
+¿Cuáles crees que serán las consecuencias económicas para el país de esta pandemia dentro de un año?
+[Q2090442]
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(Q2090442) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Consecuencias económicas', sep = ''))
+as.datatable_widget(tab)
+
+df <- data %>%
+	tab_cells('|'=unvr(Q2090442)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = var_lab(data$Q2090442)) %>% 
+    hc_chart(type = 'pie', polar = FALSE, inverted = FALSE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Consecuencias económicas", showInLegend = FALSE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```
+
+¿Y cuál es tu actitud frente a todas estas medidas?
+[Q209045]
+
+
+```{r echo = FALSE}
+tab <- data %>%
+	tab_cells(Q209045) %>%
+	tab_stat_cpct(label='%casos') %>%
+	tab_stat_cases(label='casos') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(paste('Actitud personal frente a las medidas', sep = ''))
+as.datatable_widget(tab)
+
+df <- data %>%
+	tab_cells('|'=unvr(Q209045)) %>%
+	tab_stat_cpct(label='%casos', total_row_position = 'none') %>%
+	tab_pivot(stat_position = 'inside_columns')
+colnames(df) <- c('name','y')
+highchart() %>%
+    hc_title(text = var_lab(data$Q209045)) %>% 
+    hc_chart(type = 'pie', polar = TRUE) %>% 
+    hc_xAxis(categories = df$name) %>%
+    hc_add_series(df,name = "Actitud personal frente a las medidas", showInLegend = FALSE, innerSize='75%' )%>%
+    hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+    hc_exporting(enabled=TRUE)
+```

@@ -1,0 +1,39 @@
+---
+title: 'Carga ...'
+---
+
+```{r echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE, comment = NA, warning = FALSE, messages =FALSE)
+```
+
+
+```{r echo = FALSE}
+suppressMessages(library(dplyr,quietly =TRUE))
+suppressMessages(library(stringr,quietly =TRUE))
+suppressMessages(library(expss,quietly =TRUE))
+suppressMessages(library(highcharter,quietly =TRUE))
+suppressMessages(library(kableExtra,quietly =TRUE))
+suppressMessages(library(psych,quietly =TRUE))
+suppressMessages(library(wordcloud,quietly =TRUE))
+suppressMessages(library(readr,quietly =TRUE))
+options(highcharter.theme = hc_theme_economist(tooltip = list(valueDecimals = 1)))
+
+set.seed(311265)
+
+data.total <- suppressMessages(read_spss('~/R/r-data/04.caso20202021-2/Datos_IO2020CV19.sav'))
+data.ola1 <- filter(data.total, OLA == 1)
+data.ola2 <- filter(data.total, OLA == 2)
+
+data.nointer <- filter(data.ola2, DURACION == 0)
+nointer <- nrow(data.nointer)
+data.inter <- filter(data.ola2, DURACION > 0)
+inter <- nrow(data.inter)
+parciales <- nrow(data.inter %>%  where((ESTADO == 0 | ESTADO == 2) & DURACION > 0 ))
+finalizadas <- nrow(data.inter %>%  where(ESTADO == 1))
+
+data <- data.total %>%  where(ESTADO == 1 & OLA == 2)
+respuesta <- (finalizadas / inter) * 100
+
+col_stops <- data.frame(q = c(0.25, 0.50, 0.75),c = c('#CD5C5C', '#F0E68C', '#3CB371'),stringsAsFactors = FALSE)
+stops <- list_parse2(col_stops)
+```

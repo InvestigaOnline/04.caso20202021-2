@@ -1,0 +1,158 @@
+---
+title: 'Objetivo 8'
+---
+
+
+Estamos viviendo un período convulso en el que se mezclan muchas emociones y sentimientos. Te vamos ahora a pedir que valores dos bloques de afirmaciones de 10 y 11 frases, para conocer cómo nos ha afectado todo ello. Utiliza una escala de 1 a 10, donde el 1 es que la afirmación no es relevante para ti, y un 10 si la afirmación es totalmente relevante para ti.
+[Q208010A]
+
+```{r echo = FALSE}
+tab0 <- data %>%
+        tab_cells('|'=unvr(Q208010A_1)) %>%
+        tab_stat_cpct(label=var_lab(Q208010A_1), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010A_2)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010A_2), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010A_3)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010A_3), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010A_4)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010A_4), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010A_5)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010A_5), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010A_6)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010A_6), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010A_7)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010A_7), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010A_8)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010A_8), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010A_9)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010A_9), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010A_10)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010A_10), total_row_position='below') %>%
+        tab_pivot(stat_position='inside_columns') %>%
+        t()
+tab1 <- data %>%
+    tab_cells(Q208010A_1 %to% Q208010A_10) %>% 
+    tab_stat_mean() %>%
+    tab_pivot()
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+as.datatable_widget(tab2) 
+#grafico
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q208010. Grado de afectación:  \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+highchart() %>% 
+     hc_chart(type = 'column', polar=TRUE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>%
+     hc_yAxis(min=0, max=10) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+     
+```
+
+Y ahora, igual con este segundo bloque. Utiliza nuevamente una escala de 1 a 10, donde el 1 es que la afirmación no es relevante para ti, y un 10 si la afirmación es totalmente relevante para ti.
+[Q208010B]
+
+```{r echo = FALSE}
+tab0 <- data %>%
+        tab_cells('|'=unvr(Q208010B_1)) %>%
+        tab_stat_cpct(label=var_lab(Q208010B_1), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010B_2)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010B_2), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010B_3)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010B_3), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010B_4)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010B_4), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010B_5)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010B_5), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010B_6)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010B_6), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010B_7)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010B_7), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010B_8)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010B_8), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010B_9)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010B_9), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010B_10)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010B_10), total_row_position='below') %>%
+        tab_cells('|'=unvr(Q208010B_11)) %>% 
+        tab_stat_cpct(label=var_lab(Q208010B_11), total_row_position='below') %>%
+        tab_pivot(stat_position='inside_columns') %>%
+        t()
+tab1 <- data %>%
+    tab_cells(Q208010B_1 %to% Q208010B_11) %>% 
+    tab_stat_mean() %>%
+    tab_pivot()
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+as.datatable_widget(tab2) 
+#grafico
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q208010. Grado de afectación:  \\| ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+highchart() %>% 
+     hc_chart(type = 'column', polar=TRUE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>%
+     hc_yAxis(min=0, max=10) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+     
+```
+
+# Cluster
+
+```{r echo = FALSE, warning = FALSE, message=FALSE, comment = NA}
+suppressMessages(library(DT))
+suppressMessages(library(NbClust))
+suppressMessages(library(factoextra))
+
+options(scipen=9,width=9999)
+data01 <- select(data, REGISTRO, Q208010A_1,Q208010A_2, Q208010A_3, Q208010A_4, Q208010A_5, Q208010A_6, Q208010A_7, Q208010A_8, Q208010A_9, Q208010A_10,Q208010B_1, Q208010B_2, Q208010B_3, Q208010B_4, Q208010B_5, Q208010B_6, Q208010B_7, Q208010B_8, Q208010B_9, Q208010B_10, Q208010B_11)
+#revision outliers
+mh <- round(mahalanobis(data01[,-1], colMeans(data01[,-1]), cov(data01[,-1])),5)
+pmh <- round(pchisq(mh, df=21, lower.tail=FALSE),5)
+#union de calculos al dataframe
+data01 <- cbind(data01, mh,pmh)
+dim(data01)
+#eliminacion de outliers
+data01 <- subset(data01, pmh>0.001)
+dim(data01)
+datatable(data01)
+#eliminacion campo de obtencion de outliers
+data01 <- data01[,c(-23,-24)]
+df <- data01
+#optimo de cluster por nbcluster
+set.seed(311265)
+centers=as.matrix(data.frame(
+    resistentes=c(7.5,6.7,2.6,4.6,6.0,8.9,8.1,7.3,2.9,4.6,4.6,4.9,6.9,7.3,8.8,6.4,7.7,4.6,2.0,1.8,5.4),
+    asustados=  c(2.4,5.9,3.7,4.9,4.7,5.6,3.9,3.7,4.1,5.6,5.8,4.8,6.2,6.4,8.7,4.3,8.7,3.7,3.9,2.3,4.8),
+    empoderados=c(1.6,2.2,1.7,1.6,6.6,2.9,1.7,1.4,7.1,7.1,8.1,5.9,6.7,8.8,7.6,6.2,7.8,6.1,2.9,1.9,2.0),
+    expectantes=c(5.1,3.5,3.2,1.6,5.0,7.2,5.3,4.6,7.0,7.1,7.6,3.9,6.5,8.1,8.4,5.4,8.1,4.7,2.3,1.0,1.8),
+    shockeados= c(5.8,6.0,5.5,5.2,5.3,6.5,6.2,5.9,4.7,5.5,5.5,4.4,5.8,6.0,6.8,5.5,6.6,5.4,4.2,5.9,5.4)
+     )
+)
+NbClust(data = df,diss = NULL,distance = "euclidean",min.nc = 2,max.nc = 5,method = "centroid",index = 'all')
+
+#fviz_nbclust(df[,-1], kmeans, method = "silhouette")
+km.res <- kmeans(df[,-1], t(centers))
+dd <- cbind(data01, cluster.km = km.res$cluster)
+fviz_cluster(
+  km.res,
+  data = dd,
+  palette = c("red", "green", "blue", "yellow", "cyan"),
+  ellipse.type = "t",
+  # Concentration ellipse
+  star.plot = FALSE,
+  # Add segments from centroids to items
+  repel = FALSE,
+  pointsize = 0.25,
+  ggtheme = theme_minimal()
+)
+
+```
+
+

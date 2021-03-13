@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Objetivos y necesidades de información</title>
+
+<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<!DOCTYPE html>
+<head><link rel="shortcut icon" href="https://drive.google.com/uc?export=view&id=1JbeH3BFMq-xjBIroa3lcnqhOJS4Ap-RB">&nbsp;</head>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Covid-19 ::|:: Ola 2</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Presentación
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="index.html">Introducción</a>
+    </li>
+    <li>
+      <a href="aba_analisis.html">Preliminares</a>
+    </li>
+    <li>
+      <a href="aba_ficha.html">Ficha técnica</a>
+    </li>
+    <li>
+      <a href="aba_perfil.html">Perfil de la muestra</a>
+    </li>
+    <li>
+      <a href="aba_o.html">Objetivos del estudio</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Resultados
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="o1.html">Objetivo.1</a>
+    </li>
+    <li>
+      <a href="o3.html">Objetivo.3</a>
+    </li>
+    <li>
+      <a href="o4.html">Objetivo.4</a>
+    </li>
+    <li>
+      <a href="o6.html">Objetivo.6</a>
+    </li>
+    <li>
+      <a href="o7.html">Objetivo.7</a>
+    </li>
+    <li>
+      <a href="o8.html">Objetivo.8</a>
+    </li>
+    <li>
+      <a href="o9.html">Objetivo.9</a>
+    </li>
+    <li>
+      <a href="cruces.html">Tablas cruzadas (1)</a>
+    </li>
+    <li>
+      <a href="verbatim.html">Verbatim</a>
+    </li>
+    <li>
+      <a href="qst.html">Cuestionario</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="conclusiones.html">Conclusiones</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="about.html">
+    <span class="fas fa-question-circle"></span>
+     
+    Acerca de ...
+  </a>
+</li>
+<li>
+  <a href="https://www.investigaonline.com">
+    <span class="fas fa-search-plus"></span>
+     
+    InvestigaOnline.com
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Objetivos y necesidades de información</h1>
+
+</div>
+
+
+<style>
+.rojo
+{
+color: red;
+}
+</style>
+<div id="objetivos" class="section level2">
+<h2>Objetivos</h2>
+<p>Los nuevos objetivos que nos marca el cliente junto con los anteriores que desea sean renovados. En este caso, esos objetivos medidos de forma repetida será necesario sean comparados.</p>
+<ol style="list-style-type: decimal">
+<li>Analizar el impacto psicológico de la COVID-19 sobre el consumidor (parte Ola 1).</li>
+<li>Identificar amenazas a la experiencia de usuario (UX) consumidor / comprador ante la tercera oleada de la pandemia. (No evaluado)</li>
+<li>Valorar la experiencia de usuario (UX) y comportamiento de compra en la actualidad con ya la vacunación en activo; profundizar preferentemente en el modelo de la compra online (parte Ola 1).</li>
+<li>Valorar cómo la sociedad que nos rodea está actuando en la gestión de la pandemia: instituciones, empresas, marcas y ciudadanía en general (parte Ola 1).</li>
+<li>Perfilar el target de entrevista.</li>
+<li>Conocer los efectos producidos por teletrabajo en la relación familia - trabajo.</li>
+<li>Nueva experiencia de digitalización.</li>
+<li>Clasificar la sociedad desde el punto de vista actitudinal (conducta, motivación y pensamiento).</li>
+<li>Valoración de las medidas de GVA en importancia, impacto personal, general y la importancia.</li>
+</ol>
+</div>
+<div id="resumen-de-objetivos-y-necesidades-de-información" class="section level1">
+<h1>Resumen de objetivos y necesidades de información</h1>
+<p>NOTA: En rojo auqellas necesidades de información presentes en Ola 1 que no han sido requeridas en Ola 2.</p>
+<ol style="list-style-type: decimal">
+<li>Analizar el impacto de la COVID-19 sobre el consumidor.
+<ol style="list-style-type: decimal">
+<li><label class='rojo'>Escala de ansiedad (Lee, 2020). </label></li>
+<li><label class='rojo'>Escala de obsesión (Lee, 2020). </label></li>
+<li><label class='rojo'>Escala de temor (Ahorsu, et al., 2020). </label></li>
+<li>Descripción personal (adjetiva, posible cualitativo) del estado de ánimo ante la situación.</li>
+<li>Conciencia de cambio permanente en la realidad.<br />
+</li>
+<li>Incidencia de la COVID-19 en la sociedad futura y su realidad.</li>
+<li>Valoración de la creencia de exposición a la COVID-19 en la realización de las compras en establecimientos físicos.</li>
+</ol></li>
+<li><label class='rojo'>Identificar los cambios en la experiencia de usuario (UX) de shopping del consumidor (actual, durante) pandemia</label>
+<ol style="list-style-type: decimal">
+<li><label class='rojo'>Valoración del nivel de preocupación actual ante el entorno más próximo de compras </label></li>
+<li><label class='rojo'>Identificación de cambios en el patrón de compra en cuanto a … </label>
+<ol style="list-style-type: decimal">
+<li><label class='rojo'>Número de tiendas en las que compraba. </label></li>
+<li><label class='rojo'>Aumento o disminución en la actualidad de la frecuencia de compra. </label></li>
+<li><label class='rojo'>Identificar cambios en unidades por compra. </label></li>
+<li><label class='rojo'>Identificar cambios en cantidades (mayor o menor gasto). </label></li>
+</ol></li>
+<li><label class='rojo'>Efectos de la pandemia en su forma de comprar. </label>
+<ol style="list-style-type: decimal">
+<li><label class='rojo'>Positivos. </label></li>
+<li><label class='rojo'>Negativo. </label></li>
+</ol></li>
+<li><label class='rojo'>Afectación a hábitos futuros en la forma de compra. </label></li>
+<li><label class='rojo'>Cambio de marcas, posicionamiento ante la falta de marcas en el lineal, desabastecimiento. </label></li>
+<li><label class='rojo'>Consecuencias negativas de la pandemia para la sociedad. </label></li>
+<li><label class='rojo'>Consecuencias positivas de la pandemia para la sociedad. </label></li>
+</ol></li>
+<li>Identificar nuevos patrones de experiencia de usuario (UX) y comportamiento de compra en la nueva normalidad
+<ol style="list-style-type: decimal">
+<li><label class='rojo'>Identificar cambios en patrón de compra (repetir estructura objetivo 2)</label>
+<ol style="list-style-type: decimal">
+<li><label class='rojo'>Aumento o disminución en la actualidad de la frecuencia de compra</label></li>
+<li><label class='rojo'>Identificar cambios en unidades por compra</label></li>
+<li><label class='rojo'>Identificar cambios en cantidades (mayor o menor gasto)</label></li>
+</ol></li>
+<li><label class='rojo'>Creencia de mejora en las relaciones entre los miembros de la sociedad. </label></li>
+<li>Valoración de la expectativa de seguridad futura en establecimientos.</li>
+<li>Expectativa de un horizonte de seguridad en la sociedad.</li>
+<li><label class='rojo'>Cambios de importancia en factores esenciales de compra.</label></li>
+<li><label class='rojo'>Medidas que ayudan a sentirse más cómodos. </label></li>
+<li>Expectativa de comportamiento sobre las medidas de cambio.</li>
+<li>Qué actividades se realizarán más y qué actividades de dejarán de hacer</li>
+<li>Valorar el aprendizaje personal desde olas 1 y 2.</li>
+</ol></li>
+<li>Valorar cómo la sociedad que nos rodea ha actuado en la gestión: instituciones, empresas, marcas y ciudadanía en general
+<ol style="list-style-type: decimal">
+<li>Conocer qué marcas han respondido mejor a la situación vivida [abierta]</li>
+<li>Conocer qué instituciones han respondido mejor a la situación vivida</li>
+<li>Conocer qué sectores han respondido mejor a la situación vivida</li>
+</ol></li>
+<li>Perfilar el target
+<ol style="list-style-type: decimal">
+<li>Identificación de mayor aportador de ingresos</li>
+<li>Situación laboral de mayor aportador</li>
+<li>Profesión del sustentador principal cuenta propia</li>
+<li>Profesión del sustentador principal cuenta ajena</li>
+<li>Estudios del sustentador principal</li>
+<li>Número de personas en el hogar</li>
+<li>Número de personas que reciben un ingreso</li>
+<li>Sexo del entrevistado</li>
+<li>Edad del entrevistado</li>
+<li>NCS (imputada)</li>
+</ol></li>
+<li>Conocer los efectos producidos por el teletrabajo en la relación familia - trabajo. Impacto de la pandemia en teletrabajo (relaciones trabajo - familia). (adaptado de Adame et al. , 2020)
+<ol style="list-style-type: decimal">
+<li>Teletrabajo sobre familia
+<ol style="list-style-type: decimal">
+<li>… ha interferido en mis obligaciones familiares.</li>
+<li>… ha robado tiempo a mis obligaciones familiares.</li>
+<li>… ha cambiado la forma de cumplir con mis obligaciones familiares.</li>
+<li>… combinado con mis obligaciones familiares, me ha causado estrés.</li>
+<li>… combinado con mis obligaciones familiares, me ha hecho estar más irritable.</li>
+<li>… me hizo cumplir mejor en mis obligaciones profesionales y afectó a mis relaciones familiares de forma positiva. .</li>
+<li>… me ha hecho estar más feliz y eso me hizo cumplir más eficientemente en mis obligaciones profesionales y afectó a mis relaciones familiares de forma positiva.</li>
+<li>… me ha ayudado a sentir sensación de logro y eso afectó a mis relaciones familiares de forma positiva.</li>
+<li>… me ha generado una sensación de éxito personal, y eso afectó a mis relaciones familiares de forma positiva.</li>
+<li>… me ha hecho cambiar mi perspectiva de las obligaciones familiares.</li>
+</ol></li>
+<li>Familia sobre teletrabajo
+<ol style="list-style-type: decimal">
+<li>… han interferido en el trabajo.</li>
+<li>… han robado tiempo al trabajo.</li>
+<li>… han cambiado mi forma de cumplir con el trabajo.</li>
+<li>… combinadas con el teletrabajo me han causado estrés.</li>
+<li>… me hicieron estar más irritable mientras realizaba el teletrabajo.</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Otros</li>
+<li>El teletrabajo junto a mi familia me ha ayudado a usar mi tiempo de manera más eficiente, y eso ha afectado positivamente a mi trabajo.<br />
+</li>
+<li>El teletrabajo junto a mi familia me ha ayudado a ser más feliz y eso ha afectado positivamente a mi trabajo.<br />
+</li>
+</ol></li>
+</ol></li>
+<li>Valorar el efecto de digitalización de los hogares.
+<ol style="list-style-type: decimal">
+<li>Conocer en qué medida la etapa superada ha convertido al individuo en más digitalizado. Conocer su valoración antes y después de la etapa superada.</li>
+<li>Identificar un aumento del uso de Internet.</li>
+<li>Identificar un aumento de dispositivos que permitían la conectividad.</li>
+<li>Identificar una mejora de la conectividad en el hogar y el trabajo
+<ol style="list-style-type: decimal">
+<li>Conexión fija de banda ancha (ADSL, red de cable, fibra óptica, vía satélite, WiFi público WiMax)</li>
+<li>Conexión móvil de banda ancha (a través de un dispositivo de mano como un teléfono móvil de últimas generaciones -al menos 3G-, vía modem USB o tarjeta –en portátiles, p. ej. -)</li>
+</ol></li>
+<li>Identificar el aumento en el uso de aplicaciones (no marcas sino tipologías de comunicación) (% de aumento)
+<ol style="list-style-type: decimal">
+<li>Recibir o enviar correos electrónicos</li>
+<li>Telefonear o realizar videollamadas a través de Internet (WhatsApp, Skype, Messenger, Facetime, Viber, Telegram, Zoom, Meet, . . . ).</li>
+<li>Participar en redes sociales (con un perfil de usuario, p. ej Facebook, Twitter, Instagram. . . ).</li>
+<li>Usar mensajería instantánea (WhatsApp, Skype, Messenger Viber, Telegram, Hangouts, . . . ).</li>
+<li>Buscar información sobre bienes o servicios.</li>
+<li>Leer noticias, periódicos o revistas de actualidad on-line.</li>
+</ol></li>
+<li>Identificar el aumento en operaciones (% de operaciones digitales en compras, gestiones, …).
+<ol style="list-style-type: decimal">
+<li>compras cotidianas (alimentación, higiene hogar, perfumería, cosmética, frescos, perecederos)</li>
+<li>compras no cotidianas (moda, hogar, electrónica)</li>
+<li>ocio y viajes</li>
+<li>hostelería (pedido online y recibir en casa, pedido online y recoger en local)</li>
+<li>administrativas (gestiones con instituciones del estado, autonomía, ayuntamiento)</li>
+<li>bancarias</li>
+<li>educativas (cursos online)</li>
+<li>sanidad (personal)</li>
+</ol></li>
+</ol></li>
+<li>Clasificar la sociedad desde el punto de vista actitudinal (conducta, motivación y pensamiento). Segmentación emocional y actitudinal. (adaptado de TCK, 2020)
+<ol style="list-style-type: decimal">
+<li>La crisis del coronavirus me ha afectado muy negativamente a nivel laboral / profesional.</li>
+<li>La crisis del coronavirus me ha afectado muy negativamente a nivel emocional.</li>
+<li>He tenido casos cercanos de coronavirus y me ha afectado mucho.</li>
+<li>Pienso todo el tiempo en el tema del coronavirus, me cuesta desconectar.</li>
+<li>Creo que la gente está demasiado preocupada con este tema.</li>
+<li>Me preocupa mi futuro económico a medio- corto plazo.</li>
+<li>Tendré que recortar algún gasto derivado de la crisis del coronavirus.</li>
+<li>No creo que pueda seguir manteniendo mi nivel de vida.</li>
+<li>En el fondo, mi día a día sigue siendo igual.</li>
+<li>Tengo confianza en que todo va a ir bien.</li>
+<li>Yo sigo manteniendo mis mismos proyectos vitales.</li>
+<li>Esta nueva oleada es mucho menos grave que la primera.</li>
+<li>Me estoy obligando a hacer mi vida lo más normal posible.</li>
+<li>Me niego a vivir con miedo.</li>
+<li>Intento seguir todas las recomendaciones de los responsables sanitarios.</li>
+<li>En estos momentos la prioridad debe ser ponerle freno a la crisis económica.</li>
+<li>Por encima de la economía, lo principal es la salud.</li>
+<li>El riesgo cero no existe, hay que volver a la normalidad.</li>
+<li>A raíz de esta crisis, intento alegrarme dándome caprichos comprando marcas de confianza.</li>
+<li>Me he sentido discriminado/a en algún momento por pertenecer a un determinado grupo.</li>
+<li>A nivel de estado de ánimo, estoy llevando peor esta oleada que las anteriores.</li>
+</ol></li>
+<li>Valoración de las medidas ante la pandemia de la GVA.
+<ol style="list-style-type: decimal">
+<li>Medir la percepción de la situación actual
+<ol style="list-style-type: decimal">
+<li>Interés en el seguimiento de las noticias y la información relacionada</li>
+<li>Preocupación por el grado de desarrollo</li>
+</ol></li>
+<li>Medir la percepción de importancia de las medidas (adaptado de Andrino et al. , 2020)
+<ol style="list-style-type: decimal">
+<li>Ámbito de la movilidad.
+<ol style="list-style-type: decimal">
+<li>Confinamiento perimetral de la comunidad.</li>
+<li>Confinamiento perimetral de municipios de más de 50. 000 habitantes.</li>
+<li>Establecimiento de toque de queda a las 22:00h.</li>
+</ol></li>
+<li>Ámbito de las reuniones.
+<ol style="list-style-type: decimal">
+<li>Reuniones de sólo 2 personas no convivientes.</li>
+</ol></li>
+<li>Ámbito de la hostelería, comercio y ocio.
+<ol style="list-style-type: decimal">
+<li>Cierre de bares y restaurantes.</li>
+<li>Cierre de instalaciones deportivas (gimnasios, centros de recreo, clubs deportivos) no profesionales.</li>
+<li>Eventos deportivos con ámbito inferior al nacional.</li>
+<li>Aforo limitado en todos los comercios no esenciales.</li>
+<li>Horario limitado en establecimientos comerciales no esenciales.</li>
+</ol></li>
+<li>Educación.
+<ol style="list-style-type: decimal">
+<li>Enseñanza universitaria de grado, online.</li>
+</ol></li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Medir la expectativa de funcionamiento de las mismas.</li>
+<li>Ámbito de la movilidad.
+<ol style="list-style-type: decimal">
+<li>Confinamiento perimetral de la comunidad.</li>
+<li>Confinamiento perimetral de municipios de más de 50. 000 habitantes.</li>
+<li>Establecimiento de toque de queda a las 22:00h.</li>
+</ol></li>
+<li>Ámbito de las reuniones.
+<ol style="list-style-type: decimal">
+<li>Reuniones de sólo 2 personas no convivientes.</li>
+</ol></li>
+<li>Ámbito de la hostelería, comercio y ocio.
+<ol style="list-style-type: decimal">
+<li>Cierre de bares y restaurantes.</li>
+<li>Cierre de instalaciones deportivas (gimnasios, centros de recreo, clubs deportivos) no profesionales.</li>
+<li>Eventos deportivos con ámbito inferior al nacional.</li>
+<li>Aforo limitado en todos los comercios no esenciales.</li>
+<li>Horario limitado en establecimientos comerciales no esenciales.</li>
+</ol></li>
+<li>Educación.
+<ol style="list-style-type: decimal">
+<li>Enseñanza universitaria de grado, online.</li>
+</ol></li>
+</ol></li>
+<li>Valorar impacto como amenaza de la pandemia y efectos en el individuo y su entorno (adaptado de CEO, 2020)
+<ol style="list-style-type: decimal">
+<li>Amenaza a la salud
+<ol style="list-style-type: decimal">
+<li>Salud de la población en su conjunto</li>
+<li>Su salud personal</li>
+<li>La salud de sus familiares</li>
+</ol></li>
+<li>Amenaza a la economía
+<ol style="list-style-type: decimal">
+<li>La economía en general</li>
+<li>Su situación económica personal</li>
+</ol></li>
+<li>Efectos personales
+<ol style="list-style-type: decimal">
+<li>Dificultad personal en el cumplimiento de medidas</li>
+<li>Dificultad de los niños/as, jóvenes en el cumplimiento de las medidas</li>
+<li>Dificultad para las personas con necesidades especiales</li>
+<li>Dificultad para las personas en riesgo de exclusión social</li>
+</ol></li>
+<li>Proyección en el futuro
+<ol style="list-style-type: decimal">
+<li>Valorar cómo ve su futuro</li>
+<li>Valorar el futuro de la economía debido al impacto</li>
+</ol></li>
+<li>Valorar la intención de cumplimiento
+<ol style="list-style-type: decimal">
+<li>Acatar versus no acatar.</li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+
+<br>
+<hr>
+<div style="text-align: center;">All rights reserved - 2008-2021 (c) - InvestigaOnline.com</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+---
+title: 'Objetivo 6'
+---
+
+# Conocer los efectos producidos por teletrabajo en la relación familia - trabajo
+
+Durante el tiempo de confinamiento y/o el posterior al mismo, ¿has podido realizar en tu hogar actividades que se pudieran catalogar como de teletrabajo (bien en su vertiente profesional o bien en su vertiente educacional)?
+[Q206000]
+
+```{r echo = FALSE, warning = FALSE, messages = FALSE, comment = NA}
+var_lab(data$Q206000) <- 'Q206000. Realización de actividades durante el confinamiento consideradas teletrabajo o estudio online'
+# tabla
+#================================================================================
+tab <- data %>%
+	tab_cells(Q206000) %>%
+	tab_stat_cpct(label='% casos', total_row_position='none') %>%
+	tab_stat_cases(label='casos', total_row_position='none') %>%
+	tab_pivot(stat_position = 'inside_columns') %>%
+	tab_caption(var_lab(data$Q206000))
+as.datatable_widget(tab)
+# grafico
+#================================================================================
+tab$row_labels <- str_replace_all(tab$row_labels, var_lab(data$Q206000) , "")
+tab$row_labels <- str_replace_all(tab$row_labels, '\\|' , "")
+highchart() %>% 
+     hc_title(text=var_lab(data$Q206000)) %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab$row_labels) %>% 
+     hc_add_series(round(tab$`#Total|% casos`,1), name='Casos', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```
+
+
+
+Vamos a trabajar sobre aspectos que relacionan cuál ha sido tu actividad de teletrabajo durante este tiempo que llevamos con la pandemia entre nosotros; te pedimos que nos valores de 1 a 5, siendo 1 muy en desacuerdo y 5 muy de acuerdo, cuán de acuerdo estás con las siguientes afirmaciones que versan sobre el efecto del teletrabajo en las relaciones familiares.
+
+[Q206010]
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q206010_1) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206010_2) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206010_3) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206010_4) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206010_5) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206010_6) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206010_7) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206010_8) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206010_9) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206010_10) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+
+#cuadro
+#===============================================
+tab0 <- data %>%
+     tab_cells('|'=unvr(Q206010_1)) %>%tab_stat_cpct(label=var_lab(Q206010_1), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206010_2)) %>%tab_stat_cpct(label=var_lab(Q206010_2), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206010_3)) %>%tab_stat_cpct(label=var_lab(Q206010_3), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206010_4)) %>%tab_stat_cpct(label=var_lab(Q206010_4), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206010_5)) %>%tab_stat_cpct(label=var_lab(Q206010_5), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206010_6)) %>%tab_stat_cpct(label=var_lab(Q206010_6), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206010_7)) %>%tab_stat_cpct(label=var_lab(Q206010_7), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206010_8)) %>%tab_stat_cpct(label=var_lab(Q206010_8), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206010_9)) %>%tab_stat_cpct(label=var_lab(Q206010_9), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206010_10)) %>%tab_stat_cpct(label=var_lab(Q206010_10), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab1 <- data %>%
+     tab_cells(Q206010_1 %to% Q206010_10) %>% 
+     tab_stat_mean() %>%
+     tab_pivot()
+#unir el cuadro
+#===============================================
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q206010. Grado de acuerdo con: \\| El teletrabajo ...\\: ... ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab2)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='El teletrabajo: ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+highchart() %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$`total desacuerdo`,1), name='total desacuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`en desacuerdo`,1), name='en desacuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`ni acuerdo, ni desacuerdo`,1), name='neutral', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`de acuerdo`,1), name='de acuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`total acuerdo`,1), name='total acuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+```
+
+ 
+
+Del mismo modo, y utilizando la misma escala, podrías indica cuán de acuerdo estás con las siguientes. Podrán parecerte muy similares a las anteriores, pero el sentido es inverso ya que ahora valoramos el efecto de la familia sobre la realización de la actividad del teletrabajo.
+[Q206020]
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q206020_1) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206020_2) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206020_3) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206020_4) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206020_5) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+
+#cuadro
+#===============================================
+tab0 <- data %>%
+     tab_cells('|'=unvr(Q206020_1)) %>%tab_stat_cpct(label=var_lab(Q206020_1), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206020_2)) %>%tab_stat_cpct(label=var_lab(Q206020_2), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206020_3)) %>%tab_stat_cpct(label=var_lab(Q206020_3), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206020_4)) %>%tab_stat_cpct(label=var_lab(Q206020_4), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206020_5)) %>%tab_stat_cpct(label=var_lab(Q206020_5), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab1 <- data %>%
+     tab_cells(Q206020_1 %to% Q206020_5) %>% 
+     tab_stat_mean() %>%
+     tab_pivot()
+#unir el cuadro
+#===============================================
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q206020. Grado de acuerdo con:  \\| Mis obligaciones familiares ...: ... ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab2)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='El teletrabajo: ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+highchart() %>% 
+     hc_title(text='Mis obligaciones familiares: ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$`total desacuerdo`,1), name='total desacuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`en desacuerdo`,1), name='en desacuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`ni acuerdo, ni desacuerdo`,1), name='neutral', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`de acuerdo`,1), name='de acuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`total acuerdo`,1), name='total acuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+``` 
+
+ 
+
+Del mismo modo, y utilizando la misma escala, podrías indica cuán de acuerdo estás con las siguientes afirmaciones. En general ...
+[Q206030]
+
+
+```{r echo = FALSE}
+#numeros por textos (no necesario si viene condificada ya con texto)
+#===============================================
+val_lab(data$Q206030_1) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+val_lab(data$Q206030_2) <- c('total desacuerdo'=1, 'en desacuerdo'=2, 'ni acuerdo, ni desacuerdo'=3, 'de acuerdo'=4, 'total acuerdo'=5)
+
+#cuadro
+#===============================================
+tab0 <- data %>%
+     tab_cells('|'=unvr(Q206030_1)) %>%tab_stat_cpct(label=var_lab(Q206030_1), total_row_position='below') %>%
+     tab_cells('|'=unvr(Q206030_2)) %>%tab_stat_cpct(label=var_lab(Q206030_2), total_row_position='below') %>%
+     tab_pivot(stat_position='inside_columns') %>%
+     t()
+tab1 <- data %>%
+     tab_cells(Q206030_1 %to% Q206030_2) %>% 
+     tab_stat_mean() %>%
+     tab_pivot()
+#unir el cuadro
+#===============================================
+tab1 <- tab1[,-1]
+tab2 <- as.etable(cbind(tab0,tab1))
+tab2 <- tab2[,-1]
+tab2 <- rename(tab2, Total='#Total cases', Media='#Total')
+tab2$row_labels <- str_replace_all(tab2$row_labels, "Q206030. Grado de acuerdo con:  \\| El teletrabajo junto a mi familia...: ... ", "")
+tab2$row_labels <- str_replace_all(tab2$row_labels, "#Total\\|", "")
+
+as.datatable_widget(tab2)
+#grafico
+#===============================================
+highchart() %>% 
+     hc_title(text='El teletrabajo junto a mi familia: ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$Media,1), name='media', dataLabels=list(enabled=TRUE), colorByPoint=TRUE) %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+highchart() %>% 
+     hc_title(text='Mis obligaciones familiares: ...') %>% 
+     hc_chart(type = 'column', polar=FALSE) %>%
+     hc_xAxis(categories = tab2$row_labels) %>% 
+     hc_add_series(round(tab2$`total desacuerdo`,1), name='total desacuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`en desacuerdo`,1), name='en desacuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`ni acuerdo, ni desacuerdo`,1), name='neutral', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`de acuerdo`,1), name='de acuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_add_series(round(tab2$`total acuerdo`,1), name='total acuerdo', dataLabels=list(enabled=TRUE), stacking='normal') %>%
+     hc_credits(enabled=TRUE, text='InvestigaOnline.com', href ='https://www.investigaonline.com') %>%
+     hc_exporting(enabled=TRUE)
+``` 
