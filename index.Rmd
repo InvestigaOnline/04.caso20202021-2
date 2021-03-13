@@ -5,7 +5,9 @@ author: 'Roberto Gil-Saura'
 date: 'Última actualización en `r Sys.Date()`'
 ---
 
-# Introducción
+# EL CONSUMIDOR ANTE EL ESCENARIO ACTUAL POST PANDÉMICO.
+
+## Valoración de las medidas restrictivas en la CV y sus efectos en digitalización y teletrabajo.
 
 NOTA DEL AUTOR: 
 
@@ -15,7 +17,7 @@ En esta segunda ola, trataremos de profundizar en los aspectos que se hayan deri
 
 ## Briefing inicial
 
-Nuestro cliente desea que profundicemos sobre las valoraciones de esas medidas, la creencia de su impacto positivo / negativo en la sociedad, ídem a nivel personal y la importancia que esa medida puede tener en el conjunto de la sociedad para atajar la evolución de la pandemia. Nótese que en el momento que se redacta este documento, la vacuna ya se encuentra disponible y es un motivo de esperanza para toda la sociedad en general. 
+Nuestro _cliente_ desea que profundicemos sobre las valoraciones de esas medidas, la creencia de su impacto positivo / negativo en la sociedad, ídem a nivel personal y la importancia que esa medida puede tener en el conjunto de la sociedad para atajar la evolución de la pandemia. Nótese que en el momento que se redacta este documento, la vacuna ya se encuentra disponible y es un motivo de esperanza para toda la sociedad en general. 
 
 El objetivo general de esta investigación es comparar la situación antes de la tercera ola de la pandemia que situaremos después de las fiestas de la Navidad y derivada de las actuaciones de la sociedad entre las festividad de inicio de diciembre de 2020 y las festividades de inicio de 2021. Debemos buscar comprender al nuevo consumidor, para poder concluir acerca de la valoración de estos a instituciones, organizaciones en genéricas y como no  a las marcas, grandes beneficiadas o perjudicadas del momento pandémico.
 
