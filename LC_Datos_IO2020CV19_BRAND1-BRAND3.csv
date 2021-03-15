@@ -1,153 +1,200 @@
-Libro de claves
-TIPO EXTRACCION	1
 TIPO	PADRE	DESCRIPCION	VALOR
 CLAVE		Adidas	101
 LITERAL	Adidas	-adidas	1
-LITERAL	Adidas	Adidas	8
-CLAVE		Alcampo	102
-LITERAL	Alcampo	Alcampo	5
+LITERAL	Adidas	Adidas	11
+CLAVE		Ahorramas	102
+LITERAL	Ahorramas	Ahorram?s	0
+LITERAL	Ahorramas	Ahorramas	4
+LITERAL	Ahorramas	Ahorrar?s	1
+CLAVE		Alcampo	103
 LITERAL	Alcampo	Al campo	1
-CLAVE		Aldi	103
-LITERAL	Aldi	Aldi	3
+LITERAL	Alcampo	Alcampo	5
+LITERAL	Alcampo	-alcampo	1
+CLAVE		Aldi	104
+LITERAL	Aldi	Aldi	5
 LITERAL	Aldi	-Aldy	1
-CLAVE		amazon	104
+CLAVE		Aliexpress	105
+LITERAL	Aliexpress	Aliexpress	5
+CLAVE		amazon	106
 LITERAL	amazon	amazon-	1
-LITERAL	amazon	-amazon	2
-LITERAL	amazon	Amazon	52
-CLAVE		Apple	105
-LITERAL	Apple	-apple	1
-LITERAL	Apple	Apple	6
-CLAVE		Ariel	106
+LITERAL	amazon	-amazon	4
+LITERAL	amazon	Amazon	96
+CLAVE		AMSTEL	107
+LITERAL	AMSTEL	AMSTEL	4
+CLAVE		Apple	108
+LITERAL	Apple	-apple	2
+LITERAL	Apple	Apple	8
+CLAVE		Ariel	109
 LITERAL	Ariel	-ariel	2
-LITERAL	Ariel	Ariel	5
-CLAVE		Asevi	107
+LITERAL	Ariel	Ariel	3
+CLAVE		Asevi	110
 LITERAL	Asevi	-Asevi	1
-LITERAL	Asevi	Asevi	11
-CLAVE		Bimbo	108
-LITERAL	Bimbo	-bimbo	2
+LITERAL	Asevi	Asevi	8
+CLAVE		audi	111
+LITERAL	audi	audi	1
+CLAVE		Bimbo	112
+LITERAL	Bimbo	-bimbo	1
 LITERAL	Bimbo	Bimbo	4
-CLAVE		Burger King	109
-LITERAL	Burger King	Burger King	3
+CLAVE		Burger King	113
+LITERAL	Burger King	Burger King	2
 LITERAL	Burger King	Burguer King	1
-CLAVE		Campofrio	110
+CLAVE		Campofrio	114
 LITERAL	Campofrio	Campo frio	1
 LITERAL	Campofrio	Campofrio	2
-CLAVE		carrefour	111
-LITERAL	carrefour	carrefour	34
-LITERAL	carrefour	-carrefour	5
-LITERAL	carrefour	Carrefur	2
-CLAVE		Coca cola	112
-LITERAL	Coca cola	Coca cola	2
-LITERAL	Coca cola	Cocacola	8
-LITERAL	Coca cola	-coca cola	4
+LITERAL	Campofrio	-campofrio	1
+CLAVE		Carrefour	115
+LITERAL	Carrefour	-carrefour	6
+LITERAL	Carrefour	carrefour	48
+LITERAL	Carrefour	Carrefur	1
+CLAVE		Coca cola	116
+LITERAL	Coca cola	-coca cola	2
 LITERAL	Coca cola	-cocacola	1
-LITERAL	Coca cola	Coca-Cola	3
-CLAVE		Cola Cao	113
+LITERAL	Coca cola	Coca cola	5
+LITERAL	Coca cola	Cocacola	8
+LITERAL	Coca cola	-coca-cola	2
+LITERAL	Coca cola	Coca-Cola	6
+CLAVE		Cola Cao	117
 LITERAL	Cola Cao	Cola cao	1
 LITERAL	Cola Cao	Colacao	1
 LITERAL	Cola Cao	-colacao	1
-CLAVE		Consum	114
+CLAVE		Consum	118
 LITERAL	Consum	- Consum	1
 LITERAL	Consum	-consum	9
 LITERAL	Consum	-charter	1
 LITERAL	Consum	Comsum	2
-LITERAL	Consum	Consum	64
+LITERAL	Consum	Consum	78
 LITERAL	Consum	-consun	1
-CLAVE		Cruz Roja	115
+LITERAL	Consum	Consun	1
+CLAVE		Correos	119
+LITERAL	Correos	Correos	4
+CLAVE		Cruz Roja	120
 LITERAL	Cruz Roja	-cruz roja	1
-LITERAL	Cruz Roja	Cruz roja	2
-CLAVE		Danone	116
-LITERAL	Danone	Danone	13
-LITERAL	Danone	-danone	3
-CLAVE		Decathlon	117
+LITERAL	Cruz Roja	Cruz roja	3
+CLAVE		Danone	121
+LITERAL	Danone	-danone	4
+LITERAL	Danone	Danone	10
+CLAVE		Decathlon	122
 LITERAL	Decathlon	-decathlon	1
 LITERAL	Decathlon	Decathlon	7
-LITERAL	Decathlon	Decatlón -	1
-LITERAL	Decathlon	Decatlón	1
-CLAVE		Dia	118
+LITERAL	Decathlon	Decatl?n -	1
+LITERAL	Decathlon	Decatl?n	1
+CLAVE		Dia	123
 LITERAL	Dia	Dia	5
-CLAVE		el corte ingles	119
-LITERAL	el corte ingles	Corte ingled	1
-LITERAL	el corte ingles	corte ingles	2
-LITERAL	el corte ingles	Corte Inglés	2
-LITERAL	el corte ingles	-corte ingles	3
-LITERAL	el corte ingles	El corte infles	1
-LITERAL	el corte ingles	-el corte ingles	2
-LITERAL	el corte ingles	el corte ingles	8
-LITERAL	el corte ingles	El corte inglés	10
-LITERAL	el corte ingles	Hipercor	2
-LITERAL	el corte ingles	Supercor	2
-CLAVE		Gallo	120
+LITERAL	Dia	-dia	2
+CLAVE		Druni	124
+LITERAL	Druni	Druni	3
+CLAVE		Dulcesol	125
+LITERAL	Dulcesol	Dulcesol	3
+CLAVE		El Corte Ingles	126
+LITERAL	El Corte Ingles	- El Corte Ingl?s	1
+LITERAL	El Corte Ingles	-el corte ingles	3
+LITERAL	El Corte Ingles	Corte ingled	1
+LITERAL	El Corte Ingles	-corte ingles	4
+LITERAL	El Corte Ingles	corte ingles	3
+LITERAL	El Corte Ingles	Corte Ingl?s	9
+LITERAL	El Corte Ingles	CorteIngles	1
+LITERAL	El Corte Ingles	El corte infles	1
+LITERAL	El Corte Ingles	El Corte ?ngles	1
+LITERAL	El Corte Ingles	el corte ingles	9
+LITERAL	El Corte Ingles	El corte ingl?s	14
+LITERAL	El Corte Ingles	Hipercor	2
+LITERAL	El Corte Ingles	Supercor	3
+CLAVE		Estrella	127
+LITERAL	Estrella	Estrella	3
+CLAVE		Gallo	128
 LITERAL	Gallo	-gallo	3
 LITERAL	Gallo	Gallo	5
-CLAVE		Glovo	121
+CLAVE		Glovo	129
 LITERAL	Glovo	Globo	2
-LITERAL	Glovo	GLOVO	2
+LITERAL	Glovo	GLOVO	7
 LITERAL	Glovo	Glovoo	1
-CLAVE		Google	122
-LITERAL	Google	Google	3
-CLAVE		iberdrola	123
-LITERAL	iberdrola	iberdrola	3
-CLAVE		ikea	124
-LITERAL	ikea	ikea	3
-CLAVE		inditex	125
+CLAVE		Google	130
+LITERAL	Google	Google	5
+CLAVE		Iberdrola	131
+LITERAL	Iberdrola	iberdrola	6
+CLAVE		ikea	132
+LITERAL	ikea	ikea	6
+LITERAL	ikea	-ikea	2
+CLAVE		inditex	133
 LITERAL	inditex	grupo Inditex	1
-LITERAL	inditex	inditex	37
+LITERAL	inditex	inditex	38
 LITERAL	inditex	Oysho	1
 LITERAL	inditex	Pull and bear	2
 LITERAL	inditex	Stradi	1
-LITERAL	inditex	zara	19
-LITERAL	inditex	-zara	7
-CLAVE		Leche Asturiana	126
-LITERAL	Leche Asturiana	Asturiana	1
+LITERAL	inditex	-zara	10
+LITERAL	inditex	zara	27
+LITERAL	inditex	-inditex	1
+CLAVE		Leche Asturiana	134
 LITERAL	Leche Asturiana	-asturiana	2
+LITERAL	Leche Asturiana	Asturiana	0
 LITERAL	Leche Asturiana	-Elche asturiana	1
 LITERAL	Leche Asturiana	La asturiana	1
 LITERAL	Leche Asturiana	-leche la asturiana	1
-CLAVE		Lidl	127
-LITERAL	Lidl	Lidel	3
-LITERAL	Lidl	Lidl	13
-LITERAL	Lidl	-lidl	3
+LITERAL	Leche Asturiana	Central lechera asturiana	1
+CLAVE		Leroy merlin	135
+LITERAL	Leroy merlin	Leroy merlin	3
+CLAVE		Lidl	136
+LITERAL	Lidl	Lidel	2
+LITERAL	Lidl	-lidl	5
+LITERAL	Lidl	Lidl	22
 LITERAL	Lidl	-Lydl	1
-CLAVE		L'Oreal	128
+CLAVE		L'Oreal	137
 LITERAL	L'Oreal	L?Oreal	1
-LITERAL	L'Oreal	Loreal	2
-CLAVE		Mahou	129
-LITERAL	Mahou	Mahou	3
-CLAVE		mercadona	130
+LITERAL	L'Oreal	Loreal	1
+CLAVE		Mahou	138
+LITERAL	Mahou	Mahou	2
+LITERAL	Mahou	-Mahou	1
+CLAVE		mango	139
+LITERAL	mango	mango	3
+CLAVE		Mc donalds	140
+LITERAL	Mc donalds	Mc donalds	3
+LITERAL	Mc donalds	McDonald?s -	1
+CLAVE		Mediamarkt	141
+LITERAL	Mediamarkt	-mediamark	1
+LITERAL	Mediamarkt	-Mediamarkt	1
+LITERAL	Mediamarkt	Mediamarkt	0
+CLAVE		mercadona	142
+LITERAL	mercadona	- Mercadona	1
+LITERAL	mercadona	-mercadona	26
 LITERAL	mercadona	-acendado	1
-LITERAL	mercadona	Acendado	1
+LITERAL	mercadona	Acendado	0
 LITERAL	mercadona	-bosque verde	1
-LITERAL	mercadona	Bosque verde	5
+LITERAL	mercadona	Bosque verde	6
 LITERAL	mercadona	Bosqueverde	2
-LITERAL	mercadona	Café molido hacendado	1
+LITERAL	mercadona	Caf? molido hacendado	0
 LITERAL	mercadona	-deliplus	1
-LITERAL	mercadona	Deliplus	8
+LITERAL	mercadona	Deliplus	4
 LITERAL	mercadona	DELYPLUSS	1
 LITERAL	mercadona	-hacendado	11
-LITERAL	mercadona	hacendado	45
+LITERAL	mercadona	hacendado	40
 LITERAL	mercadona	mecadona	1
-LITERAL	mercadona	mercadona	120
-LITERAL	mercadona	-mercadona	18
-LITERAL	mercadona	Mercafona	1
-CLAVE		Movistar	131
+LITERAL	mercadona	mercadona	172
+LITERAL	mercadona	Mercafona	2
+LITERAL	mercadona	Meecadona	1
+LITERAL	mercadona	Mercsdoma	1
+CLAVE		Moderna	143
+LITERAL	Moderna	Moderna	3
+CLAVE		Movistar	144
 LITERAL	Movistar	Moviestar	1
-LITERAL	Movistar	Movistar	3
-CLAVE		Nestlé	132
-LITERAL	Nestlé	-nescafe	3
-LITERAL	Nestlé	Nescafe	2
-LITERAL	Nestlé	Nescafe Dolce Gusto	1
-LITERAL	Nestlé	Nespresso	4
-LITERAL	Nestlé	-nestle	1
-LITERAL	Nestlé	Nestlé	5
-LITERAL	Nestlé	Nestle	3
-LITERAL	Nestlé	-netsle	1
-CLAVE		Netflix	133
-LITERAL	Netflix	Netflix	9
-CLAVE		Nike	134
-LITERAL	Nike	-nike	2
-LITERAL	Nike	Nike	20
-CLAVE		Ninguna	135
+LITERAL	Movistar	Movistar	4
+LITERAL	Movistar	telefonica	1
+CLAVE		Nestl?	145
+LITERAL	Nestl?	-nescafe	3
+LITERAL	Nestl?	Nescafe	2
+LITERAL	Nestl?	Nescafe Dolce Gusto	1
+LITERAL	Nestl?	-nespresso	1
+LITERAL	Nestl?	Nespresso	6
+LITERAL	Nestl?	-nestle	1
+LITERAL	Nestl?	Nestle	1
+LITERAL	Nestl?	Nestl?	5
+LITERAL	Nestl?	-netsle	1
+CLAVE		Netflix	146
+LITERAL	Netflix	- Netflix	1
+LITERAL	Netflix	Netflix	11
+CLAVE		Nike	147
+LITERAL	Nike	-nike	5
+LITERAL	Nike	Nike	29
+CLAVE		Ninguna	148
 LITERAL	Ninguna	-.	3
 LITERAL	Ninguna	-...	1
 LITERAL	Ninguna	-....	1
@@ -155,7 +202,7 @@ LITERAL	Ninguna	-....l	1
 LITERAL	Ninguna	-1	1
 LITERAL	Ninguna	-2	1
 LITERAL	Ninguna	-3	1
-LITERAL	Ninguna	-5	1
+LITERAL	Ninguna	-5	3
 LITERAL	Ninguna	-7	1
 LITERAL	Ninguna	-8	1
 LITERAL	Ninguna	-a	1
@@ -165,43 +212,59 @@ LITERAL	Ninguna	-kk	3
 LITERAL	Ninguna	-m	3
 LITERAL	Ninguna	-me da igual	3
 LITERAL	Ninguna	Nada me viene	1
-LITERAL	Ninguna	Ni idea	1
-LITERAL	Ninguna	Nine	1
-LITERAL	Ninguna	Ninguna	16
-LITERAL	Ninguna	-ninguna	12
-LITERAL	Ninguna	no	1
+LITERAL	Ninguna	Ni idea	0
+LITERAL	Ninguna	Nine	0
+LITERAL	Ninguna	-ninguna	14
+LITERAL	Ninguna	Ninguna	29
+LITERAL	Ninguna	no	3
 LITERAL	Ninguna	-no Lo de	1
+LITERAL	Ninguna	-no Lo se	2
 LITERAL	Ninguna	No lo se-	1
-LITERAL	Ninguna	-no Lo se	5
 LITERAL	Ninguna	No lo se	2
 LITERAL	Ninguna	-no recuerdo ninguna mas	1
-LITERAL	Ninguna	-no sé	1
 LITERAL	Ninguna	-no se	6
-LITERAL	Ninguna	No sé	3
-LITERAL	Ninguna	No se	7
+LITERAL	Ninguna	-no s?	1
+LITERAL	Ninguna	no se	11
+LITERAL	Ninguna	No s?	1
 LITERAL	Ninguna	-no se me ocurre nada	1
 LITERAL	Ninguna	se me	1
 LITERAL	Ninguna	-x	3
-CLAVE		Pascual	136
+CLAVE		Pascual	149
 LITERAL	Pascual	Pascual	6
-CLAVE		Pepsi	137
+LITERAL	Pascual	Leche pascual	1
+CLAVE		Pepsi	150
 LITERAL	Pepsi	Pepsi	3
-CLAVE		pfizer	138
-LITERAL	pfizer	Anian	3
+LITERAL	Pepsi	-Pepsi	1
+CLAVE		pfizer	151
+LITERAL	pfizer	Anian	2
 LITERAL	pfizer	Fizer	1
-LITERAL	pfizer	pfizer	3
+LITERAL	pfizer	pfizer	4
 LITERAL	pfizer	Pzifer	1
-LITERAL	pfizer	Pzzer	1
-CLAVE		Real Madrid	139
+LITERAL	pfizer	Pzzer	0
+LITERAL	pfizer	-Pfizer	1
+LITERAL	pfizer	Pfitzer	1
+LITERAL	pfizer	Pfizzer	1
+CLAVE		Real Madrid	152
 LITERAL	Real Madrid	Real Madrid	3
-CLAVE		Repsol	140
+CLAVE		Repsol	153
 LITERAL	Repsol	Repsol	5
 LITERAL	Repsol	Respol	1
-CLAVE		Sanytol	141
-LITERAL	Sanytol	Sanitol	22
+CLAVE		San Miguel	154
+LITERAL	San Miguel	San Miguel	3
+LITERAL	San Miguel	-san miguel	3
+CLAVE		Sanytol	155
+LITERAL	Sanytol	Sanitol	20
 LITERAL	Sanytol	-Sanytol	1
 LITERAL	Sanytol	Sanytol	7
-CLAVE		uber	142
-LITERAL	uber	-uber	2
-LITERAL	uber	UBER	2
-LITERAL	uber	Ubereats	1
+CLAVE		Shein	156
+LITERAL	Shein	Shein	6
+CLAVE		Tik tok	157
+LITERAL	Tik tok	Tik tok	2
+LITERAL	Tik tok	Tiktok	1
+CLAVE		Twitch	158
+LITERAL	Twitch	Twitch	3
+CLAVE		Uber	159
+LITERAL	Uber	-uber	2
+LITERAL	Uber	UBER	3
+LITERAL	Uber	Uber eats	2
+LITERAL	Uber	Ubereats	0

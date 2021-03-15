@@ -19,6 +19,21 @@ El resultado del proceso se muestra en forma de tabla. Cada tabla tiene los camp
 * descripción, literal codificado
 * código / frecuencia, código de la clave o frecuencia del literal según campo _tipo_.
 
+## Estados anímicos
+
+```{r echo = FALSE, message=FALSE}
+data <- suppressMessages(read_delim("LC_Datos_IO2020CV19_Q00140COD1-Q00140COD3.csv", "\t", 
+                                             escape_double = FALSE, 
+                                             locale = locale(encoding = "WINDOWS-1252"),
+                                             na = "empty", 
+                                             trim_ws = TRUE, 
+                                             skip = 2))
+colnames(data) <- c('Tipo', 'Antecesor', 'Descripción', 'Código / Frecuencia')
+kbl(data) %>% 
+    kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'))
+
+```
+
 ## Marcas 
 
 > Pregunta Q00410
@@ -30,45 +45,10 @@ data <- suppressMessages(read_delim("LC_Datos_IO2020CV19_BRAND1-BRAND3.csv", "\t
                                              na = "empty", 
                                              trim_ws = TRUE, 
                                              skip = 2))
-colnames(data) <- c('Tipo', 'Antecesor', 'Descripción', 'Código / Frecuencia')
+colnames(data) <- c('Tipo', 'Antecesor', 'Descripción', 'Código -clave- / Frecuencia -literal-')
 kbl(data) %>% 
     kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'))
 
 ```
 
 
-## Efectos positivos de la pandemia
-
-> Pregunta Q00231
-
-```{r echo = FALSE}
-data <- suppressMessages(read_delim("LC_Datos_IO2020CV19_Q00231.csv", "\t", 
-                                             escape_double = FALSE, 
-                                             locale = locale(encoding = "WINDOWS-1252"),
-                                             na = "empty", 
-                                             trim_ws = TRUE, 
-                                             skip = 2))
-colnames(data) <- c('Tipo', 'Antecesor', 'Descripción', 'Código / Frecuencia')
-kbl(data) %>% 
-    kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'))
-
-```
-
-
-## Efectos negativos de la pandemia
-
-> Pregunta Q00232
-
-```{r echo = FALSE}
-data <- suppressMessages(read_delim("LC_Datos_IO2020CV19_Q00232.csv", "\t", 
-                                             escape_double = FALSE, 
-                                             locale = locale(encoding = "WINDOWS-1252"),
-                                             na = "empty", 
-                                             trim_ws = TRUE, 
-                                             skip = 2))
-
-colnames(data) <- c('Tipo', 'Antecesor', 'Descripción', 'Código / Frecuencia')
-kbl(data) %>% 
-    kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'))
-
-```

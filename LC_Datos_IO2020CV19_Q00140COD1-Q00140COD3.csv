@@ -1,0 +1,77 @@
+TIPO	PADRE	DESCRIPCION	VALOR
+CLAVE		abrumado/a	1
+CLAVE		aburrido/a	2
+LITERAL	aburrido/a	aburrido	2
+CLAVE		activo/a	3
+LITERAL	activo/a	activo/a	1
+LITERAL	activo/a	activo/a	1
+CLAVE		agobiado/a	4
+LITERAL	agobiado/a	agobiada	2
+CLAVE		agradecido/a	5
+LITERAL	agradecido/a	agradecido/a	1
+LITERAL	agradecido/a	agradecido	1
+LITERAL	agradecido/a	agradecido/a	1
+CLAVE		ansioso/a	6
+LITERAL	ansioso/a	ansiosa	1
+CLAVE		calmado/a	7
+CLAVE		cansado/a	8
+CLAVE		completo/a	9
+LITERAL	completo/a	completa	1
+CLAVE		comprometido/a	10
+LITERAL	comprometido/a	comprometido	1
+CLAVE		concienciado/a	11
+LITERAL	concienciado/a	concienciado/a	1
+CLAVE		confiado/a	12
+CLAVE		creativo/a	13
+CLAVE		decepcionado/a	14
+LITERAL	decepcionado/a	decepcionada	1
+CLAVE		deprimida	15
+LITERAL	deprimida	deprimida	1
+CLAVE		deprimido/a	16
+CLAVE		en shock	17
+CLAVE		enfadado/a	18
+CLAVE		esperanzado/a	19
+LITERAL	esperanzado/a	esperanzado	1
+CLAVE		estresada	20
+LITERAL	estresada	estresada	1
+CLAVE		feliz	21
+CLAVE		harto/a	22
+LITERAL	harto/a	harto	1
+LITERAL	harto/a	harta	1
+CLAVE		incrédulo/a	23
+CLAVE		indeciso/a	24
+LITERAL	indeciso/a	indecisa	1
+CLAVE		indiferente	25
+LITERAL	indiferente	indiferente	1
+CLAVE		inseguro/a	26
+CLAVE		motivado/a	27
+LITERAL	motivado/a	motivado	1
+CLAVE		nervioso/a	28
+LITERAL	nervioso/a	nerviosa	1
+CLAVE		obsesionado/a	29
+CLAVE		precavido/a	30
+LITERAL	precavido/a	precavido	1
+CLAVE		preocupado/a	31
+LITERAL	preocupado/a	preocupada	1
+LITERAL	preocupado/a	preocupado	1
+CLAVE		relajado/a	32
+LITERAL	relajado/a	relajado	1
+CLAVE		resignado/a	33
+LITERAL	resignado/a	resignado	1
+CLAVE		seguro/a	34
+CLAVE		solo/a	35
+CLAVE		temeroso/a	36
+LITERAL	temeroso/a	temeroso/a	2
+LITERAL	temeroso/a	temeroso/a	2
+CLAVE		tranquilo/a	37
+CLAVE		triste	38
+CLAVE		vulnerable	39
+LITERAL	vulnerable	vulnerable	1
+LITERAL	vulnerable	vulnerable	1
+CLAVE		otros	40
+LITERAL	otros	de incertidumbre	1
+LITERAL	otros	dudoso con mis sentimient	1
+LITERAL	otros	franco	1
+LITERAL	otros	hitler	1
+LITERAL	otros	musolini	1
+
