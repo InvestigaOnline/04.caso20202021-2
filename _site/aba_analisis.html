@@ -13,8 +13,8 @@
 
 <title>Análisis de situación</title>
 
-<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -61,6 +61,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -85,6 +86,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -237,7 +241,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -247,7 +251,7 @@ $(document).ready(function () {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Presentación
      
     <span class="caret"></span>
@@ -271,7 +275,7 @@ $(document).ready(function () {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Resultados
      
     <span class="caret"></span>
@@ -316,14 +320,14 @@ $(document).ready(function () {
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="about.html">
-    <span class="fas fa-question-circle"></span>
+    <span class="fa fa-question-circle"></span>
      
     Acerca de ...
   </a>
 </li>
 <li>
   <a href="https://www.investigaonline.com">
-    <span class="fas fa-search-plus"></span>
+    <span class="fa fa-search-plus"></span>
      
     InvestigaOnline.com
   </a>
@@ -342,28 +346,95 @@ $(document).ready(function () {
 </div>
 
 
-<div id="antecedentes-y-breve-memoria-de-investigación" class="section level1">
+<div id="antecedentes-y-breve-memoria-de-investigación"
+class="section level1">
 <h1>Antecedentes y breve memoria de investigación</h1>
-<p>En el período entre noviembre y diciembre de 2020, se realizó una investigación (<a href="https://covid.investigaonline.com" class="uri">https://covid.investigaonline.com</a>) orientada a la medición de obtener información acerca de cómo la pandemia denominada COVID-19 ha afectado y afectará a los patrones de consumo, se ha decidido realizar un estudio que refleje por una lado como se ha visto afectada la estabilidad emocional del individuo tras todos los acontecimientos vividos y qué pautas de comportamiento se han visto afectadas en relación a sus patrones de consumo, emocionales y de digitalización, siendo posible el realizar una proyección de futuro sobre lo que sucederá en próximas fechas. Ello incluye el que “la emergencia sanitaria provocada por la pandemia del COVID19 ha puesto de manifiesto que esta competencia no la posee una gran parte de la ciudadanía. Las mayores dificultades están relacionadas con el uso de las tecnologías en el ámbito educativo, económico y laboral” (Silva y Lázaro, 2020:45).</p>
-<p>Ahora, el mismo cliente, nos pide dos meses después y a raíz de la situación acaecida tras las Navidades de 2020, que profundicemos sobre las valoraciones de algunas de esas medidas y una ampliación a algunos objetivos nuevos, enmarcando este nuevo estudio bajo una nueva formulación:</p>
+<p>En el período entre noviembre y diciembre de 2020, se realizó una
+investigación (<a href="https://covid.investigaonline.com"
+class="uri">https://covid.investigaonline.com</a>) orientada a la
+medición de obtener información acerca de cómo la pandemia denominada
+COVID-19 ha afectado y afectará a los patrones de consumo, se ha
+decidido realizar un estudio que refleje por una lado como se ha visto
+afectada la estabilidad emocional del individuo tras todos los
+acontecimientos vividos y qué pautas de comportamiento se han visto
+afectadas en relación a sus patrones de consumo, emocionales y de
+digitalización, siendo posible el realizar una proyección de futuro
+sobre lo que sucederá en próximas fechas. Ello incluye el que “la
+emergencia sanitaria provocada por la pandemia del COVID19 ha puesto de
+manifiesto que esta competencia no la posee una gran parte de la
+ciudadanía. Las mayores dificultades están relacionadas con el uso de
+las tecnologías en el ámbito educativo, económico y laboral” (Silva y
+Lázaro, 2020:45).</p>
+<p>Ahora, el mismo cliente, nos pide dos meses después y a raíz de la
+situación acaecida tras las Navidades de 2020, que profundicemos sobre
+las valoraciones de algunas de esas medidas y una ampliación a algunos
+objetivos nuevos, enmarcando este nuevo estudio bajo una nueva
+formulación:</p>
 <blockquote>
-<p><strong>EL CONSUMIDOR ANTE EL ESCENARIO ACTUAL POST PANDÉMICO.</strong><br><em>Valoración de las medidas restrictivas en la CV y sus efectos en digitalización y teletrabajo</em>.</p>
+<p><strong>EL CONSUMIDOR ANTE EL ESCENARIO ACTUAL POST
+PANDÉMICO.</strong><br><em>Valoración de las medidas restrictivas en la
+CV y sus efectos en digitalización y teletrabajo</em>.</p>
 </blockquote>
-<p>Nótese que en el momento que se redacta este documento, y a diferencia del período anterior, la vacuna ya se encuentra disponible y está en marcha el plan de vacunación nacional de forma incipiente pero constante, siendo un motivo de esperanza para toda la sociedad en general y por tanto fuente de nuevo optimismo.</p>
-<p>El objetivo general de esta nueva investigación es comparar la situación antes de la tercera ola de la pandemia que situaremos después de las fiestas de la Navidad y derivada de las actuaciones de la sociedad entre las festividad de inicio de diciembre de 2020 (puentes festivos) y las festividades de inicio de 2021. Debemos buscar comprender al nuevo consumidor, para poder concluir acerca de la valoración de éstos a instituciones políticas y civiles, organizaciones en genéricas y como no, a las marcas, grandes beneficiadas o perjudicadas del momento pandémico.</p>
-<p>De este modo, algunas de las cuestiones que suscitaron interés en la primera investigación deberían repetirse, a la par que se profundizará en nuevas valoraciones demandadas directamente como el teletrabajo (si ha sido necesario, si ha cambiado o está cambiando las relaciones trabajo - familia) o también realizar una clasificación de la sociedad en función de su actitud hacia la pandemia y sus repercusiones. No debemos olvidar que uno de los efectos más conocidos a nivel general ha sido la mayor digitalización de los hogares y por último, una valoración sobre las medidas que recientemente se han introducido, principalmente en la Comunitat Valenciana (sólo residentes).</p>
-<p>Desarrollar competencias digitales será necesario para el trabajo y para la vida cotidiana de los ciudadanos de una sociedad propia de la era digital y donde sin duda, la tarea jugará un papel importante para permitir a los ciudadanos adaptarse mejor y más rápido a los cambios producidos por la constante digitalización de la sociedad (Silva y Lázaro, 2020).</p>
+<p>Nótese que en el momento que se redacta este documento, y a
+diferencia del período anterior, la vacuna ya se encuentra disponible y
+está en marcha el plan de vacunación nacional de forma incipiente pero
+constante, siendo un motivo de esperanza para toda la sociedad en
+general y por tanto fuente de nuevo optimismo.</p>
+<p>El objetivo general de esta nueva investigación es comparar la
+situación antes de la tercera ola de la pandemia que situaremos después
+de las fiestas de la Navidad y derivada de las actuaciones de la
+sociedad entre las festividad de inicio de diciembre de 2020 (puentes
+festivos) y las festividades de inicio de 2021. Debemos buscar
+comprender al nuevo consumidor, para poder concluir acerca de la
+valoración de éstos a instituciones políticas y civiles, organizaciones
+en genéricas y como no, a las marcas, grandes beneficiadas o
+perjudicadas del momento pandémico.</p>
+<p>De este modo, algunas de las cuestiones que suscitaron interés en la
+primera investigación deberían repetirse, a la par que se profundizará
+en nuevas valoraciones demandadas directamente como el teletrabajo (si
+ha sido necesario, si ha cambiado o está cambiando las relaciones
+trabajo - familia) o también realizar una clasificación de la sociedad
+en función de su actitud hacia la pandemia y sus repercusiones. No
+debemos olvidar que uno de los efectos más conocidos a nivel general ha
+sido la mayor digitalización de los hogares y por último, una valoración
+sobre las medidas que recientemente se han introducido, principalmente
+en la Comunitat Valenciana (sólo residentes).</p>
+<p>Desarrollar competencias digitales será necesario para el trabajo y
+para la vida cotidiana de los ciudadanos de una sociedad propia de la
+era digital y donde sin duda, la tarea jugará un papel importante para
+permitir a los ciudadanos adaptarse mejor y más rápido a los cambios
+producidos por la constante digitalización de la sociedad (Silva y
+Lázaro, 2020).</p>
 </div>
 <div id="bibliografía" class="section level1">
 <h1>Bibliografía</h1>
 <hr>
 <ul>
-<li><p>ADAME-SÁNCHEZ, C.; MIQUEL-ROMERO, M.J.; CAPLLIURE-GINER, E. y LEÓN-LLORENTE, C., 2020. Confinamiento Familiar Y Teletrabajo: ¿Nuevas Tensiones Trabajo Y Familia? Teletrabajo y conciliación en el contexto de la covid-19: Nuevos retos en el marco de la prevención de la violencia de género y la calidad de vida de las mujeres (PEVG 2020). Aranzadi.</p></li>
-<li><p>ANDRINO, B.; GRASSO, D.; LLANERAS, K.; VALVERDE, B. y QUERO, A., (2020), <a href="https://elpais.com/sociedad/2021-02-09/cerrar-bares-adelantar-el-toque-de-queda-o-limitar-la-movilidad-que-comunidades-aplican-medidas-mas-duras-contra-el-virus.html">“Cerrar bares, adelantar el toque de queda o limitar la movilidad: qué comunidades aplican medidas más duras contra el virus”</a>, El País, 10/02/2021, recuperado el 12/02/2021.</p></li>
-<li><p>CEO (Centre d’Estudis d’Opinió), 2020, <a href="https://ceo.gencat.cat/ca/estudis/registre-estudis-dopinio/estudis-dopinio-ceo/societat/detall/index.html?id=7588">“Enquesta sobre l’impacte de la COVID-19”</a>, recuperado el 10/12/2021.</p></li>
-<li><p>INE, 2020, <a href="https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=estadistica_C&amp;cid=1254736176743&amp;menu=ultiDatos&amp;idp=1254735576799">“Encuesta sobre Equipamiento y Uso de Tecnologías de Información y Comunicación en los Hogares (TIC-H).”</a>; recuperado el 11 de febrero de 2021.</p></li>
-<li><p>SILVA-QUIROZ, J.E. y LÁZARO-CANTABRANA, J.L., 2020, La Competencia Digital De La Ciudadanía, Una Necesidad Creciente En Una Sociedad Digitalizada. Edutec. Revista Electrónica De Tecnología Educativa, nº 73, pp. 37-50.</p></li>
-<li><p>TCK-Google, 2020, “Discovering the new consumer”, Madrid, España, 2020.</p></li>
+<li><p>ADAME-SÁNCHEZ, C.; MIQUEL-ROMERO, M.J.; CAPLLIURE-GINER, E. y
+LEÓN-LLORENTE, C., 2020. Confinamiento Familiar Y Teletrabajo: ¿Nuevas
+Tensiones Trabajo Y Familia? Teletrabajo y conciliación en el contexto
+de la covid-19: Nuevos retos en el marco de la prevención de la
+violencia de género y la calidad de vida de las mujeres (PEVG 2020).
+Aranzadi.</p></li>
+<li><p>ANDRINO, B.; GRASSO, D.; LLANERAS, K.; VALVERDE, B. y QUERO, A.,
+(2020), <a
+href="https://elpais.com/sociedad/2021-02-09/cerrar-bares-adelantar-el-toque-de-queda-o-limitar-la-movilidad-que-comunidades-aplican-medidas-mas-duras-contra-el-virus.html">“Cerrar
+bares, adelantar el toque de queda o limitar la movilidad: qué
+comunidades aplican medidas más duras contra el virus”</a>, El País,
+10/02/2021, recuperado el 12/02/2021.</p></li>
+<li><p>CEO (Centre d’Estudis d’Opinió), 2020, <a
+href="https://ceo.gencat.cat/ca/estudis/registre-estudis-dopinio/estudis-dopinio-ceo/societat/detall/index.html?id=7588">“Enquesta
+sobre l’impacte de la COVID-19”</a>, recuperado el 10/12/2021.</p></li>
+<li><p>INE, 2020, <a
+href="https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=estadistica_C&amp;cid=1254736176743&amp;menu=ultiDatos&amp;idp=1254735576799">“Encuesta
+sobre Equipamiento y Uso de Tecnologías de Información y Comunicación en
+los Hogares (TIC-H).”</a>; recuperado el 11 de febrero de 2021.</p></li>
+<li><p>SILVA-QUIROZ, J.E. y LÁZARO-CANTABRANA, J.L., 2020, La
+Competencia Digital De La Ciudadanía, Una Necesidad Creciente En Una
+Sociedad Digitalizada. Edutec. Revista Electrónica De Tecnología
+Educativa, nº 73, pp. 37-50.</p></li>
+<li><p>TCK-Google, 2020, “Discovering the new consumer”, Madrid, España,
+2020.</p></li>
 </ul>
 </div>
 
